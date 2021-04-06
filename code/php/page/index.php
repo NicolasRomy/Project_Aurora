@@ -4,11 +4,18 @@
 <html lang="fr" dir="ltr">
   <head>
     <link rel="stylesheet" href="../../css/master.css"/>
-    <link rel="stylesheet" href="/css/master.css">
-    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
   </head>
   <body>
+    <header>
+    </header>
 
+    <footer>
+    </footer>
+
+    <script type="text/javascript" src="../js/materialize.js"></script>
   </body>
 </html>
