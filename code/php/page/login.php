@@ -16,7 +16,7 @@
   </header>
 
   <div class="row">
-    <form class="col s12">
+    <form action="../action/connection.php" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">email</i>
@@ -30,6 +30,10 @@
         </div>
       </div>
     </form>
+    <?php if (isset($_SESSION['message'])){
+      echo $_SESSION['message'];
+    } ?>
+
   </div>
 
   <footer>

@@ -26,3 +26,4 @@ else {
   $_SESSION['message'] = 'Password ou Email incorect';
   header('Location: ../page/login.php');
 }
+ 
