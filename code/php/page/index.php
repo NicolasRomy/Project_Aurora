@@ -27,6 +27,8 @@
     <footer>
     </footer>
 
-    <script type="text/javascript" src="../../js/materialize.js"></script>
+    <script type="text/javascript" src="../../js/materialize.js">
+
+    </script>
   </body>
 </html>
