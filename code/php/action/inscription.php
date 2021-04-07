@@ -4,9 +4,9 @@
 
     require_once "config.php";
 
-    $sql = "SELECT * FROM user WHERE username=:username OR email=:email";
+    $sql = "SELECT * FROM users WHERE pseudo=:pseudo OR email=:email";
     $dataBinded=array(
-        ':username'   => $_POST['username'],
+        ':pseudo'   => $_POST['pseudo'],
         ':email'   => $_POST['email']
     );
 
@@ -17,9 +17,10 @@
         echo "Nom d'utilisateur ou addresse mail déjà utilisés !";
     }
     else {
-        $sql = "INSERT INTO user(username, email,password) VALUES(:username,:email,MD5(:password))";
+        
+        $sql = "INSERT INTO users(pseudo, email, password) VALUES(:pseudo,:email, password_hash(:password))";
         $dataBinded=array(
-            ':username'   => $_POST['username'],
+            ':pseudo'   => $_POST['pseudo'],
             ':email'   => $_POST['email'],
             ':password'=> $_POST['password']
         );
