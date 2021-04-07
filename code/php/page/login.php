@@ -16,7 +16,7 @@
   </header>
 
   <div class="row">
-    <form action="../action/connection.php" method="post" class="col s12">
+    <form action="../action/connexion.php" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">email</i>
@@ -27,6 +27,9 @@
           <i class="material-icons prefix">lock_outline</i>
           <input id="mdp" type="password" class="validate">
           <label for="mdp">Mot De Passe</label>
+        </div>
+        <div class="col s6">
+          <input class="btn" type="submit" name="" value="Me Connecter">
         </div>
       </div>
     </form>

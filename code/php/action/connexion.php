@@ -9,7 +9,8 @@ $sql =
 
 $dataBinded = array(
   ':email' => $_POST['email'],
-)
+);
+
 $prepareRequete = $pdo->prepare($sql);
 $prepareRequete->execute($dataBinded);
 
@@ -26,4 +27,3 @@ else {
   $_SESSION['message'] = 'Password ou Email incorect';
   header('Location: ../page/login.php');
 }
- 
