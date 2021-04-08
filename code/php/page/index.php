@@ -13,7 +13,9 @@
     <header>
     <nav>
     <div class="nav-wrapper">
+    <ul class="left hide-on-med-and-down">
       <a href="#!" class="brand-logo"><img src="../../../assets/logo.png"></a>
+    </ul>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html"><i class="material-icons">search</i></a></li>
         <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
