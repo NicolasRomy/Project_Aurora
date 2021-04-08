@@ -45,7 +45,9 @@
   </footer>
 
   <script type="text/javascript" src="../../js/materialize.js">
-
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
   </script>
 </body>
 </html>

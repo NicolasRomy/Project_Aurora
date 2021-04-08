@@ -4,5 +4,19 @@
 }
 
 .raduis-navbar{
-  border-radius: 10 !important;
+  border-radius: 10px !important;
+  background-color: #f3e5f5a6;
+}
+
+.img-navbar-logo{
+height: 55px !important;
+margin-top: 5px;
+margin-left: 40px;
+
+}
+
+.img-navbar-user{
+  height: 50px !important;
+  margin-top: 7px;
+  margin-right: 10px;
 }
