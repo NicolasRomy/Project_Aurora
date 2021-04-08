@@ -3,7 +3,6 @@
   margin-left: 5% !important;
 }
 
-
 .raduis-navbar{
   border-radius: 10px !important;
   background-color: #f3e5f5a6;
@@ -12,15 +11,12 @@
 .img-navbar-logo{
 height: 55px !important;
 margin-top: 5px;
-
-
 }
 
 .img-navbar-user{
   height: 50px !important;
   margin-top: 7px;
-  margin-right: 40px;
-  margin-left: 20px;
+
 }
 
 .img-navbar-panier{
@@ -38,6 +34,12 @@ margin-top: 5px;
 .margin-left{
   margin-left: 40px;
 }
+
+.margin{
+    margin-right: 40px;
+      margin-left: 20px;
+}
+
 .hover:hover{
   background-color: transparent !important;
 }
