@@ -1,0 +1,8 @@
+body{
+    background: linear-gradient(35deg, #FDAFAA,#E3CDFA);
+}
+
+.reverse{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
