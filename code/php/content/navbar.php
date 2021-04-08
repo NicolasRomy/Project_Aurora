@@ -5,7 +5,7 @@
         <a href="#!" class="brand-logo"><img class="responsive-img img-navbar-logo" src="../../../assets/logo-big.PNG" alt=""></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="collapsible.html"><i class="material-icons">shopping_cart</i>Panier</a></li>
           <li><a href="mobile.html"></a><img class="responsive-img img-navbar-user" src="../../../assets/user-logo.PNG" alt=""></li>
         </ul>
       </div>
