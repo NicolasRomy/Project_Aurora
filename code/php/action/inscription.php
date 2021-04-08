@@ -14,7 +14,8 @@
     $pre->execute($dataBinded);
     $user = current($pre->fetchAll(PDO::FETCH_ASSOC));
     if(!empty($user)) {
-        echo "Nom d'utilisateur ou addresse mail déjà utilisés !";
+        $_SESSION['messageInscription'] = 'email ou pseudo déja utilisé';
+        header('Location: ../page/login.php');
     }
     else {
         
@@ -26,6 +27,7 @@
         );
         $pre = $pdo->prepare($sql);
         $pre->execute($dataBinded);
+        header('Location: ../page/login.php');
     }
 
     header('Location:../connexion.php');

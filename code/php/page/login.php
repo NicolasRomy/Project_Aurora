@@ -37,6 +37,30 @@
       echo $_SESSION['message'];
     } ?>
 
+
+    <form action="../action/inscription.php" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+          <i class="material-icons prefix">face</i>
+          <input id="pseudo" type="text" class="validate">
+          <label for="pseudo">pseudo</label>
+        </div>
+        <div class="input-field col s4">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="text" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s4">
+          <i class="material-icons prefix">lock_outline</i>
+          <input id="password" type="password" class="validate">
+          <label for="password">Mot De Passe</label>
+        </div>
+        <div class="col s6">
+          <input class="btn" type="submit" name="" value="inscription">
+        </div>
+      </div>
+    </form>
+
   </div>
 
   <footer>
