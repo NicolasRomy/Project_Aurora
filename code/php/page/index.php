@@ -4,12 +4,12 @@
 <html lang="fr" dir="ltr">
   <head>
     <link rel="stylesheet" href="../../css/master.css"/>
-    <?php include 'head.php'; ?>
+    <?php include '../content/head.php'; ?>
     <title></title>
   </head>
   <body>
     <header>
-      <?php include '../navbar/php'; ?>
+      <?php include '../content/navbar.php'; ?>
     </header>
 
     <footer>
