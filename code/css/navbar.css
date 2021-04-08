@@ -1,3 +1,8 @@
 .position-navbar{
-  margin: 50px;
+  margin-top: 40px;
+
+}
+
+.raduis-navbar{
+  border-radius: 10 !important;
 }
