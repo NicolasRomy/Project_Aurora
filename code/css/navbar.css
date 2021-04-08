@@ -1,7 +1,8 @@
 .position-navbar{
   margin-top: 30px;
-
+  margin-left: 5% !important;
 }
+
 
 .raduis-navbar{
   border-radius: 10px !important;
@@ -11,7 +12,7 @@
 .img-navbar-logo{
 height: 55px !important;
 margin-top: 5px;
-margin-left: 40px;
+
 
 }
 
@@ -19,4 +20,36 @@ margin-left: 40px;
   height: 50px !important;
   margin-top: 7px;
   margin-right: 40px;
+  margin-left: 20px;
+}
+
+.img-navbar-panier{
+  height: 40px !important;
+  margin-top: 12px;
+}
+
+.img-navbar-mon-panier{
+  height: 20px !important;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.margin-left{
+  margin-left: 40px;
+}
+.hover:hover{
+  background-color: transparent !important;
+}
+
+.height-logo-a{
+  height: 60px;
+}
+
+.height-panier-a{
+  height: 52px;
+}
+
+.height-user-a{
+  height: 60px;
 }
