@@ -5,7 +5,7 @@
 
 .raduis-navbar{
   border-radius: 10px !important;
-  background-color: #f3e5f5a6;
+  background-color: #f3e5f573;
 }
 
 .img-navbar-logo{
@@ -29,6 +29,24 @@ margin-top: 5px;
   margin-right: 0px;
   margin-bottom: 10px;
   margin-left: 10px;
+}
+
+.marge-search{
+  margin-left: 20% !important;
+  width: 50% !important;
+  margin-top: 7px !important;
+  margin-bottom: 7px !important;
+
+}
+#search{
+  height: 50px !important;
+    border-radius: 10px !important;
+}
+
+.icon-search{
+  height: 50px !important;
+  padding-bottom: 7px !important;
+
 }
 
 .margin-left{
