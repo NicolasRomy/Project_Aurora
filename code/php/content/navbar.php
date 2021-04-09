@@ -12,8 +12,7 @@
         <li class="right"><a class="height-panier-a hover" href=""><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
         <?php if (isset($_SESSION['user'])){
           $hrefUser = '../page/user.php';
-        }
-        else{
+        } else{
           $hrefUser = '../page/login.php';
         } ?>
         <li class="right"><a class="height-user-a hover margin" href="<?php echo $hrefUser ?>"><img class="responsive-img img-navbar-user" src="../../../assets/user-logo.PNG" alt=""></a></li>
