@@ -6,6 +6,11 @@
      <title>Contact</title>
      <link rel="stylesheet" href="../../css/catalogue.css">
      </head>
+     <?php
+     $sql= "SELECT * FROM jeux ";
+            $pre = $pdo->prepare($sql);
+            $pre->execute();
+            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
 <html>
 
 <body>
@@ -21,6 +26,13 @@
 </div>
 
 <div class="container">
+<?php
+  //loop to display title one by one and create unique link to articles
+  foreach($jeux as $jeu){
+    ?>
+     <h1><?php echo $article['Title']?></h1>
+     <a href=<?php echo "article.php?id=".$article['ID'] ?> >Voir l'article</a>
+     <?php } ?>
   <div class="filterDiv cars">BMW</div>
   <div class="filterDiv colors fruits">Orange</div>
   <div class="filterDiv cars">Volvo</div>
