@@ -9,14 +9,17 @@
           <label class="label-icon icon-searc" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons icon-search">close</i>
         </li>
-        <li class="right"><a class="height-panier-a hover" href=""><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
-        <?php if (isset($_SESSION['user'])){
-          $hrefUser = '../page/user.php';
-        } else{
-          $hrefUser = '../page/login.php';
-        } ?>
-        <li class="right"><a class="height-user-a hover margin" href="<?php echo $hrefUser ?>"><img class="responsive-img img-navbar-user" src="../../../assets/user-logo.PNG" alt=""></a></li>
-      </ul>
+        <div class="right">
+          <li><a class="height-panier-a hover" href=""><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
+          <?php if (isset($_SESSION['user'])){
+            $hrefUser = '../page/user.php';
+          } else{
+            $hrefUser = '../page/login.php';
+          } ?>
+          <li><a class="height-user-a hover margin" href="<?php echo $hrefUser ?>"><img class="responsive-img img-navbar-user" src="../../../assets/user-logo.PNG" alt=""></a></li>
+
+        </div>
+        </ul>
     </div>
   </nav>
 </div>
