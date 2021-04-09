@@ -1,0 +1,20 @@
+body{
+    background: linear-gradient(35deg, #FDAFAA,#E3CDFA);
+}
+
+
+img.jeux{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.pegi{
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+}
+
+.presentation{
+    margin-top: 50px;
+}
