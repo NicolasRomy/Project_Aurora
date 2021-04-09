@@ -35,7 +35,7 @@
 
     <footer>
     </footer>
-
+    <script src="../../js/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../js/materialize.js" charset="utf-8"></script>
     <script type="text/javascript">
 
