@@ -29,7 +29,7 @@
 <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img src="../../../assets\background_gradiant.svg" alt="background">
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img src="../../../assets\background_gradiant.svg" alt="background">
@@ -41,4 +41,4 @@
 <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img src="../../../assets\background_gradiant.svg" alt="background">
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

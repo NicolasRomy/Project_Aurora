@@ -20,10 +20,10 @@
       $('.sidenav').sidenav();
     });
     </script>
-
-<div class = "row presentation">
-         <div class = "col m3"> <img src="../../../assets\Hitman_3.png" class='jeux'></div>
-         <div class = "col m4">
+ <div class = "presentation">
+    <div class = "row">
+        <div class = "col m3"> <img src="../../../assets\Hitman_3.png" class='jeux'></div>
+        <div class = "col m4">
             hitman 3
             <br>
             <img src="../../../assets/pegi/violence.jpg" class='pegi'>
@@ -32,7 +32,7 @@
 
          </div>
       </div>
-
+      </div>
 
   </body>
 </html>
