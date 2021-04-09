@@ -25,8 +25,12 @@
 
 </div>
 <ul class="sidenav" id="mobile-demo">
-<li><a href="sass.html">Sass</a></li>
-<li><a href="badges.html">Components</a></li>
-<li><a href="collapsible.html">Javascript</a></li>
-<li><a href="mobile.html">Mobile</a></li>
+<li><a href="sass.html">Accueil</a></li>
+<li class="input-field marge-search color grey">
+  <input id="search" type="search" required>
+  <label class="label-icon icon-searc" for="search"><i class="material-icons">search</i></label>
+  <i class="material-icons icon-search">close</i>
+</li>
+<li><a href="collapsible.html">panier</a></li>
+<li><a href="mobile.html">Mon Compte</a></li>
 </ul>
