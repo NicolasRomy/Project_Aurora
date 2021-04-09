@@ -10,7 +10,11 @@
      $sql= "SELECT * FROM jeux ";
             $pre = $pdo->prepare($sql);
             $pre->execute();
-            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
+            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC); 
+      $sql= "SELECT * FROM images";
+            $pre = $pdo->prepare($sql);
+            $pre->execute();
+            $image = $pre->fetchAll(PDO::FETCH_ASSOC); ?>
 <html>
 
 <body>
@@ -19,10 +23,11 @@
 
 <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
-  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
-  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+  <button class="btn" onclick="filterSelection('3')"> pegi 3</button>
+  <button class="btn" onclick="filterSelection('7')"> pegi 7</button>
+  <button class="btn" onclick="filterSelection('12')"> pegi 12</button>
+  <button class="btn" onclick="filterSelection('16')"> pegi 16</button>
+  <button class="btn" onclick="filterSelection('18')"> pegi 18</button>
 </div>
 
 <div class="container">
@@ -30,25 +35,17 @@
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
-     <h1><?php echo $article['Title']?></h1>
-     <a href=<?php echo "article.php?id=".$article['ID'] ?> >Voir l'article</a>
-     <?php } ?>
-  <div class="filterDiv cars">BMW</div>
-  <div class="filterDiv colors fruits">Orange</div>
-  <div class="filterDiv cars">Volvo</div>
-  <div class="filterDiv colors">Red</div>
-  <div class="filterDiv cars animals">Mustang</div>
-  <div class="filterDiv colors">Blue</div>
-  <div class="filterDiv animals">Cat</div>
-  <div class="filterDiv animals">Dog</div>
-  <div class="filterDiv fruits">Melon</div>
-  <div class="filterDiv fruits animals">Kiwi</div>
-  <div class="filterDiv fruits">Banana</div>
-  <div class="filterDiv fruits">Lemon</div>
-  <div class="filterDiv animals">Cow</div>
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
+      
+  
 </div>
 
 <script>
+
+function filterrrr(c){
+  $('.filterDiv').hide();
+  $('.'+c).show();
+}
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
