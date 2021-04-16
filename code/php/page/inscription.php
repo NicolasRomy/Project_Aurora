@@ -15,7 +15,7 @@
     <!-- menu -->
     <br><br>
   </header>
-    
+
     <form action="../action/inscription.php" method="post" class="col s12">
       <div class="row">
         <div class="input-field col s4">
@@ -47,7 +47,13 @@
 <footer>
 </footer>
 
-<script type="text/javascript" src="../../js/materialize.js">
+<script type="text/javascript" src="../../js/materialize.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
 
 </script>
 </body>

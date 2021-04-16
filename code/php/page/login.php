@@ -44,10 +44,14 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </footer>
 
-  <script type="text/javascript" src="../../js/materialize.js">
+  <script type="text/javascript" src="../../js/materialize.js"></script>
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+  <script type="text/javascript">
   $(document).ready(function(){
     $('.sidenav').sidenav();
   });
+
   </script>
 </body>
 </html>

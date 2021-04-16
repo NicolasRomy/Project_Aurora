@@ -15,11 +15,7 @@
     <footer>
     </footer>
 
-    <script type="text/javascript" src="../../js/materialize.js">
-    $(document).ready(function(){
-      $('.sidenav').sidenav();
-    });
-    </script>
+
  <div class = "presentation">
     <div class = "row">
         <div class = "col m3"> <img src="../../../assets\Hitman_3.png" class='jeux'></div>
@@ -33,6 +29,14 @@
          </div>
       </div>
       </div>
+      <script type="text/javascript" src="../../js/materialize.js"></script>
+      <script type="text/javascript" src="../../js/jquery.min.js"></script>
 
+      <script type="text/javascript">
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+
+      </script>
   </body>
 </html>
