@@ -34,14 +34,19 @@
     <footer>
     </footer>
 
-    <script type="text/javascript" src="../../js/materialize.js"></script>
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
 
-    <script type="text/javascript">
+
+
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.js"></script>
+
+    <script>
 
     $(document).ready(function(){
-      $('.sidenav').sidenav();
-    });
+
+    $('.sidenav').sidenav();
+
+  });
 
     </script>
   </body>
