@@ -2,6 +2,9 @@
 include_once '../action/config.php';
 include '../action/recupCoeurIndex.php';
 var_dump($coupCoeur);
+echo '<pre>';
+var_dump($_SERVER);
+echo '</pre>';
 ?>
 
 <!DOCTYPE html>

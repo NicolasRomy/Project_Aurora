@@ -10,9 +10,9 @@
         ':email'   => $_POST['email']
     );
 
-    $pre = $pdo->prepare($sql);
-    $pre->execute($dataBinded);
-    $user = current($pre->fetchAll(PDO::FETCH_ASSOC));
+    $prepareRequete = $pdo->prepare($sql);
+    $prepareRequete->execute($dataBinded);
+    $user = current($prepareRequete->fetchAll(PDO::FETCH_ASSOC));
     if(!empty($user)) {
         $_SESSION['messageInscription'] = 'email ou pseudo déja utilisé';
         header('Location: ../page/login.php');
@@ -25,8 +25,8 @@
             ':email'   => $_POST['email'],
             ':password'=> password_hash($_POST['password'], PASSWORD_DEFAULT),
         );
-        $pre = $pdo->prepare($sql);
-        $pre->execute($dataBinded);
+        $prepareRequete = $pdo->prepare($sql);
+        $prepareRequete->execute($dataBinded);
         header('Location: ../page/login.php');
     }
 
