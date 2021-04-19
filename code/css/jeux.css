@@ -16,5 +16,71 @@ img.jeux{
 }
 
 .presentation{
-    margin-top: 50px;
+    margin-top: 130px;
+    margin-left: 90px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+h1{
+    font-size: 50px;
+}
+
+div img.logo{
+    width: 30px;
+    height: 30px;
+}
+
+.acheter{
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    line-height: 60px;
+    font-size: 25px;
+    background: linear-gradient(#eb594e,#a00202);
+}
+.warning{
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+   
+.intro{
+    background: #A00202;
+    background: -webkit-linear-gradient(to top, #A00202 0%, #eb594e 100%);
+    background: -moz-linear-gradient(to top, #A00202 0%, #eb594e 100%);
+    background: linear-gradient(to top, #A00202 0%, #eb594e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.avis-background{
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 60px;
+    border-radius: 30px;
+    color:red;
+    margin-top: 80px;
+}
+.avis-text{
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    color:black;
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+
+.ext{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.pseudo{
+    font-size: 30px;
+    color:black;
+}
+
+.bouton{
+    background-color:red;
+    border-radius: 30px;
+    font-size: 20px;
 }
