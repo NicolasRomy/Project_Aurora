@@ -1,15 +1,17 @@
+/* utiliser systeme de point */
+
 .position-navbar{
   margin-top: 30px;
   margin-left: 5% !important;
 }
 
-.raduis-navbar{
-  border-radius: 10px !important;
+body nav.raduis-navbar{
+  border-radius: 10px;
   background-color: #ffffffb3;
 }
 
-.img-navbar-logo{
-height: 55px !important;
+body nav.raduis-navbar .img-navbar-logo{
+height: 55px;
 margin-top: 5px;
 }
 
