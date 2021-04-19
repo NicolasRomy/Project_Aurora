@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : lun. 19 avr. 2021 à 07:39
--- Version du serveur :  8.0.23
--- Version de PHP : 8.0.3
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 19, 2021 at 01:28 PM
+-- Server version: 5.7.31
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,20 +18,20 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `bd_aurora`
+-- Database: `bd_aurora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commandes`
+-- Table structure for table `commandes`
 --
 
 DROP TABLE IF EXISTS `commandes`;
 CREATE TABLE IF NOT EXISTS `commandes` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `prix_total` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `prix_total` int(11) NOT NULL,
   `adresse` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
@@ -40,15 +40,15 @@ CREATE TABLE IF NOT EXISTS `commandes` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comments`
+-- Table structure for table `comments`
 --
 
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `jeux_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jeux_id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `note` int NOT NULL,
+  `note` int(11) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jeux_id` (`jeux_id`)
@@ -57,49 +57,70 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `images`
+-- Table structure for table `images`
 --
 
 DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `jeux_idi` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jeux_id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `url` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `jeux_idi` (`jeux_idi`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `jeux_idi` (`jeux_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `jeux_id`, `title`, `url`) VALUES
+(1, 2, 'DARK SOULS 3 COVER', 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg'),
+(2, 1, 'DARK SOULS 3 COVER', 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg'),
+(3, 3, 'DARK SOULS 3 COVER', 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg'),
+(4, 4, 'DARK SOULS 3 COVER', 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg'),
+(6, 5, 'DARK SOULS 3 COVER', 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `jeux`
+-- Table structure for table `jeux`
 --
 
 DROP TABLE IF EXISTS `jeux`;
 CREATE TABLE IF NOT EXISTS `jeux` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `prix` float NOT NULL,
   `synopsis` text NOT NULL,
-  `PEGI` int NOT NULL,
+  `PEGI` int(11) NOT NULL,
   `avis` text NOT NULL,
-  `temps_jeux` int NOT NULL,
-  `coeur` tinyint(1) NOT NULL DEFAULT '0',
+  `temps_jeux` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `jeux`
+--
+
+INSERT INTO `jeux` (`id`, `title`, `prix`, `synopsis`, `PEGI`, `avis`, `temps_jeux`) VALUES
+(1, 'DARK SOULS 3', 65, 'yadi yadi yada dark souls 3', 18, 'blznlznlz', 60),
+(2, 'DARK SOULS 3', 65, 'yadi yadi yada dark souls 3', 3, 'blznlznlz', 60),
+(3, 'DARK SOULS 3', 65, 'yadi yadi yada dark souls 3', 12, 'blznlznlz', 60),
+(4, 'DARK SOULS 3', 65, 'yadi yadi yada dark souls 3', 16, 'blznlznlz', 60),
+(5, 'DARK SOULS 3', 65, 'yadi yadi yada dark souls 3', 7, 'blznlznlz', 60);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `jeux_commandes`
+-- Table structure for table `jeux_commandes`
 --
 
 DROP TABLE IF EXISTS `jeux_commandes`;
 CREATE TABLE IF NOT EXISTS `jeux_commandes` (
-  `id_commande` int NOT NULL,
-  `id_jeux` int NOT NULL,
-  `quantity` int NOT NULL,
+  `id_commande` int(11) NOT NULL,
+  `id_jeux` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   KEY `id_jeux` (`id_jeux`),
   KEY `id_commande` (`id_commande`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -107,12 +128,12 @@ CREATE TABLE IF NOT EXISTS `jeux_commandes` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `admin` tinyint(1) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -122,29 +143,29 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `commandes`
+-- Constraints for table `commandes`
 --
 ALTER TABLE `commandes`
   ADD CONSTRAINT `commandes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Contraintes pour la table `comments`
+-- Constraints for table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`jeux_id`) REFERENCES `jeux` (`id`);
 
 --
--- Contraintes pour la table `images`
+-- Constraints for table `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`jeux_idi`) REFERENCES `jeux` (`id`);
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`jeux_id`) REFERENCES `jeux` (`id`);
 
 --
--- Contraintes pour la table `jeux_commandes`
+-- Constraints for table `jeux_commandes`
 --
 ALTER TABLE `jeux_commandes`
   ADD CONSTRAINT `jeux_commandes_ibfk_1` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`),
