@@ -1,6 +1,7 @@
 <?php
 include_once '../action/config.php';
 include '../action/recupCoeurIndex.php';
+var_dump($coupCoeur);
 ?>
 
 <!DOCTYPE html>
