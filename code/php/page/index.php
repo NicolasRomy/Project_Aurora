@@ -2,45 +2,57 @@
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <?php include '../content/head.php'; ?>
-    <title>Accueil</title>
-  </head>
+<head>
+  <?php include '../content/head.php'; ?>
+  <title>Accueil</title>
+</head>
 
-  <body>
-    <header>
-      <?php include '../content/navbar.php'; ?>
-    </header>
+<body>
+  <header>
+    <?php include '../content/navbar.php'; ?>
+  </header>
+  <div class="row">
 
-    <h2>Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu pour les parents.</h2>
-    <p>Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
+    <div class="col s12 m12 l12 xl12">
+      <h2>Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu pour les parents.</h2>
+      <p>Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
+    </div>
 
-    <img src="../../../assets\background_gradiant.svg" alt="background">
+    <img src="../../../assets\background_gradiant.svg" alt="background"/>
 
-    <h2>Nos jeux par PEGI</h2>
-    <p>Le PEGI est un système d'évaluation des jeux vidéo, créé pour aider les consommateurs
-      (en particulier, les parents) à s'informer de chaque type de jeux vidéo à l'aide de
-      différents logos exposé sur leur boite d'origine.</p>
+    <div class="col s12 m12 l12 xl12">
+      <div class="col s12 m12 l12 xl12">
+        <h2>Nos jeux par PEGI</h2>
+        <p>Le PEGI est un système d'évaluation des jeux vidéo, créé pour aider les consommateurs
+          (en particulier, les parents) à s'informer de chaque type de jeux vidéo à l'aide de
+          différents logos exposé sur leur boite d'origine.</p>
+      </div>
+
+        <div class="col s2 m2 l2 xl2 offset-s1 offset-m1 offset-l1 offset-xl1">
+          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
+        </div>
+        <div class="col s2 m2 l2 xl2">
+          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_7.PNG" alt="bntPEGI3"></a>
+        </div>
+        <div class="col s2 m2 l2 xl2">
+          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_12.PNG" alt="bntPEGI3"></a>
+        </div>
+        <div class="col s2 m2 l2 xl2">
+          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_16.PNG" alt="bntPEGI3"></a>
+        </div>
+        <div class="col s2 m2 l2 xl2">
+          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI3"></a>
+        </div>
+    </div>
 
       <!-- card age fixe 3 7 12 16 18 -->
 
-    <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <img src="../../../assets\background_gradiant.svg" alt="background">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <img src="../../../assets\background_gradiant.svg" alt="background">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+    </div>
     <footer>
     </footer>
 
@@ -54,10 +66,10 @@
 
     $(document).ready(function(){
 
-    $('.sidenav').sidenav();
+      $('.sidenav').sidenav();
 
-  });
+    });
 
     </script>
   </body>
-</html>
+  </html>
