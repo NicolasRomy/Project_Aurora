@@ -17,4 +17,38 @@ img.jeux{
 
 .presentation{
     margin-top: 50px;
+    font-size: 20px;
+    line-height: 20px;
+}
+}
+h1{
+    font-size: 50px;
+}
+
+div img.logo{
+    width: 30px;
+    height: 30px;
+}
+
+.acheter{
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    line-height: 60px;
+    font-size: 25px;
+    background: linear-gradient(#eb594e,#a00202);
+}
+.warning{
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+   
+.intro{
+    background: #A00202;
+    background: -webkit-linear-gradient(to top, #A00202 0%, #eb594e 100%);
+    background: -moz-linear-gradient(to top, #A00202 0%, #eb594e 100%);
+    background: linear-gradient(to top, #A00202 0%, #eb594e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
