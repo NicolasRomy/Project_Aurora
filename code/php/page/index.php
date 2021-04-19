@@ -22,7 +22,7 @@
 
     <div class="col s12 m12 l12 xl12">
       <div class="col s12 m12 l12 xl12">
-        <h2>Nos jeux par PEGI</h2>
+        <h2 class="center-align">Nos jeux par PEGI</h2>
         <p>Le PEGI est un système d'évaluation des jeux vidéo, créé pour aider les consommateurs
           (en particulier, les parents) à s'informer de chaque type de jeux vidéo à l'aide de
           différents logos exposé sur leur boite d'origine.</p>
@@ -43,6 +43,15 @@
         <div class="col s2 m2 l2 xl2">
           <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI3"></a>
         </div>
+
+        <div class="col s12 m12 l12 xl12">
+          <h3 class="center-align">Nos jeux coup de coeur</h3>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     </div>
 
       <!-- card age fixe 3 7 12 16 18 -->
