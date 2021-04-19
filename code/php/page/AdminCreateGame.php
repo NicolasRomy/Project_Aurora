@@ -1,11 +1,5 @@
 
 
-
-Hitman 3 est un jeu d'infiltration dans lequel vous incarnez l'agent 47.
-Dans ce troisième épisode de la nouvelle trilogie lancée en 2017,
-six lieux sont disponible au lancement, mais il est possible de
-transférer les ancienne missions des deux premier volets.
-
 <?php
 include_once '../action/config.php';
 ?>
@@ -23,13 +17,13 @@ include_once '../action/config.php';
   </header>
 
   <div class="row">
-    <form class="col s12" action="../action/uploadGame.php" method="post">
+    <form class="col s12" action="../action/createGameAdmin.php" method="post" enctype="multipart/form-data">
       <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
-        <input id="titleGame" type="text" name="title" value="">
+        <input id="titleGame" type="text" name="title" value=""/>
         <label for="titleGame">Nom du jeu</label>
       </div>
       <div class="col s5 m5 l5 xl5 input-field">
-        <input id="priceGame" type="number" name="price" value="">
+        <input id="priceGame" type="number" name="price" value=""/>
         <label for="priceGame">Prix du Jeu</label>
       </div>
       <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
@@ -53,6 +47,25 @@ include_once '../action/config.php';
           <option value="6" data-icon="../../../assets/pegi/sexual-content.jpg">Contenue Sexuel</option>
           <option value="7" data-icon="../../../assets/pegi/violence.jpg">Violence</option>
         </select>
+      </div>
+      <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
+        <textarea id="synop" name="synopsi" rows="20" cols="80"></textarea>
+        <label for="synop">Synopsi</label>
+      </div>
+      <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
+        <textarea id="avis" name="avi" rows="20" cols="80"></textarea>
+        <label for="avis">Avis de la rédaction</label>
+      </div>
+      <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1">
+        <label class="white-text" for="imgJacket">Image de la Jacket</label>
+        <input id="imgJacket" type="file" name="jacket"/>
+      </div>
+      <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1">
+        <label class="white-text" for="imgGame">Image du jeu</label>
+        <input id="imgGame" type="file" name="imgs[]" multiple/>
+      </div>
+      <div class="col s12">
+        <input type="submit" name="test" value="valide">
       </div>
     </form>
 

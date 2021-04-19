@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 19 avr. 2021 à 07:39
+-- Généré le : lun. 19 avr. 2021 à 14:24
 -- Version du serveur :  8.0.23
 -- Version de PHP : 8.0.3
 
@@ -63,11 +63,11 @@ CREATE TABLE IF NOT EXISTS `comments` (
 DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `jeux_idi` int NOT NULL,
+  `jeux_id` int NOT NULL,
   `title` varchar(50) NOT NULL,
   `url` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `jeux_idi` (`jeux_idi`)
+  KEY `jeux_idi` (`jeux_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -80,6 +80,7 @@ DROP TABLE IF EXISTS `jeux`;
 CREATE TABLE IF NOT EXISTS `jeux` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `prix` float NOT NULL,
   `synopsis` text NOT NULL,
   `PEGI` int NOT NULL,
@@ -102,6 +103,22 @@ CREATE TABLE IF NOT EXISTS `jeux_commandes` (
   `quantity` int NOT NULL,
   KEY `id_jeux` (`id_jeux`),
   KEY `id_commande` (`id_commande`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `pegi`
+--
+
+DROP TABLE IF EXISTS `pegi`;
+CREATE TABLE IF NOT EXISTS `pegi` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `jeux_id` int NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jeux_id` (`jeux_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -141,7 +158,7 @@ ALTER TABLE `comments`
 -- Contraintes pour la table `images`
 --
 ALTER TABLE `images`
-  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`jeux_idi`) REFERENCES `jeux` (`id`);
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`jeux_id`) REFERENCES `jeux` (`id`);
 
 --
 -- Contraintes pour la table `jeux_commandes`
@@ -149,6 +166,12 @@ ALTER TABLE `images`
 ALTER TABLE `jeux_commandes`
   ADD CONSTRAINT `jeux_commandes_ibfk_1` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`),
   ADD CONSTRAINT `jeux_commandes_ibfk_2` FOREIGN KEY (`id_commande`) REFERENCES `commandes` (`id`);
+
+--
+-- Contraintes pour la table `pegi`
+--
+ALTER TABLE `pegi`
+  ADD CONSTRAINT `pegi_ibfk_1` FOREIGN KEY (`jeux_id`) REFERENCES `jeux` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
