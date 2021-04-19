@@ -43,7 +43,8 @@
             </div>
           </div>
         </div>
-         <div class = "offset-m1 col m3 acheter" style="background-color :red">
+        
+         <div class = "offset-m1 col m3 acheter">
             <p>acheter le jeux</p>
             <p>PRIX</p>
             <p>Plateform</p>
@@ -54,20 +55,46 @@
             <button>Ajouter au panier</button> <br/>
             <button>Acheter maintenant</button>
           </div>
-
+        </div>
       </div>
       <div class = "row">
-        <div class = "offset-m2 col m8 " style="background-color: green;">
-          <div>
-            avis de carine de la direction
+        <div class = "offset-m2 col m8 ">
+          <div class="avis-background col m12">
+            Avis de carine de la direction
+            <div class="avis-text col m10 offset-m1">
+            ce jeux est fortement déconseiller au personnes mineur, il contient de très nombreuse immage de grande violence.
+   de plus ce jeu met en scène des meurtre atroce. vous incarner un tueur a gage qui doit tuer ces victimes sans se faire repèrer
+   ce jeux est donc réservé a un publique avertie sur la violence du jeu
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "offset-m2 col m8 avis-background ">
+          <div class="ext col m12">
+            Avis des joueurs (nombre) (note moyenne)
+          </div>
+          <div class="col m12">
+            <div class="col offset-m1 m2 pseudo">
+              pseudo
+            </div>
+            <div class="col offset-m7 m2 pseudo">
+              note
+            </div>
+            <div class="avis-text ">
+              woula ce jeu c'est de la balle
+            </div>
+            <button class="bouton">
+              voir plus d'avis
+            </button>
           </div>
         </div>
       </div>
 
 
 
-
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <script type="text/javascript" src="../../js/materialize.js"></script>
       <script type="text/javascript" src="../../js/jquery.min.js"></script>
 
