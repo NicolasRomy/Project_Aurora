@@ -1,2 +1,3 @@
 <?php
-include '../content/mimes.php';
+include '../function/mimes.php';
+include '../function/renameFile.php';
