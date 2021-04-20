@@ -27,7 +27,7 @@
             <img src="../../../assets/pegi/fear.jpg" class='pegi'>
             <img src="../../../assets/pegi/bad-language.jpg" class='pegi'>
             <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
-            <p class="intro">Hitman 3 est un jeu d'infiltration dans lequel vous incarnez l'agent 47.
+            <p class="degrade">Hitman 3 est un jeu d'infiltration dans lequel vous incarnez l'agent 47.
               Dans ce troisième épisode de la nouvelle trilogie lancée en 2017,
               six lieux sont disponible au lancement, mais il est possible de
               transférer les ancienne missions des deux premier volets.</p>          
@@ -59,27 +59,27 @@
       </div>
       <div class = "row">
         <div class = "offset-m2 col m8 ">
-          <div class="avis-background col m12">
-            Avis de carine de la direction
+          <div class="avis-background col m12 ">
+            <div class="degrade"> Avis de carine de la direction</div>
             <div class="avis-text col m10 offset-m1">
             ce jeux est fortement déconseiller au personnes mineur, il contient de très nombreuse immage de grande violence.
-   de plus ce jeu met en scène des meurtre atroce. vous incarner un tueur a gage qui doit tuer ces victimes sans se faire repèrer
-   ce jeux est donc réservé a un publique avertie sur la violence du jeu
+            de plus ce jeu met en scène des meurtre atroce. vous incarner un tueur a gage qui doit tuer ces victimes sans se faire repèrer
+            ce jeux est donc réservé a un publique avertie sur la violence du jeu
 
             </div>
           </div>
         </div>
       </div>
       <div class = "row">
-        <div class = "offset-m2 col m8 avis-background ">
+        <div class = "offset-m2 col m8 avis-background degrade ">
           <div class="ext col m12">
             Avis des joueurs (nombre) (note moyenne)
           </div>
           <div class="col m12">
-            <div class="col offset-m1 m2 pseudo">
+            <div class="col offset-m1 m2 pseudo degrade">
               pseudo
             </div>
-            <div class="col offset-m7 m2 pseudo">
+            <div class="col offset-m7 m2 pseudo degrade">
               note
             </div>
             <div class="avis-text ">
@@ -91,6 +91,12 @@
           </div>
         </div>
       </div>
+      <div class = "row">
+
+          <?php include '../content/pegi_explanation.php'; ?>
+
+      </div>
+
 
 
 
