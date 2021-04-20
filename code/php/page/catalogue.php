@@ -1,6 +1,17 @@
 <?php include_once '../action/config.php'; ?>
 <!DOCTYPE html>
 <head>
+<!DOCTYPE html>
+  <link rel="stylesheet" href="../../css/master.css"/>
+  <?php include '../content/head.php'; ?>
+  <title></title>
+</head>
+<body>
+  <header>
+
+    <?php include '../content/navbar.php'; ?>
+    <br><br>
+  </header>
      <meta charset="utf-8">
      <meta name="description" content="A page's description, usually one or two sentences."/>
      <title>Contact</title>
