@@ -40,6 +40,7 @@
   <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
 
+
 <div class="container">
 <?php
   //loop to display title one by one and create unique link to articles
@@ -99,6 +100,13 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+$(document).ready(function(){
+
+$('.sidenav').sidenav();
+$('select').formSelect();
+});
+
 </script>
 
 </body>
