@@ -18,20 +18,22 @@ function isImg($file){
     foreach ($file as $key => $value) {
       if($key == "type"){
         if(is_array($value)){
-          echo $value[0];
           foreach ($value as $k => $v) {
-            if (!in_array($value, $mime_types)) {
+            echo $v;
+            echo $k;
+            if (!in_array($v, $mime_types) && $v != "") {
               array_push($errors,$file['name'][$k]);
+              echo 'deuxieme prob';
             }
           }
         }else{
           if (!in_array($value, $mime_types)) {
             array_push($errors,$file['name']);
+            echo 'premier beug';
           }
         }
       }
     }
   }
   return $errors;
-
 }
