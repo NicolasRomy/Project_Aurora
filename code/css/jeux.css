@@ -45,7 +45,7 @@ div img.logo{
     margin-right: 20px;
 }
    
-.intro{
+.degrade{
     background: #A00202;
     background: -webkit-linear-gradient(to top, #A00202 0%, #eb594e 100%);
     background: -moz-linear-gradient(to top, #A00202 0%, #eb594e 100%);

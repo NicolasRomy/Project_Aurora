@@ -1,0 +1,29 @@
+.background{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+
+.ok{
+    margin-top: 30px;
+    
+}
+
+.ko{
+    margin-bottom: 30px;
+}
+
+.bd{
+    border-radius: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logo-pegi {
+    height: 150px;
+    width: 150px;
+    margin-top: 15px;
+}
+
+.background-text{
+    background-color: rgb(255, 255, 255);
+}
