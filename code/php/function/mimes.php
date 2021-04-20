@@ -1,5 +1,5 @@
 <?php
-function isImg($file){
+function isImg($fileType){
   $errors = array();
   $mime_types = array(
             'png' => 'image/png',
@@ -14,24 +14,31 @@ function isImg($file){
             'svg' => 'image/svg+xml',
             'svgz' => 'image/svg+xml',
   );
-  if(is_array($file)){
-    foreach ($file as $key => $value) {
-      if($key == "type"){
-        if(is_array($value)){
-          foreach ($value as $k => $v) {
-            echo $v;
-            echo $k;
-            if (!in_array($v, $mime_types) && $v != "") {
-              array_push($errors,$file['name'][$k]);
-            }
+  if (in_array($fileType, $mime_types)){
+    return true;
+  }
+}
+
+
+/*
+if(is_array($file)){
+  foreach ($file as $key => $value) {
+    if($key == "type"){
+      if(is_array($value)){
+        foreach ($value as $k => $v) {
+          echo $v;
+          echo $k;
+          if (!in_array($v, $mime_types) && $v != "") {
+            array_push($errors,$file['name'][$k]);
           }
-        }else{
-          if (!in_array($value, $mime_types)) {
-            array_push($errors,$file['name']);
-          }
+        }
+      }
+      else{
+        if (!in_array($value, $mime_types)) {
+          array_push($errors,$file['name']);
         }
       }
     }
   }
-  return $errors;
 }
+*/
