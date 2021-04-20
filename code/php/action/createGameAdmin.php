@@ -7,7 +7,6 @@ var_dump($_FILES);
 echo"</pre>";
 
 foreach ($_FILES as $value) {
-  echo "error";
   var_dump(isImg($value));
   if(!empty(isImg($value))){
     echo "not empty";
