@@ -31,14 +31,13 @@
 <body>
 
 <h2>Filter DIV Elements</h2>
-
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('3')"> pegi 3</button>
-  <button class="btn" onclick="filterSelection('7')"> pegi 7</button>
-  <button class="btn" onclick="filterSelection('12')"> pegi 12</button>
-  <button class="btn" onclick="filterSelection('16')"> pegi 16</button>
-  <button class="btn" onclick="filterSelection('18')"> pegi 18</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('all')"> Show all</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('3')"> pegi 3</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('7')"> pegi 7</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('12')"> pegi 12</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('16')"> pegi 16</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
 
 <div class="container">
@@ -46,6 +45,7 @@
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
+      
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
       
   
