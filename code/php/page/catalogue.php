@@ -1,6 +1,17 @@
 <?php include_once '../action/config.php'; ?>
 <!DOCTYPE html>
 <head>
+<!DOCTYPE html>
+  <link rel="stylesheet" href="../../css/master.css"/>
+  <?php include '../content/head.php'; ?>
+  <title></title>
+</head>
+<body>
+  <header>
+
+    <?php include '../content/navbar.php'; ?>
+    <br><br>
+  </header>
      <meta charset="utf-8">
      <meta name="description" content="A page's description, usually one or two sentences."/>
      <title>Contact</title>
@@ -10,7 +21,7 @@
      $sql= "SELECT * FROM jeux ";
             $pre = $pdo->prepare($sql);
             $pre->execute();
-            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC);
+            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC); 
       $sql= "SELECT * FROM images";
             $pre = $pdo->prepare($sql);
             $pre->execute();
@@ -20,14 +31,13 @@
 <body>
 
 <h2>Filter DIV Elements</h2>
-
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('3')"> pegi 3</button>
-  <button class="btn" onclick="filterSelection('7')"> pegi 7</button>
-  <button class="btn" onclick="filterSelection('12')"> pegi 12</button>
-  <button class="btn" onclick="filterSelection('16')"> pegi 16</button>
-  <button class="btn" onclick="filterSelection('18')"> pegi 18</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('all')"> Show all</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('3')"> pegi 3</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('7')"> pegi 7</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('12')"> pegi 12</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('16')"> pegi 16</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
 
 <div class="container">
@@ -35,26 +45,18 @@
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
+      
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
-
-
+      
+  
 </div>
-<script type="text/javascript" src="../../js/materialize.js"></script>
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-});
+<script>
 
-</script>
-
-<script type="text/javascript">
-
-function filterrrr(c){
+/*function filterrrr(c){
   $('.filterDiv').hide();
   $('.'+c).show();
-}
+}*/
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
@@ -81,7 +83,7 @@ function w3RemoveClass(element, name) {
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
     }
   }
   element.className = arr1.join(" ");
