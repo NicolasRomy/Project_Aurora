@@ -10,7 +10,7 @@
      $sql= "SELECT * FROM jeux ";
             $pre = $pdo->prepare($sql);
             $pre->execute();
-            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC);
+            $jeux = $pre->fetchAll(PDO::FETCH_ASSOC); 
       $sql= "SELECT * FROM images";
             $pre = $pdo->prepare($sql);
             $pre->execute();
@@ -36,25 +36,16 @@
   foreach($jeux as $jeu){
     ?>
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
-
-
+      
+  
 </div>
-<script type="text/javascript" src="../../js/materialize.js"></script>
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-});
+<script>
 
-</script>
-
-<script type="text/javascript">
-
-function filterrrr(c){
+/*function filterrrr(c){
   $('.filterDiv').hide();
   $('.'+c).show();
-}
+}*/
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
@@ -81,7 +72,7 @@ function w3RemoveClass(element, name) {
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
     while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
     }
   }
   element.className = arr1.join(" ");
