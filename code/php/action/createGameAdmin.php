@@ -18,20 +18,28 @@ $dataBinded = array(
 $prepareRequete = $pdo->prepare($sql);
 $prepareRequete->execute($dataBinded);
 $title = current($prepareRequete->fetchAll(PDO::FETCH_ASSOC));
-if (empty($title)){
+
+if ($title != false){
   // renvoier que le jeu existe deja
+  echo 'vide';
 }
 else{
   $target_dir = '../../../assets/imgGame/';
 
   foreach ($_FILES as $key => $file) {
 
-    if(is_array($file)){
-      foreach ($file as $keys => $value) {
+    foreach ($file as $keys => $value) {
+
+      if(is_array($value)){
+        echo '<pre>';
+        echo $keys;
+        echo '</pre>';
         if($keys == "type"){
+
           foreach ($value as $k => $fileType) {
-            if(!empty(isImg($fileType))){
-              echo 'error...';
+            echo isImg($fileType);
+            if(isImg($fileType) == false || $fileType[$k] == ''){
+              echo 'error..';
               array_push($errors,$file['name'][$k]);
               //header('Location: '.$_SERVER['HTTP_REFERER']);
             }
@@ -44,31 +52,41 @@ else{
           }
         }
       }
-    }
-    else{
-      if(!empty(isImg($file['type']))){
-        echo 'error...';
-        array_push($errors,$file['name']);
-        //header('Location: '.$_SERVER['HTTP_REFERER']);
-      }
+
       else{
-        $name = namedFile($fileType);
-        $target = $target_dir.$name;
-        move_uploaded_file($_FILES['jacket']['tmp_name'], $target);
-        echo 'file uploaded';
+        $fileType = $file['type'];
+        if(isImg($file['type']) == false){
+          echo 'error seul';
+          array_push($errors,$file['name']);
+          //header('Location: '.$_SERVER['HTTP_REFERER']);
+        }
+        else{
+
+          $name = namedFile($fileType);
+          $targetJacket = $target_dir.$name;
+          move_uploaded_file($_FILES['jacket']['tmp_name'], $targetJacket);
+          echo 'file uploaded 1';
+        }
       }
     }
+
   }
 }
-/*
 
-// uplaod img
+
 $sql =
 " INSERT INTO jeux(title, image, prix, synopsis, PEGI, avis, temps_jeux)
-VALUES(:title, :prix, :synopsi, :PEGI, :avis, :temp_jeux)
+VALUES(:title, :image, :prix, :synopsi, :PEGI, :avis, :temps_jeux)
 ";
 $dataBinded = array(
   ':title' => $_POST['title'],
-  'image'
+  ':image' => $targetJacket,
+  ':prix' => $_POST['price'],
+  ':synopsi' => $_POST['synopsi'],
+  ':PEGI' => $_POST['PEGI'],
+  ':avis' => $_POST['avi'],
+  ':temps_jeux' => $_POST['temps_jeux'],
 );
-*/
+
+$prepareRequete = $pdo->prepare($sql);
+$prepareRequete->execute($dataBinded);

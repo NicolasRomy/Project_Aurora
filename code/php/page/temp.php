@@ -16,6 +16,6 @@ et ne convient pas aux personnes mineurs. Cette note a été donnée car le  jeu
  y compris à l'encontre de personnage vulnérable et sans défenses.
   Il y a aussi un fort usage de grossierté et de mots vulgaires
 
-  ce jeux est fortement déconseiller au personnes mineur, il contient de très nombreuse immage de grande violence.
+  Ce jeux est fortement déconseiller au personnes mineur, il contient de très nombreuse immage de grande violence.
    de plus ce jeu met en scène des meurtre atroce. vous incarner un tueur a gage qui doit tuer ces victimes sans se faire repèrer
-   ce jeux est donc réservé a un publique avertie sur la violence du jeu
+   ce jeux est donc réservé a un publique avertie sur la violence du jeu.

@@ -26,6 +26,10 @@ include_once '../action/config.php';
         <input id="priceGame" type="number" name="price" value=""/>
         <label for="priceGame">Prix du Jeu</label>
       </div>
+      <div class="col s8 m8 l8 xl8 offset-s2 offset-m2 offset-l2 offset-xl2 center-align input-field">
+        <input id="priceGame" type="number" name="temps_jeux" value=""/>
+        <label for="priceGame">Temps de jeu en heures</label>
+      </div>
       <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
         <select class="icons" name="PEGI">
           <option value="" disabled selected>Choisir le PEGI</option>

@@ -17,6 +17,9 @@ function isImg($fileType){
   if (in_array($fileType, $mime_types)){
     return true;
   }
+  else{
+    return false;
+  }
 }
 
 
