@@ -1,8 +1,8 @@
 <?php
-function postJeux($post, $lien, $pdo){
+function postJeux($post, $lien, $pdo, $listePEGI){
   $sql =
-  " INSERT INTO jeux(title, image, prix, synopsis, PEGI, avis, temps_jeux)
-  VALUES(:title, :image, :prix, :synopsi, :PEGI, :avis, :temps_jeux)
+  " INSERT INTO jeux(title, image, prix, synopsis, PEGI, listePEGI, avis, temps_jeux)
+  VALUES(:title, :image, :prix, :synopsi, :PEGI, :listePEGI, :avis, :temps_jeux)
   ";
   $dataBinded = array(
     ':title' => $post['title'],
@@ -10,7 +10,7 @@ function postJeux($post, $lien, $pdo){
     ':prix' => $post['price'],
     ':synopsi' => $post['synopsi'],
     ':PEGI' => $post['PEGI'],
-    ':listPEGI' => $post['listPEGI'],
+    ':listePEGI' => $listePEGI,
     ':avis' => $post['avi'],
     ':temps_jeux' => $post['temps_jeux'],
   );
