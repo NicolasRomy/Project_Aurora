@@ -16,6 +16,9 @@
   <title></title>
 </head>
 <body>
-<?php $background_color = "background color : red" ?>
-<?php $img_jeux = " echo $jeu['image']" ?>
-<?php include '../content/game_card.php'; ?>
+<?php
+  foreach($jeux as $jeu){
+    ?>
+      
+       <?php include '../content/game_card.php'; } ?>
+    

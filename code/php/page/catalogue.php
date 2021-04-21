@@ -55,7 +55,7 @@ $background_color = "background-color : red" ?>
   foreach($jeux as $jeu){
     ?>
       
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
+       <div class= 'filterDiv <?php echo $jeu['im']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
       
   
 </div>
