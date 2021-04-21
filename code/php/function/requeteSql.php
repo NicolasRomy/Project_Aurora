@@ -22,7 +22,7 @@ function postJeux($post, $lien, $pdo, $listePEGI){
 function isExistGame($post, $pdo){
   $sql =
   " SELECT id FROM jeux
-  WHERE title=:titleGame
+    WHERE title=:titleGame
   ";
 
   $dataBinded = array(
@@ -35,5 +35,7 @@ function isExistGame($post, $pdo){
 }
 
 function postImgs(){
-
+  $sql =
+  " INSERT INTO images(jeux_id, url)
+    WHERE"
 }

@@ -56,7 +56,6 @@ else{
         echo 'file uploaded 1';
         postJeux($_POST, $targetJacket, $pdo, $listePEGI);
         $id = isExistGame($_POST, $pdo);
-
       }
     }
   }
