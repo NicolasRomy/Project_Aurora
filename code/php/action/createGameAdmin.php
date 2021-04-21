@@ -42,7 +42,7 @@ else{
             if(isImg($fileType) == false || $fileType[$k] == ''){
               echo 'error..';
               array_push($errors,$file['name'][$k]);
-              //header('Location: '.$_SERVER['HTTP_REFERER']);
+              header('Location: '.$_SERVER['HTTP_REFERER']);
             }
             else{
               $name = namedFile($fileType);
@@ -51,7 +51,6 @@ else{
               echo 'file uploaded';
             }
           }
-
       }
 
       else{
@@ -59,7 +58,7 @@ else{
         if(isImg($fileType) == false){
           echo 'error seul';
           array_push($errors,$file['name']);
-          //header('Location: '.$_SERVER['HTTP_REFERER']);
+          header('Location: '.$_SERVER['HTTP_REFERER']);
         }
         else{
           $listePEGI = json_encode($_POST['listePEGI']);
@@ -70,7 +69,5 @@ else{
           postJeux($_POST, $targetJacket, $pdo, $listePEGI);
         }
       }
-
-
   }
 }
