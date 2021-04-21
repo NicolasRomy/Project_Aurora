@@ -19,6 +19,21 @@ function postJeux($post, $lien, $pdo, $listePEGI){
   $prepareRequete->execute($dataBinded);
 }
 
+function isExistGame($post, $pdo){
+  $sql =
+  " SELECT id FROM jeux
+  WHERE title=:titleGame
+  ";
+
+  $dataBinded = array(
+    ':titleGame' => $post['title'],
+  );
+  $prepareRequete = $pdo->prepare($sql);
+  $prepareRequete->execute($dataBinded);
+  $id = current($prepareRequete->fetchAll(PDO::FETCH_ASSOC));
+  return $id;
+}
+
 function postImgs(){
 
 }
