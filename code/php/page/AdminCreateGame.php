@@ -74,6 +74,10 @@ include_once '../action/config.php';
         <label for="synop">Synopsi</label>
       </div>
       <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
+        <textarea id="avisPEGI" name="avisPEGI" rows="20" cols="80"></textarea>
+        <label for="synop">Avis du PEGI</label>
+      </div>
+      <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
         <textarea id="avis" name="avi" rows="20" cols="80"></textarea>
         <label for="avis">Avis de la rédaction</label>
       </div>
