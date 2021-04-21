@@ -1,3 +1,7 @@
+<?php include '../content/game_card.php'; 
+
+$background_color = "background-color : red" ?>
+
 <?php include_once '../action/config.php'; ?>
 <!DOCTYPE html>
 <head>
@@ -29,6 +33,10 @@
 <html>
 
 <body>
+
+<div class = "col s12 m7">
+ <h1> nos coups de coeur <h1>
+</div>
 
 <h2>Filter DIV Elements</h2>
 <div id="myBtnContainer">
