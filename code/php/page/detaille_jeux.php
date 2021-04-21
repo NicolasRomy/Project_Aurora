@@ -71,8 +71,8 @@
         </div>
       </div>
       <div class = "row">
-        <div class = "offset-m2 col m8 avis-background degrade ">
-          <div class="ext col m12">
+        <div class = "avis-background offset-m2 col m8 ">
+          <div class="ext col m12 degrade">
             Avis des joueurs (nombre) (note moyenne)
           </div>
           <div class="col m12">
@@ -91,23 +91,34 @@
           </div>
         </div>
       </div>
-      <div class = "row">
-
-          <?php include '../content/pegi_explanation.php'; ?>
-
+      <div class="row">
+        <div class>
+          <div  class="offset-m2 col m8">
+            <div class="carousel carousel-slider " style="border-radius: 30px;">
+              <a class="carousel-item" href="#one!"><img src="../../../assets/imgGame/Hitman-3-screenshots-1.jpg"></a>
+              <a class="carousel-item" href="#two!"><img src="../../../assets/imgGame/Hitman-3-screenshots-2.jpg"></a>
+              <a class="carousel-item" href="#three!"><img src="../../../assets/imgGame/Hitman-3-screenshots-3.jpg"></a>
+            </div>
+          </div>
+        </div>
       </div>
 
+        <?php include '../content/pegi_explanation.php'; ?>
 
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <script type="text/javascript" src="../../js/materialize.js"></script>
       <script type="text/javascript" src="../../js/jquery.min.js"></script>
+      <script type="text/javascript" src="../../js/materialize.js"></script>
 
       <script type="text/javascript">
+
       $(document).ready(function(){
         $('.sidenav').sidenav();
       });
+
+      $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+        
 
       </script>
   </body>
