@@ -2,15 +2,20 @@
 
     <div class="card" style= "height: 260px ; width: 195px; border-radius: 15px;
      <?php  if ($jeu['PEGI'] == 18){
-                ?> background-color : red; <?php
+                ?>background: rgb(255,97,97);
+                background: linear-gradient(180deg, rgba(255,97,97,1) 0%, rgba(143,0,0,1) 100%);<?php
             } elseif ($jeu['PEGI'] == 16){
-                ?> background-color : black; <?php
+                ?> background: rgb(97,207,255);
+                background: linear-gradient(0deg, rgba(97,207,255,1) 0%, rgba(73,76,255,1) 100%);<?php
             } elseif($jeu['PEGI'] == 12){
-                ?> background-color : blue; <?php
+                ?> background: rgb(97,207,255);
+                background: linear-gradient(180deg, rgba(97,207,255,1) 0%, rgba(73,76,255,1) 100%);<?php
             } elseif($jeu['PEGI'] == 7){ 
-                ?> background-color : purple; <?php
+                ?> background: rgb(255,153,238);
+                background: linear-gradient(0deg, rgba(255,153,238,1) 0%, rgba(155,73,255,1) 100%);  <?php
             } elseif($jeu['PEGI'] == 3){
-                ?> background-color : pink;<?php
+                ?> background: rgb(255,153,238);
+                background: linear-gradient(180deg, rgba(255,153,238,1) 0%, rgba(155,73,255,1) 100%);<?php
             }
                 ?>">
         <div class="card-image">
