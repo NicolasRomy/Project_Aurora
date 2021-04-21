@@ -50,6 +50,7 @@ include_once '../action/config.php';
           <option value="5" data-icon="../../../assets/pegi/gambling.jpg">Jeu de Hasard</option>
           <option value="6" data-icon="../../../assets/pegi/sexual-content.jpg">Contenue Sexuel</option>
           <option value="7" data-icon="../../../assets/pegi/violence.jpg">Violence</option>
+          <option value="8" data-icon="../../../assets/pegi/in-game-purchases.jpeg">Achat Intégré</option>
         </select>
       </div>
       <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
