@@ -6,3 +6,9 @@ body{
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
+
+
+div div ul.dropdown-content.select-dropdown.multiple-select-dropdown{
+  background-color: #ffddf9;
+
+}

@@ -42,8 +42,8 @@ include_once '../action/config.php';
         </select>
       </div>
       <div class="col s5 m5 l5 xl5 input-field">
-        <input id="priceGame" type="number" name="temps_jeux" value=""/>
-        <label for="priceGame">Temps de jeu en heures</label>
+        <input id="timeGame" type="number" name="temps_jeux" value=""/>
+        <label for="timeGame">Temps de jeu en heures</label>
       </div>
       <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
         <select class="icons" name="PEGI">

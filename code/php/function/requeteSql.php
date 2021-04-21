@@ -37,5 +37,5 @@ function isExistGame($post, $pdo){
 function postImgs(){
   $sql =
   " INSERT INTO images(jeux_id, url)
-    WHERE"
+    ";
 }
