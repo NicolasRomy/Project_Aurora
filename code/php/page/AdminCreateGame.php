@@ -41,7 +41,7 @@ include_once '../action/config.php';
         </select>
       </div>
       <div class="col s5 m5 l5 xl5 input-field">
-        <select multiple class="icon" name="listPEGI[]">
+        <select multiple class="icon" name="listePEGI[]">
           <option value="0"disabled selected>Choisir les pictogrammes PEGI</option>
           <option value="10" data-icon="../../../assets/pegi/bad-language.jpg">Mauvais language</option>
           <option value="11" data-icon="../../../assets/pegi/discrimination.jpg">Discrimination</option>
