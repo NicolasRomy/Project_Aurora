@@ -41,16 +41,16 @@ include_once '../action/config.php';
         </select>
       </div>
       <div class="col s5 m5 l5 xl5 input-field">
-        <select multiple class="icon" name="PEGIicn">
-          <option value=""disabled selected>Choisir les pictogrammes PEGI</option>
-          <option value="1" data-icon="../../../assets/pegi/bad-language.jpg">Mauvais language</option>
-          <option value="2" data-icon="../../../assets/pegi/discrimination.jpg">Discrimination</option>
-          <option value="3" data-icon="../../../assets/pegi/drugs.jpg">Drogues</option>
-          <option value="4" data-icon="../../../assets/pegi/fear.jpg">Peur</option>
-          <option value="5" data-icon="../../../assets/pegi/gambling.jpg">Jeu de Hasard</option>
-          <option value="6" data-icon="../../../assets/pegi/sexual-content.jpg">Contenue Sexuel</option>
-          <option value="7" data-icon="../../../assets/pegi/violence.jpg">Violence</option>
-          <option value="8" data-icon="../../../assets/pegi/in-game-purchases.jpeg">Achat Intégré</option>
+        <select multiple class="icon" name="listPEGI[]">
+          <option value="0"disabled selected>Choisir les pictogrammes PEGI</option>
+          <option value="10" data-icon="../../../assets/pegi/bad-language.jpg">Mauvais language</option>
+          <option value="11" data-icon="../../../assets/pegi/discrimination.jpg">Discrimination</option>
+          <option value="12" data-icon="../../../assets/pegi/drugs.jpg">Drogues</option>
+          <option value="13" data-icon="../../../assets/pegi/fear.jpg">Peur</option>
+          <option value="14" data-icon="../../../assets/pegi/gambling.jpg">Jeu de Hasard</option>
+          <option value="15" data-icon="../../../assets/pegi/sexual-content.jpg">Contenue Sexuel</option>
+          <option value="16" data-icon="../../../assets/pegi/violence.jpg">Violence</option>
+          <option value="17" data-icon="../../../assets/pegi/in-game-purchases.jpeg">Achat Intégré</option>
         </select>
       </div>
       <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">

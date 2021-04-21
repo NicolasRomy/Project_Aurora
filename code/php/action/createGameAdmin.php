@@ -3,10 +3,13 @@ include_once 'config.php';
 $errors = array();
 echo"<pre>";
 var_dump($_FILES);
+var_dump($_POST);
 echo"</pre>";
 
 
-//if ($_POST['title']['lenght'] > 0 && $_POST['price']['lenght'] > 0 && $_POST['synopsi']['lenght'] > 0 && $_POST['avi']['lenght'] > 0){
+if ($_POST['title'] == "" && $_POST['price'] == "" && $_POST['synopsi'] == "" && $_POST['avi'] == ""){
+//header('Location: '.$_SERVER['HTTP_REFERER']);
+}
 $sql =
 " SELECT * FROM jeux
 WHERE title=:titleGame
@@ -66,27 +69,10 @@ else{
           $targetJacket = $target_dir.$name;
           move_uploaded_file($_FILES['jacket']['tmp_name'], $targetJacket);
           echo 'file uploaded 1';
+          //postJeux($_POST, $targetJacket, $pdo);
         }
       }
     }
 
   }
 }
-
-
-$sql =
-" INSERT INTO jeux(title, image, prix, synopsis, PEGI, avis, temps_jeux)
-VALUES(:title, :image, :prix, :synopsi, :PEGI, :avis, :temps_jeux)
-";
-$dataBinded = array(
-  ':title' => $_POST['title'],
-  ':image' => $targetJacket,
-  ':prix' => $_POST['price'],
-  ':synopsi' => $_POST['synopsi'],
-  ':PEGI' => $_POST['PEGI'],
-  ':avis' => $_POST['avi'],
-  ':temps_jeux' => $_POST['temps_jeux'],
-);
-
-$prepareRequete = $pdo->prepare($sql);
-$prepareRequete->execute($dataBinded);
