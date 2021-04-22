@@ -10,6 +10,9 @@
           <i class="material-icons icon-search">close</i>
         </li>
         <div class="right">
+          <?php if (isset($_SESSION['user'])): ?>
+            <li><a class="height-panier-a hover" href="../page/admin.php"><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
+          <?php endif; ?>
           <li><a class="height-panier-a hover" href=""><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
           <?php
             if (isset($_SESSION['user'])){
@@ -26,8 +29,8 @@
 </div>
 
 
-<ul class="sidenav" id="mobile-demo">
 
+<ul class="sidenav" id="mobile-demo">
 <li><a href="sass.html">Accueil</a></li>
 <li class="input-field marge-search color grey">
   <input id="search" type="search" required>
