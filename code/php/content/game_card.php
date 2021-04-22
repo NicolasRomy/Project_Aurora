@@ -26,7 +26,7 @@
         <div class="card-image">
             <div style="display:flex;align-items:center;justify-content:center">
                 <?php foreach($plateforms as $plateform){ ?>
-                    <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:30px; margin-bottom: 10px">
+                    <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:30px; margin-bottom: 10px ;margin-top: 10px;margin-right:5px;">
                 <?php } ?>
             </div>
             <div style= "background-size: cover; width: 90%; height: 180px; margin:0 auto; background-image:url(<?php echo $jeu['image']?>);border-radius: 15px;";>
