@@ -25,11 +25,11 @@ if(empty($user)){
 else{
 
 if(! password_verify($_POST['password'], $user['password'])) {
-  $_SESSION['user'] = $user;
   $_SESSION['message'] = 'Email ou mot de passe incorrect';
   header('Location: ../page/login.php');
 }
 else {
+  $_SESSION['user'] = $user;
   $_SESSION['message'] = '';
   header('Location: ../page/index.php');
 }

@@ -13,7 +13,7 @@
   </header>
 
 <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
-  <div class="row valign-wrapper">
+  <div class="row">
     <div class="col s12 center">
       <a class="waves-effect waves-light btn-large" href="login.php">Connexion</a>
     </div>

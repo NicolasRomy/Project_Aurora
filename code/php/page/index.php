@@ -1,8 +1,9 @@
 <?php
 include_once '../action/config.php';
 include '../action/recupCoeurIndex.php';
-
+var_dump($_SESSION['user']);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
