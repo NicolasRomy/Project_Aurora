@@ -34,15 +34,13 @@ margin-top: 5px;
 }
 
 .marge-search{
-  margin-left: 15% !important;
-  width: 45% !important;
   margin-top: 7px !important;
   margin-bottom: 7px !important;
 
 }
 #search{
   height: 50px !important;
-    border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 
 .icon-search{
@@ -74,4 +72,8 @@ margin-top: 5px;
 
 .height-user-a{
   height: 60px;
+}
+
+nav ul li a.height-panier-a {
+  padding: 0px 5px;
 }
