@@ -1,5 +1,5 @@
 <?php
-$token = $_POST['stripToken'];
+$token = $_POST['stripeToken'];
 $email = $_POST['email'];
 $name = $_POST['name'];
 

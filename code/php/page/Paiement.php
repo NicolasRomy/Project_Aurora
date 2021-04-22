@@ -57,7 +57,7 @@
                     $form.prepend('<div class="white"><p>' + response.error.message + '</p> </div>');
                 } else{
                     var token = response.id
-                    $form.append($('<input type="hidden" name="stripToken">').val(token))
+                    $form.append($('<input type="hidden" name="stripeToken">').val(token))
                     $form.get(0).submit()
                 }
 
