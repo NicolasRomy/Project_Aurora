@@ -5,13 +5,13 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down row">
         <li class="input-field marge-search offset-s2 offset-m2 offset-l2 offset-xl2 col s4 m3 l3 xl4">
-          <input id="search" type="search" required>
+          <input placeholder="Rechercher" id="search" type="search" required>
           <label class="label-icon icon-searc" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons icon-search">close</i>
         </li>
         <div class="right">
           <?php if (isset($_SESSION['user'])): ?>
-            <li><a class="height-panier-a hover" href="../page/admin.php"><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
+            <li><a class="height-panier-a hover" href="../page/admin.php"><img class="responsive-img img-navbar-panier taille-admin" src="../../../assets/admin.png" alt=""></a></li>
           <?php endif; ?>
           <li><a class="height-panier-a hover" href=""><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
           <?php

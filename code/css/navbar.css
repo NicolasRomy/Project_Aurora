@@ -16,18 +16,19 @@ margin-top: 5px;
 }
 
 .img-navbar-user{
-  height: 50px !important;
-  margin-top: 7px;
+  height: 40px !important;
+  margin-top: 12px;
 
 }
 
 .img-navbar-panier{
-  height: 40px !important;
-  margin-top: 12px;
+  height: 30px !important;
+  margin-top: 20px;
 }
 
 .img-navbar-mon-panier{
   height: 20px !important;
+  margin-top: 5px !important;
   margin-right: 0px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -41,6 +42,7 @@ margin-top: 5px;
 #search{
   height: 50px !important;
   border-radius: 10px !important;
+  background-color: #fff;
 }
 
 .icon-search{
@@ -54,7 +56,7 @@ margin-top: 5px;
 }
 
 .margin{
-    margin-right: 40px;
+    margin-right: 20px;
       margin-left: 20px;
 }
 
@@ -76,4 +78,10 @@ margin-top: 5px;
 
 nav ul li a.height-panier-a {
   padding: 0px 5px;
+}
+li a img.taille-admin{
+  margin-top: 20px;
+  margin-right: 20px;
+  height: 25px !important;
+  width: auto;
 }
