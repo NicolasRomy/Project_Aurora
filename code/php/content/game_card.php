@@ -26,10 +26,10 @@
         <div class="card-image">
             <div style="display:flex;align-items:center;justify-content:center">
                 <?php foreach($plateforms as $plateform){ ?>
-                    <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:30px; margin-bottom: 10px ;margin-top: 10px;margin-right:5px;">
+                    <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:30px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
                 <?php } ?>
             </div>
-            <div style= "background-size: cover; width: 90%; height: 180px; margin:0 auto; background-image:url(<?php echo $jeu['image']?>);border-radius: 15px;";>
+            <div style= "background-size: cover; width: 90%; height: 180px; margin:0 auto;margin-bottom:3px; background-image:url(<?php echo $jeu['image']?>);border-radius: 15px;";>
             </div>
             <div style="text-align:center">
             <h2 style="font-size: 15px; color : white ;margin:0 auto; font-weight:bold;white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;"> <?php echo $jeu['title']?></h2>
