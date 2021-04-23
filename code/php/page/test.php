@@ -30,10 +30,12 @@ $image = $pre->fetchAll(PDO::FETCH_ASSOC);
   </header>
 
   <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
-  <?php
-  foreach($jeux as $jeu){
-    include '../content/game_card.php';
-  } ?>
+  <div class="row">
+    <?php
+    foreach($jeux as $jeu){
+      include '../content/game_card.php';
+    } ?>
+  </div>
   <img src="../../../assets\background_gradiant.svg" alt="background"/>
 
   <?php include '../content/footer.php'; ?>
