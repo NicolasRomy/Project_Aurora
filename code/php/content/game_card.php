@@ -12,7 +12,7 @@ $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="col s4 m4 l3 xl2 offset-s1 offset-m1 offset-l1 offset-xl1">
-<a href="../page/index.php">
+<a href="../page/detaille_jeux.php">
   <div class="card"
       style= "height: 260px ; width: 195px;
               border-radius: 15px;
