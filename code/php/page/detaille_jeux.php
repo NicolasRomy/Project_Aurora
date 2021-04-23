@@ -19,43 +19,43 @@
     $sql= "SELECT * FROM jeux where id = 1 ";
     $pre = $pdo->prepare($sql);
     $pre->execute();
-    $jeu = $pre->fetchAll(PDO::FETCH_ASSOC); 
+    $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <?php
     $sql= "SELECT * FROM jeux_plateforme jp INNER JOIN plateforme p ON p.id = jp.plateforme WHERE jeux=".$jeu[0]['id'];
     $pre = $pdo->prepare($sql);
     $pre->execute();
-    $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC); 
+    $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
 
  <div class = "presentation">
     <div class = "row">
         <div class = "col m3"> <img src= "<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
-        <div class = "col m4">  
+        <div class = "col m4">
           <div class ="offset-m1 col m12">
-            <h2> <?php echo $jeu[0]['title'] ?>   </h2> 
+            <h2> <?php echo $jeu[0]['title'] ?>   </h2>
                 <?php foreach($plateforms as $plateform){ ?>
                     <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
                 <?php } ?>
 
-        
+
             <br>
             <img src="../../../assets/pegi/violence.jpg" class='pegi'>
             <img src="../../../assets/pegi/fear.jpg" class='pegi'>
             <img src="../../../assets/pegi/bad-language.jpg" class='pegi'>
             <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
-            <p class="degrade"><?php echo $jeu[0]['synopsis'] ?></p>          
+            <p class="degrade"><?php echo $jeu[0]['synopsis'] ?></p>
 
             <div class = "col m12 warning">
               <div class = "col m2"> <img src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" class='pegi' style="margin-top: 30%;"></div>
               <div class = "col m9 ">
-              <?php echo $jeu[0]['avisPEGI'] ?></p>      
-              </div>            
+              <?php echo $jeu[0]['avisPEGI'] ?></p>
+              </div>
             </div>
           </div>
         </div>
-        
+
          <div class = "offset-m1 col m3 acheter">
             <p>acheter le jeux</p>
             <p><?php echo $jeu[0]['prix'] ?> € </p>
@@ -67,8 +67,8 @@
             </div>
             </p>
             <p>livraison en 24H</p>
-            <button>Ajouter au panier</button> <br/>
-            <button>Acheter maintenant</button>
+            <button class="btn" id="addPanier" type="button" name="addPanier">Ajouter au panier</button>
+            <button class="btn" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@
       $('.carousel.carousel-slider').carousel({
     fullWidth: true
   });
-        
+
 
       </script>
   </body>
