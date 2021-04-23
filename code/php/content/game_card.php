@@ -32,9 +32,10 @@ $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
   <div class="card-image">
     <div style="display:flex;align-items:center;justify-content:center">
       <?php foreach($plateforms as $plateform): ?>
-          <img src="../../../<?php echo $plateform['icon'] ?>" style= "height:30px; width:32px;
-                                                                       margin-bottom: 5px ;margin-top: 5px;margin-right:5px;
-                                                                      ">
+          <img src="../../../<?php echo $plateform['icon'] ?>"
+            style= "height:30px; width:32px;
+                    margin-bottom: 5px ;margin-top: 5px;margin-right:5px;
+                   ">
       <?php endforeach; ?>
     </div>
 
