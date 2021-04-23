@@ -1,4 +1,3 @@
-
 <?php include_once '../action/config.php'; ?>
 <!DOCTYPE html>
 <head>
@@ -27,16 +26,16 @@
             <input type="email" name="email" placeholder="email" require value="ecros@gaming.tech">
         </div>
         <div>
-            <input type="text" placeholder="Votre code de carte Bleu"  data-stripe="number" value="4242 4242 4242 4242">
+            <input type="text" placeholder="Votre code de carte Bleu" name="card_number"  data-stripe="number" value="4242 4242 4242 4242">
         </div>
         <div>
-            <input type="text" placeholder="MM"  data-stripe="exp_month" value="10">
+            <input type="text" placeholder="MM" name="exp_month"  data-stripe="exp_month" value="10">
         </div>
         <div>
-            <input type="text" placeholder="YY"  data-stripe="exp_year" value="22">
+            <input type="text" placeholder="YY" name="exp_year"  data-stripe="exp_year" value="22">
         </div>
         <div>
-            <input type="text" placeholder="CVC"  data-stripe="cvc" value="123">
+            <input type="text" placeholder="CVC" name="cvc"  data-stripe="cvc" value="123">
         </div>
         <button class="button" type="submit">Acheter</button>
      
