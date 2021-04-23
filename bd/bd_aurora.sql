@@ -134,13 +134,20 @@ CREATE TABLE IF NOT EXISTS `jeux_commandes` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `admin` tinyint(1) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   `pseudo` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `adresse` varchar(100) NOT NULL,
+  `adresse` varchar(100) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `admin`, `pseudo`, `email`, `adresse`, `password`) VALUES
+(1, 1, 'OoZoX', 'dev@admin.com', NULL, '$2y$10$EnNT/AkxeGi8UVsKQuwMg.Ftdkp/hyasnTm1ZQUcNs1X9WLVgOD22');
 
 --
 -- Contraintes pour les tables déchargées
