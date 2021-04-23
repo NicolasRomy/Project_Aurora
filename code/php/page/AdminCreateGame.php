@@ -32,16 +32,14 @@ include_once '../action/config.php';
       <div class="color-purple col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
         <select  multiple class="icon" name="platformes[]">
           <option value="0"disabled selected>Choisir les platformes</option>
-          <option value="10" data-icon="../../../assets/logoPlatformes/PS.png">PS3</option>
-          <option value="10" data-icon="../../../assets/logoPlatformes/PS.png">PS4</option>
-          <option value="11" data-icon="../../../assets/logoPlatformes/PS.png">PS5</option>
-          <option value="12" data-icon="../../../assets/pegi/drugs.jpg">Switch</option>
-          <option value="13" data-icon="../../../assets/logoPlatformes/PC.png">PC</option>
-          <option value="13" data-icon="../../../assets/pegi/fear.jpg">Mac</option>
-          <option value="13" data-icon="../../../assets/pegi/fear.jpg">Linux</option>
-          <option value="16" data-icon="../../../assets/logoPlatformes/XB.png">Xbox 360</option>
-          <option value="17" data-icon="../../../assets/logoPlatformes/XB.png">Xbox One</option>
-          <option value="17" data-icon="../../../assets/logoPlatformes/XB.png">Xbox Serie X</option>
+          <option value="3" data-icon="../../../assets/logoPlatformes/PS4.png">PS4</option>
+          <option value="5" data-icon="../../../assets/logoPlatformes/PS5.png">PS5</option>
+          <option value="4" data-icon="../../../assets/logoPlatformes/NS.png">Switch</option>
+          <option value="6" data-icon="../../../assets/logoPlatformes/WU.png">Wii U</option>
+          <option value="1" data-icon="../../../assets/logoPlatformes/PC.png">PC</option>
+          <option value="7" data-icon="../../../assets/logoPlatformes/AP.png">Mac</option>
+          <option value="8" data-icon="../../../assets/logoplatformes/LX.png">Linux</option>
+          <option value="2" data-icon="../../../assets/logoPlatformes/XB.png">Xbox Serie X</option>
         </select>
       </div>
       <div class="col s5 m5 l5 xl5 input-field">

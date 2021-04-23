@@ -1,28 +1,4 @@
 <?php
-function postJeux($post, $lien, $pdo){
-  $listePEGI = json_encode($_POST['listePEGI']);
-  $platformes = json_encode($_POST['platformes']);
-  $sql =
-  " INSERT INTO jeux(title, image, prix, synopsis, platformes, PEGI, listePEGI, avis, avisPEGI, temps_jeux)
-  VALUES(:title, :image, :prix, :synopsi, :platformes, :PEGI, :listePEGI, :avis, :avisPEGI, :temps_jeux)
-  ";
-  $dataBinded = array(
-    ':title' => $post['title'],
-    ':image' => $lien,
-    ':prix' => $post['price'],
-    ':synopsi' => $post['synopsi'],
-    ':platformes' => $platformes,
-    ':PEGI' => $post['PEGI'],
-    ':listePEGI' => $listePEGI,
-    ':avisPEGI' => $post['avisPEGI'],
-    ':avis' => $post['avi'],
-    ':temps_jeux' => $post['temps_jeux'],
-  );
-
-  $prepareRequete = $pdo->prepare($sql);
-  $prepareRequete->execute($dataBinded);
-}
-
 function isExistGame($post, $pdo){
   $sql =
   " SELECT id FROM jeux
@@ -37,6 +13,48 @@ function isExistGame($post, $pdo){
   $id = current($prepareRequete->fetchAll(PDO::FETCH_ASSOC));
   return $id;
 }
+
+function postJeux($post, $lien, $pdo){
+  $listePEGI = json_encode($_POST['listePEGI']);
+  $sql =
+  " INSERT INTO jeux(title, image, prix, synopsis, PEGI, listePEGI, avis, avisPEGI, temps_jeux)
+  VALUES(:title, :image, :prix, :synopsi, :PEGI, :listePEGI, :avis, :avisPEGI, :temps_jeux)
+  ";
+  $dataBinded = array(
+    ':title' => $post['title'],
+    ':image' => $lien,
+    ':prix' => $post['price'],
+    ':synopsi' => $post['synopsi'],
+    ':PEGI' => $post['PEGI'],
+    ':listePEGI' => $listePEGI,
+    ':avisPEGI' => $post['avisPEGI'],
+    ':avis' => $post['avi'],
+    ':temps_jeux' => $post['temps_jeux'],
+  );
+
+  $prepareRequete = $pdo->prepare($sql);
+  $prepareRequete->execute($dataBinded);
+
+  $id = isExistGame($post, $pdo);
+
+  foreach ($post['platformes'] as $key => $value) {
+    echo $value;
+    $sql =
+    " INSERT INTO jeux_plateforme(jeux, plateforme)
+      VALUES(:jeux, :plateforme)
+    ";
+
+    $dataBinded = array(
+      ':jeux' => $id['id'],
+      ':plateforme' => $value,
+    );
+
+    $prepareRequete = $pdo->prepare($sql);
+    $prepareRequete->execute($dataBinded);
+  }
+}
+
+
 
 function postImgs($id, $url, $pdo){
   $sql =

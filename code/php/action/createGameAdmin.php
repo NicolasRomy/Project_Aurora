@@ -1,7 +1,9 @@
 <?php
-// add security of admin
-
 include_once 'config.php';
+if (! $SESSION['user']['admin']){
+  header('Location: ../page/AdminCreateGame.php');
+}
+else{
 $errors = array();
 
 //$test2 = json_decode($test);
@@ -12,7 +14,7 @@ var_dump($_POST);
 echo"</pre>";
 
 if ($_POST['temps_jeux'] == "" || $_POST['title'] == "" || $_POST['price'] == "" || $_POST['synopsi'] == "" || $_POST['avi'] == "" || ! array_key_exists('PEGI', $_POST) || ! array_key_exists('listePEGI', $_POST) || ! array_key_exists('platformes', $_POST)){
-  header('Location: ../page/AdminCreateGame.php';
+  header('Location: ../page/AdminCreateGame.php');
 }
 else{
   $id = isExistGame($_POST, $pdo); //lance requete sql pour verifier si le jeux existe deja dans la bd
@@ -20,6 +22,7 @@ else{
   if ($id != false){
     // renvoier que le jeu existe deja (à programmer !!!)
     echo 'vide';
+    header('Location: ../page/AdminCreateGame.php');
   }
   else{
     $target_dir = '../../../assets/imgGame/';
@@ -28,18 +31,20 @@ else{
         foreach ($file['type'] as $k => $fileType) {
 
           if ($fileType == ''){
-            header('Location: ../page/AdminCreateGame.php';
+
             // renvoie que le jeux est uplaod mais il n'a pas d'img carousel
           }
-          if(isImg($fileType) == false){
-            array_push($errors,$file['name'][$k]);
-          }
           else{
-            $name = namedFile($fileType);
-            $target = $target_dir.$name;
-            move_uploaded_file($file['tmp_name'][$k], $target);
-            postImgs($id, $target, $pdo);
-            echo 'file uploaded +';
+            if(isImg($fileType) == false){
+              array_push($errors,$file['name'][$k]);
+            }
+            else{
+              $name = namedFile($fileType);
+              $target = $target_dir.$name;
+              move_uploaded_file($file['tmp_name'][$k], $target);
+              postImgs($id, $target, $pdo);
+              echo 'file uploaded +';
+            }
           }
         }
       }
@@ -48,7 +53,7 @@ else{
         if(isImg($fileType) == false){
           echo 'error seul';
           array_push($errors,$file['name']);
-          header('Location: ../page/AdminCreateGame.php';
+          header('Location: ../page/AdminCreateGame.php');
         }
         else{
           $name = namedFile($fileType);
@@ -58,9 +63,11 @@ else{
           postJeux($_POST, $targetJacket, $pdo);
           $id = isExistGame($_POST, $pdo);
           var_dump($id);
+
         }
       }
     }
   }
-  header('Location: ../page/AdminCreateGame.php';
+  header('Location: ../page/AdminCreateGame.php');
+}
 }
