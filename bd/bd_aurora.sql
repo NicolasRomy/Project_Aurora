@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 22 avr. 2021 à 16:31
+-- Généré le : ven. 23 avr. 2021 à 00:11
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -135,8 +135,9 @@ DROP TABLE IF EXISTS `jeux_plateforme`;
 CREATE TABLE IF NOT EXISTS `jeux_plateforme` (
   `jeux` int(11) NOT NULL,
   `plateforme` int(11) NOT NULL,
-  PRIMARY KEY (`jeux`,`plateforme`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`jeux`,`plateforme`),
+  KEY `plateformes` (`plateforme`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `jeux_plateforme`
@@ -144,7 +145,14 @@ CREATE TABLE IF NOT EXISTS `jeux_plateforme` (
 
 INSERT INTO `jeux_plateforme` (`jeux`, `plateforme`) VALUES
 (1, 1),
-(1, 2);
+(3, 1),
+(1, 2),
+(3, 2),
+(3, 3),
+(2, 4),
+(4, 4),
+(5, 5),
+(4, 6);
 
 -- --------------------------------------------------------
 
@@ -158,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `plateforme` (
   `name` varchar(15) NOT NULL,
   `icon` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `plateforme`
@@ -167,9 +175,12 @@ CREATE TABLE IF NOT EXISTS `plateforme` (
 INSERT INTO `plateforme` (`id`, `name`, `icon`) VALUES
 (1, 'PC', 'assets/logoPlatformes/PC.png'),
 (2, 'xbox series', 'assets\\logoPlatformes\\XB.png'),
-(3, 'PS4', 'assets\\logoPlatformes\\PS.png'),
+(3, 'PS4', 'assets\\logoPlatformes\\PS4.png'),
 (4, 'SWITCH', 'assets\\logoPlatformes\\NS.png'),
-(5, 'PS5', '');
+(5, 'PS5', 'assets\\logoPlatformes\\PS5.png'),
+(6, 'WII U', 'assets\\logoPlatformes\\WU.png'),
+(7, 'MAC', 'assets\\logoPlatformes\\AP.png'),
+(8, 'LINUX', 'assets\\logoPlatformes\\LX.png');
 
 -- --------------------------------------------------------
 
@@ -216,6 +227,13 @@ ALTER TABLE `images`
 ALTER TABLE `jeux_commandes`
   ADD CONSTRAINT `jeux_commandes_ibfk_1` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`),
   ADD CONSTRAINT `jeux_commandes_ibfk_2` FOREIGN KEY (`id_commande`) REFERENCES `commandes` (`id`);
+
+--
+-- Contraintes pour la table `jeux_plateforme`
+--
+ALTER TABLE `jeux_plateforme`
+  ADD CONSTRAINT `jeux` FOREIGN KEY (`jeux`) REFERENCES `jeux` (`id`),
+  ADD CONSTRAINT `plateformes` FOREIGN KEY (`plateforme`) REFERENCES `plateforme` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
