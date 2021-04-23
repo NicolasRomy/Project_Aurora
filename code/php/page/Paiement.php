@@ -1,138 +1,68 @@
-
 <?php include_once '../action/config.php'; ?>
-
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="../../css/jeux.css"/>
-    <?php include '../content/head.php'; ?>
-    <title></title>
-  </head>
-  <body>
-    <header>
-      <?php include '../content/navbar.php'; ?>
-    </header>
+<head>
+<!DOCTYPE html>
 
-    <footer>
-    </footer>
+  <?php include '../content/head.php'; ?>
+  <title></title>
+</head>
+<body>
+  <header>
 
-    <?php
-    $sql= "SELECT * FROM jeux where id = 1 ";
-    $pre = $pdo->prepare($sql);
-    $pre->execute();
-    $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
-    ?>
-    <?php
-    $sql= "SELECT * FROM jeux_plateforme jp INNER JOIN plateforme p ON p.id = jp.plateforme WHERE jeux=".$jeu[0]['id'];
-    $pre = $pdo->prepare($sql);
-    $pre->execute();
-    $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
-    ?>
+    <?php include '../content/navbar.php'; ?>
+    <br><br>
+  </header>
+     <meta charset="utf-8">
+     <meta name="description" content="A page's description, usually one or two sentences."/>
+     <title>Contact</title>
+     <link rel="stylesheet" href="../../css/catalogue.css">
+     </head>
 
-
- <div class = "presentation">
-    <div class = "row">
-        <div class = "col m3"> <img src= "<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
-        <div class = "col m4">
-          <div class ="offset-m1 col m12">
-            <h2> <?php echo $jeu[0]['title'] ?>   </h2>
-                <?php foreach($plateforms as $plateform){ ?>
-                    <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
-                <?php } ?>
-
-
-            <br>
-            <img src="../../../assets/pegi/violence.jpg" class='pegi'>
-            <img src="../../../assets/pegi/fear.jpg" class='pegi'>
-            <img src="../../../assets/pegi/bad-language.jpg" class='pegi'>
-            <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
-            <p class="degrade"><?php echo $jeu[0]['synopsis'] ?></p>
-
-            <div class = "col m12 warning">
-              <div class = "col m2"> <img src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" class='pegi' style="margin-top: 30%;"></div>
-              <div class = "col m9 ">
-              <?php echo $jeu[0]['avisPEGI'] ?></p>
-              </div>
-            </div>
-          </div>
+     <form action="../action/paiement_stripe.php" class="form white" id="payment_form" method="post">
+        <div>
+            <input type="text" name="name" placeholder="name" require value="Eliot">
         </div>
-
-         <div class = "offset-m1 col m3 acheter">
-            <p>acheter le jeux</p>
-            <p><?php echo $jeu[0]['prix'] ?> € </p>
-            <p>
-            <div style="display:flex;align-items:center;justify-content:center">
-                <?php foreach($plateforms as $plateform){ ?>
-                    <button><img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;"></button>
-                <?php } ?>
-            </div>
-            </p>
-            <p>livraison en 24H</p>
-            <button class="btn" id="addPanier" type="button" name="addPanier">Ajouter au panier</button>
-            <button class="btn" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
-          </div>
+        <div>
+            <input type="email" name="email" placeholder="email" require value="ecros@gaming.tech">
         </div>
-      </div>
-      <div class = "row">
-        <div class = "offset-m2 col m8 ">
-          <div class="avis-background col m12 ">
-            <div class="degrade "> Avis de la direction</div>
-            <div class="avis-text col m10 offset-m1">
-            <?php echo $jeu[0]['avis'] ?>
-            </div>
-          </div>
+        <div>
+            <input type="text" placeholder="Votre code de carte Bleu" name="card_number"  data-stripe="number" value="4242 4242 4242 4242">
         </div>
-      </div>
-      <div class = "row">
-        <div class = "avis-background offset-m2 col m8 ">
-          <div class="ext col m12 degrade">
-            Avis des joueurs (nombre) (note moyenne)
-          </div>
-          <div class="col m12">
-            <div class="col offset-m1 m2 pseudo degrade">
-              pseudo
-            </div>
-            <div class="col offset-m7 m2 pseudo degrade">
-              note
-            </div>
-            <div class="avis-text ">
-              woula ce jeu c'est de la balle
-            </div>
-            <button class="bouton">
-              voir plus d'avis
-            </button>
-          </div>
+        <div>
+            <input type="text" placeholder="MM" name="exp_month"  data-stripe="exp_month" value="10">
         </div>
-      </div>
-      <div class="row">
-        <div class>
-          <div  class="offset-m2 col m8">
-            <div class="carousel carousel-slider " style="border-radius: 30px;">
-              <a class="carousel-item" href="#one!"><img src="../../../assets/imgGame/Hitman-3-screenshots-1.jpg"></a>
-              <a class="carousel-item" href="#two!"><img src="../../../assets/imgGame/Hitman-3-screenshots-2.jpg"></a>
-              <a class="carousel-item" href="#three!"><img src="../../../assets/imgGame/Hitman-3-screenshots-3.jpg"></a>
-            </div>
-          </div>
+        <div>
+            <input type="text" placeholder="YY" name="exp_year"  data-stripe="exp_year" value="22">
         </div>
-      </div>
+        <div>
+            <input type="text" placeholder="CVC" name="cvc"  data-stripe="cvc" value="123">
+        </div>
+        <button class="button" type="submit">Acheter</button>
+     
+     </form>
 
-        <?php include '../content/pegi_explanation.php'; ?>
+     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+     <script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+     <script>
+        Stripe.setPublishableKey("pk_test_51Ij187I4NeokXeq3sbuqZ5tA5E6ARw572XdUd0O05JDDlaAgflUBfzIOQ6A8EgqMCMXqQS64TmSbmp3xb1iWmY6R001IrgxmW7")
+        var $form = $('#payment_form')
+        $form.submit(function (e) {
+            e.preventDefault()
+            $form.find ('.button').attr('disabled', true)
+            Stripe.card.createToken($form, function (status,response) {
+                if (response.error) {
+                    $form.find('.message').remove();
+                    $form.prepend('<div class="white"><p>' + response.error.message + '</p> </div>');
+                } else{
+                    var token = response.id
+                    $form.append($('<input type="hidden" name="stripeToken">').val(token))
+                    $form.get(0).submit()
+                }
+
+            })
+        })
 
 
-      <script type="text/javascript" src="../../js/jquery.min.js"></script>
-      <script type="text/javascript" src="../../js/materialize.js"></script>
 
-      <script type="text/javascript">
-
-      $(document).ready(function(){
-        $('.sidenav').sidenav();
-      });
-
-      $('.carousel.carousel-slider').carousel({
-    fullWidth: true
-  });
-
-
-      </script>
-  </body>
-</html>
+     </script>
