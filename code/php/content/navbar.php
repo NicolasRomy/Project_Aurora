@@ -13,7 +13,7 @@
           <?php if (isset($_SESSION['user'])): ?>
             <li><a class="height-panier-a hover" href="../page/admin.php"><img class="responsive-img img-navbar-panier taille-admin" src="../../../assets/admin.png" alt=""></a></li>
           <?php endif; ?>
-          <li><a class="height-panier-a hover" href=""><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
+          <li><a class="height-panier-a hover" href="../page/panier.php"><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
           <?php
             if (isset($_SESSION['user'])){
             $hrefUser = '../page/user.php';
