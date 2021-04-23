@@ -1,0 +1,29 @@
+.background{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}    
+.flex{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.bd{
+    border-radius: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+
+}
+.ok{
+    margin-right: 20px;
+}

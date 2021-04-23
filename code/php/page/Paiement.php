@@ -18,7 +18,7 @@
      <link rel="stylesheet" href="../../css/catalogue.css">
      </head>
 
-     <form action="../action/paiement_stripe.php" class="form white" id="payment_form" method="post">
+     <form action="../action/paiement_stripe_demo.php" class="form white" id="payment_form" method="post">
         <div>
             <input type="text" name="name" placeholder="name" require value="Eliot">
         </div>
