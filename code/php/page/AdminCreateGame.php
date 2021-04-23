@@ -18,7 +18,7 @@ include_once '../action/config.php';
 
   <div class="row">
     <div class="s12">
-      <h1 class="center-align">Ajouter un nopuveau jeu</h1>
+      <h1 class="center-align">Ajouter un nouveau jeu</h1>
     </div>
     <form class="col s12" action="../action/createGameAdmin.php" method="post" enctype="multipart/form-data">
       <div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 input-field">
