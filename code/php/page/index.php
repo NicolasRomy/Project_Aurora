@@ -66,6 +66,7 @@ include '../action/recupCoeurIndex.php';
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
+    <?php include '../content/pegi_explanation.php'; ?>
     <footer>
     </footer>
 
