@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 23 avr. 2021 à 00:11
+-- Généré le : ven. 23 avr. 2021 à 15:12
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -127,6 +127,20 @@ CREATE TABLE IF NOT EXISTS `jeux_commandes` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `jeux_pegi`
+--
+
+DROP TABLE IF EXISTS `jeux_pegi`;
+CREATE TABLE IF NOT EXISTS `jeux_pegi` (
+  `jeux` int(11) NOT NULL,
+  `pegi` int(11) NOT NULL,
+  KEY `Pegi` (`pegi`),
+  KEY `jeu` (`jeux`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `jeux_plateforme`
 --
 
@@ -152,6 +166,34 @@ INSERT INTO `jeux_plateforme` (`jeux`, `plateforme`) VALUES
 (4, 4),
 (5, 5),
 (4, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `pegi`
+--
+
+DROP TABLE IF EXISTS `pegi`;
+CREATE TABLE IF NOT EXISTS `pegi` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
+  `icon` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `pegi`
+--
+
+INSERT INTO `pegi` (`id`, `nom`, `icon`) VALUES
+(1, 'langage grossier', 'assets\\pegi\\bad-language.jpg'),
+(2, 'discrimination', 'assets\\pegi\\discrimination.jpg'),
+(3, 'drogues', 'assets\\pegi\\drugs.jpg'),
+(4, 'peur', 'assets\\pegi\\fear.jpg'),
+(5, 'jeux de hasard', 'assets\\pegi\\gambling.jpg'),
+(6, 'in game purchases', 'assets\\pegi\\in-game-purchases.jpeg'),
+(7, 'sexe', 'assets\\pegi\\sexual-content.jpg'),
+(8, 'violence', 'assets\\pegi\\violence.jpg');
 
 -- --------------------------------------------------------
 
@@ -233,6 +275,13 @@ ALTER TABLE `images`
 ALTER TABLE `jeux_commandes`
   ADD CONSTRAINT `jeux_commandes_ibfk_1` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`),
   ADD CONSTRAINT `jeux_commandes_ibfk_2` FOREIGN KEY (`id_commande`) REFERENCES `commandes` (`id`);
+
+--
+-- Contraintes pour la table `jeux_pegi`
+--
+ALTER TABLE `jeux_pegi`
+  ADD CONSTRAINT `Pegi` FOREIGN KEY (`pegi`) REFERENCES `pegi` (`id`),
+  ADD CONSTRAINT `jeu` FOREIGN KEY (`jeux`) REFERENCES `jeux` (`id`);
 
 --
 -- Contraintes pour la table `jeux_plateforme`
