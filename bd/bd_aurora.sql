@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 21 avr. 2021 à 15:07
+-- Généré le : ven. 23 avr. 2021 à 00:11
 -- Version du serveur :  5.7.31
--- Version de PHP : 8.0.3
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,13 +89,13 @@ CREATE TABLE IF NOT EXISTS `jeux` (
   `image` varchar(100) NOT NULL,
   `prix` float NOT NULL,
   `synopsis` text NOT NULL,
-  `platformes` varchar(100) NOT NULL,
   `PEGI` int(11) NOT NULL,
   `listePEGI` varchar(100) NOT NULL,
   `avis` text NOT NULL,
   `avisPEGI` text NOT NULL,
   `temps_jeux` int(11) NOT NULL,
   `coeur` tinyint(1) NOT NULL DEFAULT '0',
+  `plateforme` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
@@ -103,12 +103,12 @@ CREATE TABLE IF NOT EXISTS `jeux` (
 -- Déchargement des données de la table `jeux`
 --
 
-INSERT INTO `jeux` (`id`, `title`, `image`, `prix`, `synopsis`, `platformes`, `PEGI`, `listePEGI`, `avis`, `avisPEGI`, `temps_jeux`, `coeur`) VALUES
-(1, 'dark souls 3', 'https://cdn.akamai.steamstatic.com/steam/apps/374320/capsule_616x353.jpg?t=1608544497', 65, 'lorem ipsum ', '', 18, '', 'tres bon jeu wlh', '', 60, 1),
-(2, 'animal crossing new horizons', 'https://upload.wikimedia.org/wikipedia/en/1/1f/Animal_Crossing_New_Horizons.jpg', 65, 'lorem ipsum ', '', 3, '', 'tres bon jeu wlh', '', 60, 1),
-(3, 'need for speed heat', 'https://upload.wikimedia.org/wikipedia/en/7/7f/Cover_Art_of_Need_for_Speed_Heat.png', 65, 'lorem ipsum ', '', 16, '', 'tres bon jeu wlh', '', 60, 1),
-(4, 'Zelda: Breath of the wild', 'https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg', 65, 'lorem ipsum ', '', 12, '', 'tres bon jeu wlh', '', 60, 1),
-(5, 'Ratchet et clank : rift apart ', 'https://upload.wikimedia.org/wikipedia/en/3/37/Ratchet_and_Clank_cover.jpg', 65, 'lorem ipsum ', '', 7, '', 'tres bon jeu wlh', '', 60, 1);
+INSERT INTO `jeux` (`id`, `title`, `image`, `prix`, `synopsis`, `PEGI`, `listePEGI`, `avis`, `avisPEGI`, `temps_jeux`, `coeur`, `plateforme`) VALUES
+(1, 'dark souls 3', 'https://cdn.akamai.steamstatic.com/steam/apps/374320/capsule_616x353.jpg?t=1608544497', 65, 'lorem ipsum ', 18, '', 'tres bon jeu wlh', '', 60, 1, 0),
+(2, 'animal crossing new horizons', 'https://upload.wikimedia.org/wikipedia/en/1/1f/Animal_Crossing_New_Horizons.jpg', 65, 'lorem ipsum ', 3, '', 'tres bon jeu wlh', '', 60, 1, 0),
+(3, 'need for speed heat', 'https://upload.wikimedia.org/wikipedia/en/7/7f/Cover_Art_of_Need_for_Speed_Heat.png', 65, 'lorem ipsum ', 16, '', 'tres bon jeu wlh', '', 60, 1, 0),
+(4, 'Zelda: Breath of the wild', 'https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg', 65, 'lorem ipsum ', 12, '', 'tres bon jeu wlh', '', 60, 1, 0),
+(5, 'Ratchet et clank : rift apart ', 'https://upload.wikimedia.org/wikipedia/en/3/37/Ratchet_and_Clank_cover.jpg', 65, 'lorem ipsum ', 7, '', 'tres bon jeu wlh', '', 60, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -124,6 +124,63 @@ CREATE TABLE IF NOT EXISTS `jeux_commandes` (
   KEY `id_jeux` (`id_jeux`),
   KEY `id_commande` (`id_commande`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `jeux_plateforme`
+--
+
+DROP TABLE IF EXISTS `jeux_plateforme`;
+CREATE TABLE IF NOT EXISTS `jeux_plateforme` (
+  `jeux` int(11) NOT NULL,
+  `plateforme` int(11) NOT NULL,
+  PRIMARY KEY (`jeux`,`plateforme`),
+  KEY `plateformes` (`plateforme`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `jeux_plateforme`
+--
+
+INSERT INTO `jeux_plateforme` (`jeux`, `plateforme`) VALUES
+(1, 1),
+(3, 1),
+(1, 2),
+(3, 2),
+(3, 3),
+(2, 4),
+(4, 4),
+(5, 5),
+(4, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `plateforme`
+--
+
+DROP TABLE IF EXISTS `plateforme`;
+CREATE TABLE IF NOT EXISTS `plateforme` (
+  `id` int(1) NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) NOT NULL,
+  `icon` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `plateforme`
+--
+
+INSERT INTO `plateforme` (`id`, `name`, `icon`) VALUES
+(1, 'PC', 'assets/logoPlatformes/PC.png'),
+(2, 'xbox series', 'assets\\logoPlatformes\\XB.png'),
+(3, 'PS4', 'assets\\logoPlatformes\\PS4.png'),
+(4, 'SWITCH', 'assets\\logoPlatformes\\NS.png'),
+(5, 'PS5', 'assets\\logoPlatformes\\PS5.png'),
+(6, 'WII U', 'assets\\logoPlatformes\\WU.png'),
+(7, 'MAC', 'assets\\logoPlatformes\\AP.png'),
+(8, 'LINUX', 'assets\\logoPlatformes\\LX.png');
 
 -- --------------------------------------------------------
 
@@ -177,6 +234,13 @@ ALTER TABLE `images`
 ALTER TABLE `jeux_commandes`
   ADD CONSTRAINT `jeux_commandes_ibfk_1` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`),
   ADD CONSTRAINT `jeux_commandes_ibfk_2` FOREIGN KEY (`id_commande`) REFERENCES `commandes` (`id`);
+
+--
+-- Contraintes pour la table `jeux_plateforme`
+--
+ALTER TABLE `jeux_plateforme`
+  ADD CONSTRAINT `jeux` FOREIGN KEY (`jeux`) REFERENCES `jeux` (`id`),
+  ADD CONSTRAINT `plateformes` FOREIGN KEY (`plateforme`) REFERENCES `plateforme` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
