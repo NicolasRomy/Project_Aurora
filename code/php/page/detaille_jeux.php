@@ -152,23 +152,19 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class>
-                <div  class="offset-m2 col m8">
                   <div class="carousel carousel-slider " style="border-radius: 30px;">
                     <a class="carousel-item" href="#one!"><img src="../../../assets/imgJeu/dark-souls-3-img-1.jpg"></a>
                     <a class="carousel-item" href="#two!"><img src="../../../assets/imgJeu/dark-souls-3-img-2.jpg"></a>
                     <a class="carousel-item" href="#three!"><img src="../../../assets/imgJeu/dark-souls-3-img-3.jpg"></a>
-                  </div>
-                </div>
+              
               </div>
-            </div>
+
 
             <?php include '../content/pegi_explanation.php'; ?>
-
-
             <script type="text/javascript" src="../../js/jquery.min.js"></script>
             <script type="text/javascript" src="../../js/materialize.js"></script>
+
+
 
             <script type="text/javascript">
 
@@ -180,6 +176,7 @@
               fullWidth: false
             });
 
+            
             $(document).ready(function(){
               $('.modal').modal();
             });
