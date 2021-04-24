@@ -28,10 +28,17 @@
     $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
+    <?php
+    $sql= "SELECT * FROM jeux_pegi jp INNER JOIN pegi p ON p.id = jp.pegi WHERE jeux=".$jeu[0]['id'];
+    $pre = $pdo->prepare($sql);
+    $pre->execute();
+    $pegi = $pre->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
 
  <div class = "presentation">
     <div class = "row">
-        <div class = "col m3"> <img src= "<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
+        <div class = "col m3"> <img src= "../../../<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
         <div class = "col m4">
           <div class ="offset-m1 col m12">
             <h2> <?php echo $jeu[0]['title'] ?>   </h2>
@@ -41,9 +48,9 @@
 
 
             <br>
-            <img src="../../../assets/pegi/violence.jpg" class='pegi'>
-            <img src="../../../assets/pegi/fear.jpg" class='pegi'>
-            <img src="../../../assets/pegi/bad-language.jpg" class='pegi'>
+            <?php foreach($pegi as $pegis){ ?>
+                <img src="../../../<?php echo $pegis['icon'] ?>" class="pegi">
+            <?php } ?>
             <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
             <p class="degrade"><?php echo $jeu[0]['synopsis'] ?></p>
 
