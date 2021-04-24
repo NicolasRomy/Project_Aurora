@@ -198,6 +198,7 @@ function send_avis(){
           note:$("#note").val(),
           content:$("#text").val(),
           jeux_id: <?php $jeu['id'] ?>
+          pseudo: <?php $_SESSION['pseudo']?>
           projet:projet
         },
       });
