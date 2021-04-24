@@ -37,7 +37,6 @@ div img.logo{
     border-radius: 20px;
     line-height: 60px;
     font-size: 25px;
-    background: linear-gradient(#eb594e,#a00202);
 }
 .warning{
     background-color: white;
@@ -45,20 +44,75 @@ div img.logo{
     margin-right: 20px;
 }
    
-.degrade{
-    background: #A00202;
-    background: -webkit-linear-gradient(to top, #A00202 0%, #eb594e 100%);
-    background: -moz-linear-gradient(to top, #A00202 0%, #eb594e 100%);
-    background: linear-gradient(to top, #A00202 0%, #eb594e 100%);
+.degrade_bleuC{
+    background: rgba(67 ,101 ,255,1);
+    background: -webkit-linear-gradient(to top, 0deg, rgba(68, 169 ,255,1) 0%, rgba(67 ,101 ,255,1) 100%);
+    background: -moz-linear-gradient(to top,0deg, rgba(68, 169 ,255,1) 0%, rgba(67 ,101 ,255,1) 100%);
+    background: linear-gradient(to top, 0deg, rgba(68, 169 ,255,1) 0%, rgba(67 ,101 ,255,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.degrade_bleuF{
+    background:  rgba(73,76,255,1) 100%;
+    background: -webkit-linear-gradient(to top, 180deg, rgba(68, 169 ,255,1) 0%, rgba(73,76,255,1) 100%);
+    background: -moz-linear-gradient(to top, 180deg, rgba(68, 169 ,255,1) 0%, rgba(73,76,255,1) 100%);
+    background: linear-gradient(to top, 180deg, rgba(68, 169 ,255,1) 0%, rgba(73,76,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.degrade_violetF{
+    background: rgba(219,91,255,1) 100%;
+    background: -webkit-linear-gradient(to top,180deg, rgba(164,84,255,1) 0%, rgba(219,91,255,1) 100%);
+    background: -moz-linear-gradient(to top,180deg, rgba(164,84,255,1) 0%, rgba(219,91,255,1) 100%);
+    background: linear-gradient(to top,180deg, rgba(164,84,255,1) 0%, rgba(219,91,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.degrade_violetC{
+    background: #A00202;
+    background: -webkit-linear-gradient(to top,180deg, rgba(219,91,255,1) 0%, rgba(164,84,255,1) 100%);
+    background: -moz-linear-gradient(to top,180deg, rgba(219,91,255,1) 0%, rgba(164,84,255,1) 100%);
+    background: linear-gradient(to top,180deg, rgba(219,91,255,1) 0%, rgba(164,84,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.degrade_rouge{
+    background: rgba(181,0,0,1);
+    background: -webkit-linear-gradient(180deg, rgba(255, 91 , 91,1) 0%, rgba(181,0,0,1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(255, 91 , 91,1) 0%, rgba(181,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(255, 91 , 91,1) 0%, rgba(181,0,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bleuC{
+    background: linear-gradient(0deg, rgba(68, 169 ,255,1) 0%, rgba(67 ,101 ,255,1) 100%);
+}
+
+.bleuF{
+    background: linear-gradient(180deg, rgba(68, 169 ,255,1) 0%, rgba(73,76,255,1) 100%);
+}
+
+.violetF{
+    background: linear-gradient(180deg, rgba(164,84,255,1) 0%, rgba(219,91,255,1) 100%);
+}
+
+.violetC{
+    background: linear-gradient(180deg, rgba(219,91,255,1) 0%, rgba(164,84,255,1) 100%);
+}
+
+.rouge{
+    background: linear-gradient(180deg, rgba(255, 91 , 91,1) 0%, rgba(181,0,0,1) 100%);
 }
 .avis-background{
     background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
     font-size: 60px;
     border-radius: 30px;
-    color:red;
     margin-top: 80px;
 }
 .avis-text{
