@@ -43,6 +43,11 @@
   <button class="waves-effect waves-light btn-small" onclick="filterSelection('16')"> pegi 16</button>
   <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
+<div id="myBtnContainer">
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('all')"> Show all</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('0')"> coeur</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('1')"> pascoeur</button>
+
 
 
 
@@ -50,9 +55,9 @@
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
-      
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php include '../content/game_card.php';?></div><?php } ?>
-      
+      <div style="display:flex;">
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv <?php echo $jeu['coeur']?>'><?php include '../content/game_card.php';?></div><?php } ?>
+      </div>
   
 
 
