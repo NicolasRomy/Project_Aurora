@@ -5,9 +5,9 @@
   " INSERT INTO comments(pseudo, content, note, jeux_id )
     VALUES(:pseudo, :content, :note, :jeux_id)
   ";
-  
+
   $dataBinded = array(
-    ':pseudo' => $_SESSION['pseudo'],
+    ':pseudo' => $_SESSION['user']['pseudo'],
     ':content' => $_POST['content'],
     ':note' => $_POST['note'],
     ':jeux_id' => $_POST['jeux_id'],
