@@ -124,27 +124,13 @@
               voir plus d'avis
             </button>
 
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
             
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-    <div class="section">
-      <div class="row container">
-        <h2 class="header white-text">Vos Avis</h2>
-          <p class="range-field">
-            <input type="range" id="note" min="0" max="10" onchange="angry()"/>
-          </p>
-          <div class="row">
-              <div class="col s12">
-                <div class="row">
-                  <div class="input-field white-text col s6">
-                    <input id="prenom" type="text" class="validate white-text">
-                    <label for="prenom">Prénom</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="nom" type="text" class="validate white-text">
-                    <label for="nom">Nom</label>
-                  </div>
-                </div>
-                <div class="row">
+
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                  <div class="row">
                     <div class="col s12">
                       <div class="row">
                         <div class="input-field col s12">
@@ -154,16 +140,12 @@
                       </div>
                     </div>
                   </div>
-                  <button class="btn waves-effect waves-light orange" id="submit" onclick="send_avis()" name="action">Submit
-                      <i class="material-icons right">send</i>
-                  </button>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
               </div>
             </div>
-            <div class="row" id="avis" >
 
-            </div>
-        </div>
-      </div>
           </div>
         </div>
       </div>
@@ -195,6 +177,9 @@
     fullWidth: true
   });
 
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
 
       </script>
   </body>
