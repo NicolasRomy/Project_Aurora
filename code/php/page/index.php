@@ -1,8 +1,7 @@
 <?php
 include_once '../action/config.php';
-include '../action/recupCoeurIndex.php';
+$coupCoeur = recupCoeur($pdo);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -51,6 +50,53 @@ include '../action/recupCoeurIndex.php';
         <div class="col s12 m12 l12 xl12">
           <h3 class="center-align">Nos jeux coup de coeur</h3>
         </div>
+        <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
+          <div class="col s12 white mt5 bd-raduis"> <!-- à opti en un foreatch avec un array de PEGI -->
+            <?php foreach ($coupCoeur as $key => $jeu) {
+                    if($jeu['PEGI'] == 3){
+                      include '../content/game_card.php';
+                    }
+                  }
+                ?>
+          </div>
+          <div class="col s12 white mt5 bd-raduis">
+            <?php
+            foreach ($coupCoeur as $key => $jeu) {
+                    if($jeu['PEGI'] == 7){
+                      include '../content/game_card.php';
+                    }
+                  }
+            ?>
+          </div>
+          <div class="col s12 white mt5 bd-raduis">
+            <?php
+                foreach ($coupCoeur as $key => $jeu) {
+                        if($jeu['PEGI'] == 12){
+                          include '../content/game_card.php';
+                        }
+                      }
+                ?>
+          </div>
+          <div class="col s12 white mt5 bd-raduis">
+            <?php
+                foreach ($coupCoeur as $key => $jeu) {
+                        if($jeu['PEGI'] == 16){
+                          include '../content/game_card.php';
+                        }
+                      }
+                ?>
+          </div>
+              <div class="col s12 white mt5 bd-raduis">
+                <?php
+                  foreach ($coupCoeur as $key => $jeu) {
+                          if($jeu['PEGI'] == 18){
+                            include '../content/game_card.php';
+                          }
+                        }
+            ?>
+              </div>
+        </div>
+
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -58,15 +104,14 @@ include '../action/recupCoeurIndex.php';
 
     </div>
 
-      <!-- card age fixe 3 7 12 16 18 -->
 
-      <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
+      <?php include '../content/pegi_explanation.php'; ?>
       <img src="../../../assets\background_gradiant.svg" alt="background">
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
-    <?php include '../content/pegi_explanation.php'; ?>
+
     <footer>
     </footer>
 
