@@ -10,3 +10,5 @@ name bd : bd_aurora
 
 
 penser a passer dans la bd users adresse en NULL !!!
+
+a
