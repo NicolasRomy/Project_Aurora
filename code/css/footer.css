@@ -1,4 +1,9 @@
 .page-footer{
     list-style-type: none;
     background-color:rgba(100,100, 100, 0);
+    color: white;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 200px;
+    align-items: center;
 }

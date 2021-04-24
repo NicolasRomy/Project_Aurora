@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="../../css/footer.css">
+<div class ="titre">
 <footer class="page-footer">
   <div class="container">
     <div class="row">
       <div class="col l4 s12">
         <h5 class="white-text">A propos</h5>
-        <li><a class="grey-text text-lighten-3" href="#!">SAV</a></li>
+        
+          <li><a class="grey-text text-lighten-3" href="#!">SAV</a></li>
           <li><a class="grey-text text-lighten-3" href="#!">Conditions générales du Marketplace</a></li>
           <li><a class="grey-text text-lighten-3" href="#!">Conditions générales de ventes </a></li>
           <li><a class="grey-text text-lighten-3" href="#!">Données personnelles</a></li>
@@ -39,6 +41,6 @@
         
       </div>
     </div>
-  
+</div>
   </div>
 </footer>
