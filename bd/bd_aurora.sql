@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Apr 24, 2021 at 10:27 AM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  sam. 24 avr. 2021 à 18:38
+-- Version du serveur :  5.7.31
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_aurora`
+-- Base de données :  `bd_aurora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commandes`
+-- Structure de la table `commandes`
 --
 
 DROP TABLE IF EXISTS `commandes`;
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `commandes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Structure de la table `comments`
 --
 
 DROP TABLE IF EXISTS `comments`;
@@ -52,12 +53,20 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `pseudo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jeux_id` (`jeux_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `comments`
+--
+
+INSERT INTO `comments` (`id`, `jeux_id`, `content`, `note`, `pseudo`) VALUES
+(1, 1, 'rgZGQERGER', 7, 'eliot'),
+(2, 1, 'Fzrfgqergqsrfger', 2, 'eliot');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Structure de la table `images`
 --
 
 DROP TABLE IF EXISTS `images`;
@@ -70,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `images` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `images`
+-- Déchargement des données de la table `images`
 --
 
 INSERT INTO `images` (`id`, `jeux_id`, `url`) VALUES
@@ -79,7 +88,7 @@ INSERT INTO `images` (`id`, `jeux_id`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jeux`
+-- Structure de la table `jeux`
 --
 
 DROP TABLE IF EXISTS `jeux`;
@@ -99,11 +108,11 @@ CREATE TABLE IF NOT EXISTS `jeux` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `jeux`
+-- Déchargement des données de la table `jeux`
 --
 
 INSERT INTO `jeux` (`id`, `title`, `image`, `prix`, `synopsis`, `PEGI`, `listePEGI`, `avis`, `avisPEGI`, `temps_jeux`, `coeur`) VALUES
-(1, 'dark souls 3', 'assets\\Dark_Souls_III_jackette.png', 65, 'lorem ipsum ', 18, '', 'tres bon jeu wlh', '', 60, 1),
+(1, 'dark souls 3', 'assets\\Dark_Souls_III_jackette.png', 65, 'Avec Dark Souls 3, From Software livre la conclusion magistrale d’une saga certes enrichie au fil des épisodes, mais toujours fidèle à son concept original. Épique, magistral, haletant, cohérent, les qualificatifs élogieux ne manquent pas pour ce troisième volet chapeauté d’une main de maître par un Hidetaka Miyazaki au sommet de sa vision artistique et ludique pour la licence. Le titre parvient à s’approprier et surtout à faire évoluer les mécanismes issus de son passif pour en extraire un concentré de maîtrise à presque tous les niveaux. Décors à couper le souffle, approche des combats plus nerveuse, comportement des ennemis amélioré et boss mémorables, tous ces éléments participent à nous offrir ni plus ni moins que le meilleur des Souls !', 18, '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Ce jeu a reçu un PEGI 18, cela restreint sa disponibilité pour les adultes uniquement\r\net ne convient pas aux personnes mineurs. Cette note a été donnée car le  jeu contiens une forte violence,\r\ny compris à l\'encontre de personnage vulnérable et sans défenses.\r\nIl y a aussi un fort usage de grossierté et de mots vulgaires', 60, 1),
 (2, 'animal crossing new horizons', 'https://upload.wikimedia.org/wikipedia/en/1/1f/Animal_Crossing_New_Horizons.jpg', 65, 'lorem ipsum ', 3, '', 'tres bon jeu wlh', '', 60, 1),
 (3, 'need for speed heat', 'https://upload.wikimedia.org/wikipedia/en/7/7f/Cover_Art_of_Need_for_Speed_Heat.png', 65, 'lorem ipsum ', 16, '', 'tres bon jeu wlh', '', 60, 1),
 (4, 'Zelda: Breath of the wild', 'https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg', 65, 'lorem ipsum ', 12, '', 'tres bon jeu wlh', '', 60, 1),
@@ -112,7 +121,7 @@ INSERT INTO `jeux` (`id`, `title`, `image`, `prix`, `synopsis`, `PEGI`, `listePE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jeux_commandes`
+-- Structure de la table `jeux_commandes`
 --
 
 DROP TABLE IF EXISTS `jeux_commandes`;
@@ -127,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `jeux_commandes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jeux_pegi`
+-- Structure de la table `jeux_pegi`
 --
 
 DROP TABLE IF EXISTS `jeux_pegi`;
@@ -139,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `jeux_pegi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `jeux_pegi`
+-- Déchargement des données de la table `jeux_pegi`
 --
 
 INSERT INTO `jeux_pegi` (`jeux`, `pegi`) VALUES
@@ -150,7 +159,7 @@ INSERT INTO `jeux_pegi` (`jeux`, `pegi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jeux_plateforme`
+-- Structure de la table `jeux_plateforme`
 --
 
 DROP TABLE IF EXISTS `jeux_plateforme`;
@@ -162,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `jeux_plateforme` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `jeux_plateforme`
+-- Déchargement des données de la table `jeux_plateforme`
 --
 
 INSERT INTO `jeux_plateforme` (`jeux`, `plateforme`) VALUES
@@ -179,7 +188,7 @@ INSERT INTO `jeux_plateforme` (`jeux`, `plateforme`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pegi`
+-- Structure de la table `pegi`
 --
 
 DROP TABLE IF EXISTS `pegi`;
@@ -191,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `pegi` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pegi`
+-- Déchargement des données de la table `pegi`
 --
 
 INSERT INTO `pegi` (`id`, `nom`, `icon`) VALUES
@@ -207,7 +216,7 @@ INSERT INTO `pegi` (`id`, `nom`, `icon`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `plateforme`
+-- Structure de la table `plateforme`
 --
 
 DROP TABLE IF EXISTS `plateforme`;
@@ -219,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `plateforme` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `plateforme`
+-- Déchargement des données de la table `plateforme`
 --
 
 INSERT INTO `plateforme` (`id`, `name`, `icon`) VALUES
@@ -235,7 +244,7 @@ INSERT INTO `plateforme` (`id`, `name`, `icon`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -247,53 +256,54 @@ CREATE TABLE IF NOT EXISTS `users` (
   `adresse` varchar(100) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `admin`, `pseudo`, `email`, `adresse`, `password`) VALUES
-(1, 1, 'OoZoX', 'dev@admin.com', NULL, '$2y$10$EnNT/AkxeGi8UVsKQuwMg.Ftdkp/hyasnTm1ZQUcNs1X9WLVgOD22');
+(1, 1, 'OoZoX', 'dev@admin.com', NULL, '$2y$10$EnNT/AkxeGi8UVsKQuwMg.Ftdkp/hyasnTm1ZQUcNs1X9WLVgOD22'),
+(2, 0, 'eliot', 'ecros@gaming.tech', NULL, '$2y$10$.xBwFsfcCKNCVrb.7ahg7evjbW2hDRqxd5VoJqbapdsdSP8Dxjhkm');
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `commandes`
+-- Contraintes pour la table `commandes`
 --
 ALTER TABLE `commandes`
   ADD CONSTRAINT `commandes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `comments`
+-- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`jeux_id`) REFERENCES `jeux` (`id`);
 
 --
--- Constraints for table `images`
+-- Contraintes pour la table `images`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`jeux_id`) REFERENCES `jeux` (`id`);
 
 --
--- Constraints for table `jeux_commandes`
+-- Contraintes pour la table `jeux_commandes`
 --
 ALTER TABLE `jeux_commandes`
   ADD CONSTRAINT `jeux_commandes_ibfk_1` FOREIGN KEY (`id_jeux`) REFERENCES `jeux` (`id`),
   ADD CONSTRAINT `jeux_commandes_ibfk_2` FOREIGN KEY (`id_commande`) REFERENCES `commandes` (`id`);
 
 --
--- Constraints for table `jeux_pegi`
+-- Contraintes pour la table `jeux_pegi`
 --
 ALTER TABLE `jeux_pegi`
   ADD CONSTRAINT `Pegi` FOREIGN KEY (`pegi`) REFERENCES `pegi` (`id`),
   ADD CONSTRAINT `jeu` FOREIGN KEY (`jeux`) REFERENCES `jeux` (`id`);
 
 --
--- Constraints for table `jeux_plateforme`
+-- Contraintes pour la table `jeux_plateforme`
 --
 ALTER TABLE `jeux_plateforme`
   ADD CONSTRAINT `jeux` FOREIGN KEY (`jeux`) REFERENCES `jeux` (`id`),

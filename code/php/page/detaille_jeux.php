@@ -21,6 +21,14 @@
   $pre->execute();
   $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
   ?>
+
+<?php
+  $sql= "SELECT * FROM comments where jeux_id = 1 ";
+  $pre = $pdo->prepare($sql);
+  $pre->execute();
+  $comment = $pre->fetchAll(PDO::FETCH_ASSOC);
+  ?>
+
   <?php
   $sql= "SELECT * FROM jeux_plateforme jp INNER JOIN plateforme p ON p.id = jp.plateforme WHERE jeux=".$jeu[0]['id'];
   $pre = $pdo->prepare($sql);
@@ -111,15 +119,21 @@
                   Avis des joueurs (nombre) (note moyenne)
                 </div>
                 <div class="col m12">
+                <?php foreach($comment as $comments){?>
+                  
                   <div class="col offset-m1 m2 pseudo degrade_<?php echo $couleur ?>">
-                    pseudo
+                  <?php echo $comments[0]['pseudo'] ?>
                   </div>
                   <div class="col offset-m7 m2 pseudo degrade_<?php echo $couleur ?>">
-                    note
+                  <?php echo $comments[0]['note'] ?>
                   </div>
                   <div class="avis-text ">
-                    woula ce jeu c'est de la balle
+                  <?php echo $comments[0]['content'] ?>
                   </div>
+                  
+                  <?php} ?>
+
+
                   <button class="bouton">
                     voir plus d'avis
                   </button>
