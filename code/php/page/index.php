@@ -51,7 +51,7 @@ $coupCoeur = recupCoeur($pdo);
           <h3 class="center-align">Nos jeux coup de coeur</h3>
         </div>
         <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
-          <div class="col s12 white mt5"> <!-- à opti en un foreatch avec un array de PEGI -->
+          <div class="col s12 white mt5 bd-raduis"> <!-- à opti en un foreatch avec un array de PEGI -->
             <?php foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 3){
                       include '../content/game_card.php';
@@ -59,7 +59,7 @@ $coupCoeur = recupCoeur($pdo);
                   }
                 ?>
           </div>
-          <div class="col s12 white mt5">
+          <div class="col s12 white mt5 bd-raduis">
             <?php
             foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 7){
@@ -68,7 +68,7 @@ $coupCoeur = recupCoeur($pdo);
                   }
             ?>
           </div>
-          <div class="col s12 white mt5">
+          <div class="col s12 white mt5 bd-raduis">
             <?php
                 foreach ($coupCoeur as $key => $jeu) {
                         if($jeu['PEGI'] == 12){
@@ -77,7 +77,7 @@ $coupCoeur = recupCoeur($pdo);
                       }
                 ?>
           </div>
-          <div class="col s12 white mt5">
+          <div class="col s12 white mt5 bd-raduis">
             <?php
                 foreach ($coupCoeur as $key => $jeu) {
                         if($jeu['PEGI'] == 16){
@@ -86,7 +86,7 @@ $coupCoeur = recupCoeur($pdo);
                       }
                 ?>
           </div>
-              <div class="col s12 white mt5">
+              <div class="col s12 white mt5 bd-raduis">
                 <?php
                   foreach ($coupCoeur as $key => $jeu) {
                           if($jeu['PEGI'] == 18){
