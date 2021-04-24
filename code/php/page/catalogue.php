@@ -64,6 +64,7 @@
 <script>
 filterrrr("all")
 function filterrrr(c){
+  x = document.getElementsByClassName("filterDiv");
   $('.filterDiv').hide();
   $('.'+c).show();}
 
