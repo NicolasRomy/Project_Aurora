@@ -1,6 +1,6 @@
 <?php
 include_once '../action/config.php';
-include '../action/recupCoeurIndex.php';
+$coupCoeur = recupCoeur($pdo);
 ?>
 
 
