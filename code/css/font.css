@@ -1,0 +1,30 @@
+.titre{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:900;
+}
+
+.bold{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.meduim{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.light{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.gradient{
+    background: #A454FF;
+    background: -webkit-linear-gradient(to bottom, #A454FF 0%, #DB5BFF 100%);
+    background: -moz-linear-gradient(to bottom, #A454FF 0%, #DB5BFF 100%);
+    background: linear-gradient(to bottom, #A454FF 0%, #DB5BFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.center{
+    text-align: center;
+}

@@ -16,8 +16,8 @@ $coupCoeur = recupCoeur($pdo);
   </header>
   <div class="row">
 
-    <div class="col s12 m12 l12 xl12">
-      <h2>Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu pour les parents.</h2>
+    <div class="col s12 m12 l12 xl10 offset-xl2 offset-xl2 offset-xl2 offset-xl2">
+      <h2 class="titre white-text">Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu</h2> <h2 class="titre white-text gradient"> pour les parents.</h2>
       <p>Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
     </div>
 

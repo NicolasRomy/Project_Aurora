@@ -35,13 +35,28 @@
     $pegi = $pre->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
+    <?php  if ($jeu[0]['PEGI'] == 18){
+                    $couleur = "rouge"; }
 
- <div class = "presentation">
+     elseif ($jeu[0]['PEGI'] == 16){
+                    $couleur = "violetF"; }
+
+     elseif($jeu[0]['PEGI'] == 12){
+                    $couleur = "violetC"; }
+
+     elseif($jeu[0]['PEGI'] == 7){
+                    $couleur = "bleuF"; }
+
+    elseif($jeu[0]['PEGI'] == 3){
+                    $couleur = "bleuF"; }
+    ?>
+
+ <div class = "presentation  <?php $couleur ?>">
     <div class = "row">
         <div class = "col m3"> <img src= "../../../<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
         <div class = "col m4">
           <div class ="offset-m1 col m12">
-            <h2> <?php echo $jeu[0]['title'] ?>   </h2>
+            <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?>   </h2>
                 <?php foreach($plateforms as $plateform){ ?>
                     <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
                 <?php } ?>
@@ -52,7 +67,7 @@
                 <img src="../../../<?php echo $pegis['icon'] ?>" class="pegi">
             <?php } ?>
             <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
-            <p class="degrade"><?php echo $jeu[0]['synopsis'] ?></p>
+            <p class="degrade_<?php echo $couleur ?>"><?php echo $jeu[0]['synopsis'] ?></p>
 
             <div class = "col m12 warning">
               <div class = "col m2"> <img src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" class='pegi' style="margin-top: 30%;"></div>
@@ -63,7 +78,7 @@
           </div>
         </div>
 
-         <div class = "offset-m1 col m3 acheter">
+         <div class = "offset-m1 col m3 acheter <?php echo $couleur ?>">
             <p>acheter le jeux</p>
             <p><?php echo $jeu[0]['prix'] ?> € </p>
             <p>
@@ -82,7 +97,7 @@
       <div class = "row">
         <div class = "offset-m2 col m8 ">
           <div class="avis-background col m12 ">
-            <div class="degrade "> Avis de la direction</div>
+            <div class="degrade_<?php echo $couleur ?> "> Avis de la direction</div>
             <div class="avis-text col m10 offset-m1">
             <?php echo $jeu[0]['avis'] ?>
 
@@ -92,14 +107,14 @@
       </div>
       <div class = "row">
         <div class = "avis-background offset-m2 col m8 ">
-          <div class="ext col m12 degrade">
+          <div class="ext col m12 degrade_<?php echo $couleur ?>">
             Avis des joueurs (nombre) (note moyenne)
           </div>
           <div class="col m12">
-            <div class="col offset-m1 m2 pseudo degrade">
+            <div class="col offset-m1 m2 pseudo degrade_<?php echo $couleur ?>">
               pseudo
             </div>
-            <div class="col offset-m7 m2 pseudo degrade">
+            <div class="col offset-m7 m2 pseudo degrade_<?php echo $couleur ?>">
               note
             </div>
             <div class="avis-text ">
@@ -108,6 +123,34 @@
             <button class="bouton">
               voir plus d'avis
             </button>
+
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                 <div class="row">
+                    <div class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="text" class="materialize-textarea white-text"></textarea>
+                          <label for="text">Votre Avis</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <label for="text">Votre note</label>
+                  <p class="range-field">
+                    <input type="range" id="note" min="0" max="10"/>
+                  </p>
+                  <button class="btn waves-effect waves-light orange  modal-close" id="submit" onclick="send_avis()" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -139,7 +182,28 @@
     fullWidth: true
   });
 
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
 
       </script>
+
+<script type="text/javascript">
+
+function send_avis(){
+      $.ajax({
+        type: "POST",
+        url: "../action/send_avis.php",
+        data: { 
+          note:$("#note").val(),
+          content:$("#text").val(),
+          jeux_id: <?php $jeu['id'] ?>
+          projet:projet
+        },
+      });
+}
+</script>
+
+      
   </body>
 </html>
