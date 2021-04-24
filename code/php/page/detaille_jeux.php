@@ -126,11 +126,9 @@
 
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-            
-
             <div id="modal1" class="modal">
               <div class="modal-content">
-                  <div class="row">
+                 <div class="row">
                     <div class="col s12">
                       <div class="row">
                         <div class="input-field col s12">
@@ -140,7 +138,14 @@
                       </div>
                     </div>
                   </div>
-              </div>
+                  <label for="text">Votre note</label>
+                  <p class="range-field">
+                    <input type="range" id="note" min="0" max="10"/>
+                  </p>
+                  <button class="btn waves-effect waves-light orange  modal-close" id="submit" onclick="send_avis()" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
               <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
               </div>
@@ -182,5 +187,23 @@
   });
 
       </script>
+
+<script type="text/javascript">
+
+function send_avis(){
+      $.ajax({
+        type: "POST",
+        url: "../action/send_avis.php",
+        data: { 
+          note:$("#note").val(),
+          content:$("#text").val(),
+          jeux_id: <?php $jeu['id'] ?>
+          projet:projet
+        },
+      });
+}
+</script>
+
+      
   </body>
 </html>
