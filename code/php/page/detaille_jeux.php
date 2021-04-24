@@ -131,7 +131,7 @@
                   <?php echo $comments[0]['content'] ?>
                   </div>
                   
-                  <?php} ?>
+                  <?php endforeach; ?>
 
 
                   <button class="bouton">
