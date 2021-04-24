@@ -138,3 +138,13 @@ div img.logo{
     border-radius: 30px;
     font-size: 20px;
 }
+.carousel.carousel-slider{
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vh;
+}
+.carroussel{
+    align-items: center;
+    text-align: center;
+}

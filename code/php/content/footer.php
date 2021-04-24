@@ -1,11 +1,22 @@
+<link rel="stylesheet" href="../../css/footer.css">
+<div class ="titre">
 <footer class="page-footer">
   <div class="container">
     <div class="row">
       <div class="col l4 s12">
         <h5 class="white-text">A propos</h5>
-        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        
+          <li><a class="grey-text text-lighten-3" href="#!">SAV</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Conditions générales du Marketplace</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Conditions générales de ventes </a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Données personnelles</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Mentions légales</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Cookies</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Conditions de publications des avis</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Avis</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">voir les critères de classement</a></li>
       </div>
-      <div class="col l4  s12">
+      <div class="col l4 s12">
         <h5 class="white-text">Aide, SAV et Services </h5>
         <ul>
           <li><a class="grey-text text-lighten-3" href="#!">SAV</a></li>
@@ -30,6 +41,6 @@
         
       </div>
     </div>
-  
+</div>
   </div>
 </footer>
