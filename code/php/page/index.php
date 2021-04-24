@@ -7,6 +7,7 @@ $coupCoeur = recupCoeur($pdo);
 <html lang="fr" dir="ltr">
 <head>
   <?php include '../content/head.php'; ?>
+  <link rel="stylesheet" href="../../css/index.css"/>
   <title>Accueil</title>
 </head>
 
@@ -52,6 +53,9 @@ $coupCoeur = recupCoeur($pdo);
         </div>
         <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
           <div class="col s12 white mt5 bd-raduis"> <!-- à opti en un foreatch avec un array de PEGI -->
+            <div class="col s2 m2 l2 xl2 valign-wrapper">
+              <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
+            </div>
             <?php foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 3){
                       include '../content/game_card.php';
@@ -60,6 +64,9 @@ $coupCoeur = recupCoeur($pdo);
                 ?>
           </div>
           <div class="col s12 white mt5 bd-raduis">
+            <div class="col s2 m2 l2 xl2 valign-wrapper">
+              <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_7.PNG" alt="bntPEGI7"></a>
+            </div>
             <?php
             foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 7){
@@ -69,6 +76,9 @@ $coupCoeur = recupCoeur($pdo);
             ?>
           </div>
           <div class="col s12 white mt5 bd-raduis">
+            <div class="col s2 m2 l2 xl2 valign-wrapper">
+              <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_12.PNG" alt="bntPEGI12"></a>
+            </div>
             <?php
                 foreach ($coupCoeur as $key => $jeu) {
                         if($jeu['PEGI'] == 12){
@@ -78,6 +88,9 @@ $coupCoeur = recupCoeur($pdo);
                 ?>
           </div>
           <div class="col s12 white mt5 bd-raduis">
+            <div class="col s2 m2 l2 xl2 valign-wrapper">
+              <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_16.PNG" alt="bntPEGI16"></a>
+            </div>
             <?php
                 foreach ($coupCoeur as $key => $jeu) {
                         if($jeu['PEGI'] == 16){
@@ -87,6 +100,9 @@ $coupCoeur = recupCoeur($pdo);
                 ?>
           </div>
               <div class="col s12 white mt5 bd-raduis">
+                <div class="col s2 m2 l2 xl2 valign-wrapper">
+                  <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI18"></a>
+                </div>
                 <?php
                   foreach ($coupCoeur as $key => $jeu) {
                           if($jeu['PEGI'] == 18){
