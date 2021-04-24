@@ -152,10 +152,14 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col l4 m2 s12">
                   <div class="carousel carousel-slider " style="border-radius: 30px;">
                     <a class="carousel-item" href="#one!"><img src="../../../assets/imgJeu/dark-souls-3-img-1.jpg"></a>
                     <a class="carousel-item" href="#two!"><img src="../../../assets/imgJeu/dark-souls-3-img-2.jpg"></a>
                     <a class="carousel-item" href="#three!"><img src="../../../assets/imgJeu/dark-souls-3-img-3.jpg"></a>
+                  </div>
+            </div>
               
               </div>
 
@@ -173,7 +177,7 @@
             });
 
             $('.carousel.carousel-slider').carousel({
-              fullWidth: false
+              fullWidth: true
             });
 
             
