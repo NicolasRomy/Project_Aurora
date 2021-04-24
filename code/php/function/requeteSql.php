@@ -77,6 +77,6 @@ function recupCoeur($pdo){
 
   $prepareRequete = $pdo->prepare($sql);
   $prepareRequete->execute();
-  $coupCoeur = current($prepareRequete->fetchAll(PDO::FETCH_ASSOC));
+  $coupCoeur = $prepareRequete->fetchAll(PDO::FETCH_ASSOC);
   return $coupCoeur;
 }

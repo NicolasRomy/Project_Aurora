@@ -1,6 +1,7 @@
 <?php
 include_once '../action/config.php';
 $coupCoeur = recupCoeur($pdo);
+var_dump($coupCoeur);
 ?>
 
 
@@ -51,6 +52,50 @@ $coupCoeur = recupCoeur($pdo);
         <div class="col s12 m12 l12 xl12">
           <h3 class="center-align">Nos jeux coup de coeur</h3>
         </div>
+        <div class="col s12">
+          <?php foreach ($coupCoeur as $key => $jeu) {
+                  if($jeu['PEGI'] == 3){
+                    include '../content/game_card.php';
+                  }
+                }
+              ?>
+        </div>
+        <div class="col s12">
+          <?php
+          foreach ($coupCoeur as $key => $jeu) {
+                  if($jeu['PEGI'] == 7){
+                    include '../content/game_card.php';
+                  }
+                }
+          ?>
+        </div>
+        <div class="col s12">
+          <?php
+              foreach ($coupCoeur as $key => $jeu) {
+                      if($jeu['PEGI'] == 12){
+                        include '../content/game_card.php';
+                      }
+                    }
+              ?>
+        </div>
+        <div class="col s12">
+          <?php
+              foreach ($coupCoeur as $key => $jeu) {
+                      if($jeu['PEGI'] == 16){
+                        include '../content/game_card.php';
+                      }
+                    }
+              ?>
+        </div>
+            <div class="col s12">
+              <?php
+                foreach ($coupCoeur as $key => $jeu) {
+                        if($jeu['PEGI'] == 18){
+                          include '../content/game_card.php';
+                        }
+                      }
+          ?>
+            </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
