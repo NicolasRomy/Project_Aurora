@@ -44,9 +44,9 @@
   <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
 <div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection('all')"> Show all</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection('0')"> coeur</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection('1')"> pascoeur</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('all')"> Show all</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('0')"> coeur</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('1')"> pascoeur</button>
 
 
 
@@ -56,21 +56,31 @@
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv <?php echo $jeu['coeur']?>'><?php include '../content/game_card.php';?></div><?php } ?>
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php include '../content/game_card.php';?></div><?php } ?>
       </div>
   
 
 
 <script>
-
-/*function filterrrr(c){
+filterrrr("all")
+function filterrrr(c){
   $('.filterDiv').hide();
-  $('.'+c).show();
-}*/
+  $('.'+c).show();}
+
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+filterSelection2("all")
+function filterSelection2(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv2");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
