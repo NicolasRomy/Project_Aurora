@@ -68,3 +68,15 @@ function postImgs($id, $url, $pdo){
   $prepareRequete = $pdo->prepare($sql);
   $prepareRequete->execute($dataBinded);
 }
+
+function recupCoeur($pdo){
+  $sql =
+  " SELECT * FROM jeux
+    WHERE coeur = 1
+  ";
+
+  $prepareRequete = $pdo->prepare($sql);
+  $prepareRequete->execute();
+  $coupCoeur = $prepareRequete->fetchAll(PDO::FETCH_ASSOC);
+  return $coupCoeur;
+}
