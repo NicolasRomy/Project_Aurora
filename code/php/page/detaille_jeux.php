@@ -128,16 +128,12 @@
 
             <div id="modal1" class="modal">
               <div class="modal-content">
-                 <div class="row">
                     <div class="col s12">
-                      <div class="row">
                         <div class="input-field col s12">
                           <textarea id="text" class="materialize-textarea white-text"></textarea>
                           <label for="text">Votre Avis</label>
                         </div>
-                      </div>
                     </div>
-                  </div>
                   <label for="text">Votre note</label>
                   <p class="range-field">
                     <input type="range" id="note" min="0" max="10"/>
@@ -194,7 +190,7 @@ function send_avis(){
       $.ajax({
         type: "POST",
         url: "../action/send_avis.php",
-        data: { 
+        data: {
           note:$("#note").val(),
           content:$("#text").val(),
           jeux_id: <?php $jeu['id'] ?>
@@ -204,6 +200,6 @@ function send_avis(){
 }
 </script>
 
-      
+
   </body>
 </html>
