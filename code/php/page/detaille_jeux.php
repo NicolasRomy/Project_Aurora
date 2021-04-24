@@ -66,7 +66,7 @@
             <?php foreach($pegi as $pegis){ ?>
                 <img src="../../../<?php echo $pegis['icon'] ?>" class="pegi">
             <?php } ?>
-            <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
+            <img src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" class='pegi'>
             <p class="degrade_<?php echo $couleur ?>"><?php echo $jeu[0]['synopsis'] ?></p>
 
             <div class = "col m12 warning">
@@ -154,9 +154,9 @@
         <div class>
           <div  class="offset-m2 col m8">
             <div class="carousel carousel-slider " style="border-radius: 30px;">
-              <a class="carousel-item" href="#one!"><img src="../../../assets/imgGame/Hitman-3-screenshots-1.jpg"></a>
-              <a class="carousel-item" href="#two!"><img src="../../../assets/imgGame/Hitman-3-screenshots-2.jpg"></a>
-              <a class="carousel-item" href="#three!"><img src="../../../assets/imgGame/Hitman-3-screenshots-3.jpg"></a>
+              <a class="carousel-item" href="#one!"><img src="../../../assets/imgJeu/dark-souls-3-img-2.jpg"></a>
+              <a class="carousel-item" href="#two!"><img src="../../../assets/imgJeu/dark-souls-3-img-3.jpg"></a>
+              <a class="carousel-item" href="#three!"><img src="../../../assets/imgJeu/dark-souls-3-img-2.jpg"></a>
             </div>
           </div>
         </div>
@@ -193,8 +193,8 @@ function send_avis(){
         data: {
           note:$("#note").val(),
           content:$("#text").val(),
-          jeux_id: <?php $jeu['id'] ?>
-          pseudo: <?php $_SESSION['pseudo']?>
+          jeux_id: <?php echo $jeu[0]['id'] ?>
+          pseudo: <?php echo $_SESSION['pseudo']?>
           projet:projet
         },
       });
