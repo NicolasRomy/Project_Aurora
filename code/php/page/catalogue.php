@@ -1,12 +1,8 @@
-<?php include '../content/game_card.php'; 
-
-$background_color = "background-color : red" ?>
 
 <?php include_once '../action/config.php'; ?>
 <!DOCTYPE html>
 <head>
 <!DOCTYPE html>
-  <link rel="stylesheet" href="../../css/master.css"/>
   <?php include '../content/head.php'; ?>
   <title></title>
 </head>
@@ -49,16 +45,16 @@ $background_color = "background-color : red" ?>
 </div>
 
 
-<div class="container">
+
 <?php
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
       
-       <div class= 'filterDiv <?php echo $jeu['im']?>'><?php echo $jeu['title']?><br><?php echo $jeu['PEGI']?></div><?php } ?>
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>'><?php include '../content/game_card.php';?></div><?php } ?>
       
   
-</div>
+
 
 <script>
 
