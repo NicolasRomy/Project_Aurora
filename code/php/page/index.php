@@ -17,17 +17,17 @@ $coupCoeur = recupCoeur($pdo);
   </header>
   <div class="row">
 
-    <div class="col s12 m12 l12 xl10 offset-xl2 offset-xl2 offset-xl2 offset-xl2">
-      <h2 class="titre white-text">Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu</h2> <h2 class="titre white-text gradient"> pour les parents.</h2>
-      <p>Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
+    <div class="col m10 offset-m1 ">
+      <h1><span class="titre white-text shadow"> Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu</span> <span class="titre white-text gradient "> pour les parents.</span></h1>
+      <p class="light white-text">Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
     </div>
 
     <img src="../../../assets\background_gradiant.svg" alt="background"/>
 
     <div class="col s12 m12 l12 xl12">
       <div class="col s12 m12 l12 xl12">
-        <h2 class="center-align">Nos jeux par PEGI</h2>
-        <p>Le PEGI est un système d'évaluation des jeux vidéo, créé pour aider les consommateurs
+        <h2 class="center-align"><span class="titre white-text"> Nos jeux par</span><span class="titre gradient"> PEGI</span></h2>
+        <p class="medium white-text center-align" style="font-size: 25px">Le PEGI est un système d'évaluation des jeux vidéo, créé pour aider les consommateurs
           (en particulier, les parents) à s'informer de chaque type de jeux vidéo à l'aide de
           différents logos exposé sur leur boite d'origine.</p>
       </div>
@@ -49,7 +49,7 @@ $coupCoeur = recupCoeur($pdo);
         </div>
 
         <div class="col s12 m12 l12 xl12">
-          <h3 class="center-align">Nos jeux coup de coeur</h3>
+          <h3 class="center-align white-text titre">Nos jeux coup de coeur</h3>
         </div>
         <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
           <div class="col s12 white mt5 bd-raduis"> <!-- à opti en un foreatch avec un array de PEGI -->
@@ -113,18 +113,15 @@ $coupCoeur = recupCoeur($pdo);
               </div>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
 
 
       <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
+      <h2 class="center-align"><span class="titre white-text">La</span><span class="titre gradient">signifiquaion des pictogrammes PEGI </span><span class="titre white-text">définit par l'Union Européenne</span></h2>
       <?php include '../content/pegi_explanation.php'; ?>
       <img src="../../../assets\background_gradiant.svg" alt="background">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
 
     </div>
 

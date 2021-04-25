@@ -57,11 +57,16 @@
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
+<<<<<<< HEAD
        <div id= "myDIV"><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
+=======
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
+>>>>>>> c20b92d2f55721164531ab4480142bc00e883732
       </div>
 <p><b>Note:</b> The element will not take up any space when the display property set to "none".</p>
 
 <script>
+<<<<<<< HEAD
 function myFunction() {
   var x = document.getElementById("myDIV");
   if (x.style.display === "none") {
@@ -72,6 +77,34 @@ function myFunction() {
 }
 </script>
 
+=======
+filterrrr("all")
+function filterrrr(c){
+  x = document.getElementsByClassName("filterDiv");
+  $('.filterDiv').hide();
+  $('.'+c).show();}
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+filterSelection2("all")
+function filterSelection2(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv2");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+>>>>>>> c20b92d2f55721164531ab4480142bc00e883732
 
       
 
