@@ -56,15 +56,15 @@
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?> filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
       </div>
       
 
 <script>
-filterrrr("all")
-function filterrrr(c){
-  x = document.getElementsByClassName("filterDiv");
-  $('.filterDiv').hide();
+filterSelection2("all")
+function filterSelection2(c){
+  x = document.getElementsByClassName("filterDiv2");
+  $('.filterDiv2').hide();
   $('.'+c).show();}
 
 filterSelection("all")
