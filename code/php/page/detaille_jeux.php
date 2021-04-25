@@ -108,7 +108,7 @@
           </div>
         </p>
         <p>livraison en 24H</p>
-        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
+        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="Panier"> Ajouter au panier</button>
         <button class="btn   <?php echo $couleur ?> white-text" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
       </div>
     </div>
@@ -196,7 +196,15 @@
       offset = 0;
 
       $('button#addPanier').click(function(){
-        <?php addArticle($jeu[0]['id']); ?>
+        $.ajax({
+          type: 'POST',
+          url: '../action/addToPanier.php',
+          data: {
+            id:<?php echo $jeu[0]['id']; ?>,
+          },
+        });
+        M.toast({html: 'I am a toast!'});
+
       });
 
       $('button#submit').click(function(){
