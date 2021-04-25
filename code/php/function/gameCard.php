@@ -12,12 +12,8 @@
   <form action="../page/detaille_jeux.php"  method="post">
 
 <button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border: none">
-<<<<<<< HEAD
-   
-=======
 
 
->>>>>>> 13cc1b18c2f4d36c5d0cc4bb01cb98136c9772ea
       <div class="card"
       style= "height: 260px ; width: 195px;
       border-radius: 15px;
