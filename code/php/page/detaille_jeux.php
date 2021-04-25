@@ -65,7 +65,7 @@
 
     <div class = "presentation  <?php $couleur ?>">
     <div class = "row">
-      <div class = "col m3"> <img src= "../../../<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
+      <div class = "col m3"> <img src= "../../../assets/imgJeu/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
       <div class = "col m4">
         <div class ="offset-m1 col m12">
           <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?>   </h2>
