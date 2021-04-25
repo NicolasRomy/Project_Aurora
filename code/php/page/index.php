@@ -58,7 +58,7 @@ $coupCoeur = recupCoeur($pdo);
             </div>
             <?php foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 3){
-                      include '../content/game_card.php';
+                      gameCard($pdo, $jeu, 0);
                     }
                   }
                 ?>
@@ -70,7 +70,7 @@ $coupCoeur = recupCoeur($pdo);
             <?php
             foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 7){
-                      include '../content/game_card.php';
+                      gameCard($pdo, $jeu, 0);
                     }
                   }
             ?>
@@ -82,7 +82,7 @@ $coupCoeur = recupCoeur($pdo);
             <?php
                 foreach ($coupCoeur as $key => $jeu) {
                         if($jeu['PEGI'] == 12){
-                          include '../content/game_card.php';
+                          gameCard($pdo, $jeu, 0);
                         }
                       }
                 ?>
@@ -94,7 +94,7 @@ $coupCoeur = recupCoeur($pdo);
             <?php
                 foreach ($coupCoeur as $key => $jeu) {
                         if($jeu['PEGI'] == 16){
-                          include '../content/game_card.php';
+                          gameCard($pdo, $jeu, 0);
                         }
                       }
                 ?>
@@ -106,7 +106,7 @@ $coupCoeur = recupCoeur($pdo);
                 <?php
                   foreach ($coupCoeur as $key => $jeu) {
                           if($jeu['PEGI'] == 18){
-                            include '../content/game_card.php';
+                            gameCard($pdo, $jeu, 0);
                           }
                         }
             ?>

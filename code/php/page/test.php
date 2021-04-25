@@ -1,18 +1,7 @@
 <?php include_once '../action/config.php';
 
-$sql=
-  " SELECT * FROM jeux
-  ";
-$pre = $pdo->prepare($sql);
-$pre->execute();
-$jeux = $pre->fetchAll(PDO::FETCH_ASSOC);
+      $jeux = recupAllGame($pdo);
 
-$sql=
-  " SELECT * FROM images
-  ";
-$pre = $pdo->prepare($sql);
-$pre->execute();
-$image = $pre->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -33,7 +22,7 @@ $image = $pre->fetchAll(PDO::FETCH_ASSOC);
   <div class="row">
     <?php
     foreach($jeux as $jeu){
-      include '../content/game_card.php';
+      gameCard($pdo, $jeu);
     } ?>
   </div>
   <img src="../../../assets\background_gradiant.svg" alt="background"/>

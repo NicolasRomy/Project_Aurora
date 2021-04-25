@@ -1,38 +1,34 @@
 <?php
 include_once 'config.php';
-
 if ($_SESSION['user']['admin'] == 0){
-  header('Location: ../page/index.php');
+  //pas admin
 }
 else{
   $errors = array();
-
   //$test2 = json_decode($test);
-  echo"<pre>";
-  var_dump($_FILES);
-  var_dump($_POST);
+  //echo"<pre>";
+  //var_dump($_FILES);
+  //var_dump($_POST);
   //var_dump($test2);
-  echo"</pre>";
+  //echo"</pre>";
 
   if ($_POST['temps_jeux'] == "" || $_POST['title'] == "" || $_POST['price'] == "" || $_POST['synopsi'] == ""
   || $_POST['avi'] == "" || ! array_key_exists('PEGI', $_POST) || ! array_key_exists('listePEGI', $_POST) || ! array_key_exists('platformes', $_POST)){
-    echo 'truc pas rempli';
+    //echo 'truc pas rempli';
   }
   else{
     $id = isExistGame($_POST, $pdo); //lance requete sql pour verifier si le jeux existe deja dans la bd
-    var_dump ($id);
+    //var_dump ($id);
     if ($id != false){
       // renvoier que le jeu existe deja (à programmer !!!)
-      echo 'vide';
+      echo 'deja inscrit';
     }
     else{
       $target_dir = '../../../assets/imgGame/';
       foreach ($_FILES as $file) { // enleve key tester as $key
         if(is_array($file['type'])){
           foreach ($file['type'] as $k => $fileType) {
-
             if ($fileType == ''){
-
               // renvoie que le jeux est uplaod mais il n'a pas d'img carousel
             }
             else{
@@ -44,7 +40,7 @@ else{
                 $target = $target_dir.$name;
                 move_uploaded_file($file['tmp_name'][$k], $target);
                 postImgs($id, $target, $pdo);
-                echo 'file uploaded +';
+                //echo 'file uploaded +';
               }
             }
           }
@@ -52,7 +48,7 @@ else{
         else{
           $fileType = $file['type'];
           if(isImg($fileType) == false){
-            echo 'error seul';
+            //echo 'error seul';
             array_push($errors,$file['name']);
             break;
           }
@@ -60,14 +56,14 @@ else{
             $name = namedFile($fileType);
             $targetJacket = $target_dir.$name;
             move_uploaded_file($_FILES['jacket']['tmp_name'], $targetJacket);
-            echo 'file uploaded 1';
+            //echo 'file uploaded 1';
             postJeux($_POST, $targetJacket, $pdo);
             $id = isExistGame($_POST, $pdo);
-            var_dump($id);
+            //var_dump($id);
           }
         }
       }
     }
   }
 }
-header('Loacation: ../page/AdminCreateGame.php');
+header('Location: ../page/AdminCreateGame.php');

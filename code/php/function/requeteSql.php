@@ -80,3 +80,36 @@ function recupCoeur($pdo){
   $coupCoeur = $prepareRequete->fetchAll(PDO::FETCH_ASSOC);
   return $coupCoeur;
 }
+
+function recupAllGame($pdo){
+  $sql=
+    " SELECT * FROM jeux
+    ";
+  $pre = $pdo->prepare($sql);
+  $pre->execute();
+  $jeux = $pre->fetchAll(PDO::FETCH_ASSOC);
+  return $jeux;
+}
+
+function recupAllImg($pdo){
+  $sql=
+    " SELECT * FROM images
+    ";
+  $pre = $pdo->prepare($sql);
+  $pre->execute();
+  $image = $pre->fetchAll(PDO::FETCH_ASSOC);
+  return $image;
+}
+
+  function recupPlatForGame($pdo, $jeu){
+    $sql =
+      " SELECT * FROM jeux_plateforme jp
+        INNER JOIN plateforme p
+        ON p.id = jp.plateforme
+        WHERE jeux = ".$jeu['id']."
+      ";
+    $pre = $pdo->prepare($sql);
+    $pre->execute();
+    $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
+    return $plateforms;
+}
