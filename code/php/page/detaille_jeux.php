@@ -115,6 +115,10 @@
                 </div>
                 <div class="col m12">
             
+<<<<<<< HEAD
+=======
+              
+>>>>>>> 249fd24536442ce1f63f2895f804f69f91b18eca
 
                   <button class="bouton" onclick="show_avis()" >
                     voir plus d'avis
