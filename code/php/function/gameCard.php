@@ -11,11 +11,7 @@
   <div class="col s4 m4 l3 xl2 <?php $class ?>" >
   <form action="../page/detaille_jeux.php"  method="post">
 
-<<<<<<< HEAD
-<button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border: none">
-=======
     <button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border:none">
->>>>>>> 00327b8208f82520d738be7d0550ed851f4d3341
    
       <div class="card"
       style= "height: 260px ; width: 195px;
