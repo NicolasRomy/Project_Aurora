@@ -76,7 +76,7 @@
       <div class = "col m3"><img src= "../../../assets/imgJeu/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
       <div class = "col m4">
         <div class ="offset-m1 col m12">
-          <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?>   </h2>
+          <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?></h2>
           <?php foreach($plateforms as $plateform){ ?>
             <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
           <?php } ?>
@@ -181,9 +181,9 @@
       $('.sidenav').sidenav();
     });
 
-    $('.carousel.carousel-slider').carousel({
-      fullWidth: true
-    });
+    //$('.carousel.carousel-slider').carousel({
+      //fullWidth: true
+    //});
 
 
     $(document).ready(function(){
@@ -197,14 +197,14 @@
 
       $('button#addPanier').click(function(){
         $.ajax({
-          type: 'POST',
-          url: '../action/addToPanier.php',
+          type: "POST",
+          url: "../action/addToPanier.php",
           data: {
-            id:<?php echo $jeu[0]['id']; ?>,
+            id_: <?php echo $jeu[0]['id']; ?>,
           },
+          success: console.log("ca marche"),
         });
         M.toast({html: 'I am a toast!'});
-
       });
 
       $('button#submit').click(function(){
@@ -217,7 +217,9 @@
           content:$("#text").val(),
           jeux_id: <?php echo $jeu[0]['id'] ?>,
         },
+
       });
+
     });
 
 
@@ -241,7 +243,7 @@
             offset+=3
           }
 
-        }
+        },
       });
     }
     show_avis();
