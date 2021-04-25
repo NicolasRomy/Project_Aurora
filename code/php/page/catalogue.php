@@ -66,18 +66,6 @@
 <p><b>Note:</b> The element will not take up any space when the display property set to "none".</p>
 
 <script>
-<<<<<<< HEAD
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.show;
-  } else {
-    x.style.hide;
-  }
-}
-</script>
-
-=======
 filterrrr("all")
 function filterrrr(c){
   x = document.getElementsByClassName("filterDiv");
@@ -104,7 +92,6 @@ function filterSelection2(c) {
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
->>>>>>> c20b92d2f55721164531ab4480142bc00e883732
 
       
 
