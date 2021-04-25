@@ -18,7 +18,12 @@
 
 
   <?php
+<<<<<<< HEAD
   
+=======
+
+  var_dump($_POST);
+>>>>>>> 140e3b6b56c3301484b58855b0caa4c31cf66413
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
@@ -69,7 +74,7 @@
 
     <div class = "presentation  <?php $couleur ?>">
     <div class = "row">
-      <div class = "col m3"> <img src= "../../../assets/imgJeu/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
+      <div class = "col m3"><img src= "../../../assets/imgJeu/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
       <div class = "col m4">
         <div class ="offset-m1 col m12">
           <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?>   </h2>
@@ -104,7 +109,7 @@
           </div>
         </p>
         <p>livraison en 24H</p>
-        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
+        <button class="btn  <?php echo $couleur ?> white-text" onclick="<?php addArticle($jeu[0]['id']); ?>" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
         <button class="btn   <?php echo $couleur ?> white-text" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
       </div>
     </div>
@@ -126,7 +131,7 @@
           Avis des joueurs (nombre) (note moyenne)
         </div>
         <div class="col m12">
-    
+
 
           <button class="bouton   <?php echo $couleur ?> white-text" onclick="show_avis()" >
             voir plus d'avis
@@ -159,7 +164,7 @@
           <div class="carousel carousel-slider " style="border-radius: 30px;">
           <?php foreach ($img as $imgs):?>
             <a class="carousel-item" href="#one!" ?><img src="../../../assets/imgJeu/<?php echo $imgs["url"]?> "></a>
-          <?php 
+          <?php
               endforeach; ?>
           </div>
     </div>
@@ -181,7 +186,7 @@
       fullWidth: true
     });
 
-    
+
     $(document).ready(function(){
       $('.modal').modal();
     });
@@ -224,14 +229,14 @@
             $("#avis").append(data)
             offset+=3
           }
-          
+
         }
       });
     }
     show_avis();
 
   </script>
-  
+
 
 
 </body>
