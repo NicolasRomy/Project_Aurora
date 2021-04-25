@@ -12,10 +12,10 @@
   <form action="../page/detaille_jeux.php"  method="post">
 
 <<<<<<< HEAD
-<button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border: none">
-=======
     <button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border:none">
->>>>>>> 00327b8208f82520d738be7d0550ed851f4d3341
+=======
+<button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border: none">
+>>>>>>> c20b92d2f55721164531ab4480142bc00e883732
    
       <div class="card"
       style= "height: 260px ; width: 195px;

@@ -20,7 +20,10 @@
   <?php
 
   var_dump($_POST);
+<<<<<<< HEAD
   var_dump ($_SESSION['user']['panier']);
+=======
+>>>>>>> 63f8c002ac52923ec51bd9208e25f645be290838
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
@@ -49,19 +52,24 @@
   ?>
 
   <?php  if ($jeu[0]['PEGI'] == 18){
-    $couleur = "rouge"; }
+    $couleur = "rouge";
+    $boutonPegi = "btn_PEGI_18.PNG"; }
 
     elseif ($jeu[0]['PEGI'] == 16){
-      $couleur = "violetF"; }
+      $couleur = "bleuF";
+      $boutonPegi = "btn_PEGI_16.PNG";  }
 
       elseif($jeu[0]['PEGI'] == 12){
-        $couleur = "violetC"; }
+        $couleur = "bleuC";
+        $boutonPegi = "btn_PEGI_12.PNG"; }
 
         elseif($jeu[0]['PEGI'] == 7){
-          $couleur = "bleuF"; }
+          $couleur = "violetF";
+          $boutonPegi = "btn_PEGI_7.PNG" ;}
 
           elseif($jeu[0]['PEGI'] == 3){
-            $couleur = "bleuF"; }
+            $couleur = "violetC";
+            $boutonPegi = "btn_PEGI_3.PNG" ;}
             ?>
 
     <div class = "presentation  <?php $couleur ?>">
@@ -79,11 +87,11 @@
           <?php foreach($pegi as $pegis){ ?>
             <img src="../../../<?php echo $pegis['icon'] ?>" class="pegi">
           <?php } ?>
-          <img src="../../../assets\btn_PEGI\btn_PEGI_18.PNG" class='pegi'>
+          <img src="../../../assets\btn_PEGI\<?php echo $boutonPegi ?>" class='pegi'>
           <p class="degrade_<?php echo $couleur ?>"><?php echo $jeu[0]['synopsis'] ?></p>
 
           <div class = "col m12 warning">
-            <div class = "col m2"> <img src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" class='pegi' style="margin-top: 30%;"></div>
+            <div class = "col m2"> <img src="../../../assets/btn_PEGI/<?php echo $boutonPegi ?>" class='pegi' style="margin-top: 30%;"></div>
             <div class = "col m9 ">
               <?php echo $jeu[0]['avisPEGI'] ?></p>
             </div>
