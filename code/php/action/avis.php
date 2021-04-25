@@ -14,10 +14,15 @@ var_dump($_POST);
 
 
     foreach($comment as $comments):?>
-   <h1> grenouille <h1>
+                  
+   <div class="col offset-m1 m2 pseudo degrade_<?php echo $couleur ?>">
    <?php echo $comments['pseudo'] ?>
-  
+   </div>
+   <div class="col offset-m7 m2 pseudo degrade_<?php echo $couleur ?>">
    <?php echo $comments['note'] ?>
-  
+   </div>
+   <div class="avis-text ">
    <?php echo $comments['content'] ?>
+   </div>
+   
    <?php endforeach; ?>

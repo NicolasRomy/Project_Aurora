@@ -29,10 +29,13 @@
 <html>
 
 <body>
-
-<div class = "col s12 m7">
+<div>
  <h1> nos coups de coeur <h1>
-</div>
+ <?php foreach($jeux as $jeu){
+    ?>
+      <div style="display:flex;">
+       <?php gameCard($pdo, $jeu, 0);?><?php } ?>
+       </div>
 
 <h2>Filter DIV Elements</h2>
 <div id="myBtnContainer">
@@ -43,11 +46,6 @@
   <button class="waves-effect waves-light btn-small" onclick="filterSelection('16')"> pegi 16</button>
   <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
-<div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('all')"> Show all</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('0')"> coeur</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('1')"> pascoeur</button>
-
 
 
 
