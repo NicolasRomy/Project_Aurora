@@ -36,12 +36,12 @@
 
 <h2>Filter DIV Elements</h2>
 <div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('all')"> Show all</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('3')"> pegi 3</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('7')"> pegi 7</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('12')"> pegi 12</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('16')"> pegi 16</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('18')"> pegi 18</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('all')"> Show all</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('3')"> pegi 3</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('7')"> pegi 7</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('12')"> pegi 12</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('16')"> pegi 16</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterSelection('18')"> pegi 18</button>
 </div>
 <div id="myBtnContainer">
   <button class="waves-effect waves-light btn-small" onclick="filterSelection2('all')"> Show all</button>
@@ -49,35 +49,18 @@
   <button class="waves-effect waves-light btn-small" onclick="filterSelection2('1')"> pascoeur</button>
 
 
-  <p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
 
-<button onclick="myFunction()">Try it</button>
+
 <?php
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
-<<<<<<< HEAD
-       <div id= "myDIV"><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
-=======
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
->>>>>>> c20b92d2f55721164531ab4480142bc00e883732
       </div>
-<p><b>Note:</b> The element will not take up any space when the display property set to "none".</p>
+      
 
 <script>
-<<<<<<< HEAD
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.show;
-  } else {
-    x.style.hide;
-  }
-}
-</script>
-
-=======
 filterrrr("all")
 function filterrrr(c){
   x = document.getElementsByClassName("filterDiv");
@@ -104,21 +87,38 @@ function filterSelection2(c) {
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
->>>>>>> c20b92d2f55721164531ab4480142bc00e883732
 
-      
-
-<script>
-
-function filterSelection2(c){
-  $x = document.getElementsByClassName("filterDiv");
-  $i = 0
-  while (i < x.lengh)
-  { 
-    $(x[i]).show();
-    $i++;
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
   }
-  $('.filterDiv'+c).show();}
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 
 $(document).ready(function(){
 
