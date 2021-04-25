@@ -61,10 +61,10 @@
       
 
 <script>
-filterrrr("all")
-function filterrrr(c){
-  x = document.getElementsByClassName("filterDiv");
-  $('.filterDiv').hide();
+filterSelection2("all")
+function filterSelection2(c){
+  x = document.getElementsByClassName("filterDiv2");
+  $('.filterDiv2').hide();
   $('.'+c).show();}
 
 filterSelection("all")
