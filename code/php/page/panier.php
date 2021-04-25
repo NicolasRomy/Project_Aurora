@@ -6,6 +6,7 @@ include_once '../action/config.php';
 <html lang="fr" dir="ltr">
 <head>
   <?php include '../content/head.php'; ?>
+  <link rel="stylesheet" href="../../css/panier.css"/>
   <title>Panier</title>
 </head>
 
@@ -15,6 +16,25 @@ include_once '../action/config.php';
   </header>
 
   <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
+
+<div class="col s12">
+  <?php
+  $total = 0;
+  foreach ($_SESSION['user']['panier'] as $id => $nb):
+    $total += $nb;
+    $jeux = recupGamePanier($pdo, $id);
+    $plateform = recupPlatForGame($pdo, $jeux[0]);
+   ?>
+   <div class="col s6 m6 l6 xl6 offset-s1 offset-m1 offset-l1 offset-xl1 bd-raduis white">
+     <img class="taille-img" src="../../../assets/imgGame/<?php echo $jeux[0]['image']?>" alt="img jeu">
+   </div>
+   <div class="col s4 m4 l4 xl4">
+<p></p>
+   </div>
+
+</div>
+
+<?php endforeach; ?>
 
   <img src="../../../assets\background_gradiant.svg" alt="background"/>
 
