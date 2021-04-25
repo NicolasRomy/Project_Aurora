@@ -56,15 +56,15 @@
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?> filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
       </div>
       
 
 <script>
-filterSelection2("all")
-function filterSelection2(c){
-  x = document.getElementsByClassName("filterDiv2");
-  $('.filterDiv2').hide();
+filterrrr("all")
+function filterrrr(c){
+  x = document.getElementsByClassName("filterDiv");
+  $('.filterDiv').hide();
   $('.'+c).show();}
 
 filterSelection("all")
@@ -77,7 +77,16 @@ function filterSelection(c) {
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
-
+filterSelection2("all")
+function filterSelection2(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv2");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
 
 function w3AddClass(element, name) {
   var i, arr1, arr2;

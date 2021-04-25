@@ -9,12 +9,16 @@
 
 .meduim{
     font-family: 'Montserrat', sans-serif;
+
 }
 
 .light{
     font-family: 'Montserrat', sans-serif;
 }
 
+.shadow{
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 0 10px;
+}
 
 .gradient{
     background: #A454FF;
@@ -27,4 +31,13 @@
 
 .center{
     text-align: center;
+}
+
+h1{
+    margin-top: 200px;
+}
+
+
+h3{
+    margin-top: 100px;
 }
