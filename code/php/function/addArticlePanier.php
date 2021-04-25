@@ -4,7 +4,9 @@ function addArticle($id){
     $_SESSION['user']['panier'] = array();
   }
   if(array_key_exists($id, $_SESSION['user']['panier'])){
+
     $_SESSION['user']['panier'][$id] ++;
+    
   }
   else{
 

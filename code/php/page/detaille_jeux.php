@@ -197,7 +197,7 @@
 
       $('button#addPanier').click(function(){
         <?php addArticle($jeu[0]['id']); ?>
-      })
+      });
 
       $('button#submit').click(function(){
 
