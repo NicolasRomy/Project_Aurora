@@ -115,7 +115,6 @@
                 </div>
                 <div class="col m12">
             
-              <script> show_avis(); </script>
 
                   <button class="bouton" onclick="show_avis()" >
                     voir plus d'avis
@@ -162,7 +161,6 @@
 
 
             <script type="text/javascript">
-
             $(document).ready(function(){
               $('.sidenav').sidenav();
             });
@@ -201,6 +199,9 @@
                 url: "../action/avis.php",
                 data: {
                   offset:offset,
+                  jeux_id: <?php echo $jeu[0]['id'] ?>,
+
+
                 },
                 success: function(data){
                   if (offset==0) {
@@ -215,6 +216,7 @@
                 }
               });
             }
+            show_avis();
 
           </script>
           

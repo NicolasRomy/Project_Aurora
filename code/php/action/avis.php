@@ -4,9 +4,9 @@
 include_once 'config.php';
 
 
+var_dump($_POST);
 
-
-  $sql= "SELECT * FROM comments where jeux_id = 1 order by date desc LIMIT 3 OFFSET ".$_POST['offset'];
+  $sql= "SELECT * FROM comments where jeux_id = 1 order by id desc LIMIT 3 OFFSET ".$_POST["offset"];
   $pre = $pdo->prepare($sql);
   $pre->execute();
   $comment = $pre->fetchAll(PDO::FETCH_ASSOC);
