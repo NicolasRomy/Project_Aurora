@@ -129,6 +129,9 @@
         <div class="ext col m12 degrade_<?php echo $couleur ?>">
           Avis des joueurs (nombre) (note moyenne)
         </div>
+        <div id="divComments" class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
+
+        </div>
         <div class="col m12">
 
 
@@ -193,7 +196,7 @@
     </script>
 
     <script type="text/javascript">
-      offset = 0;
+
 
       $('button#addPanier').click(function(){
         $.ajax({
@@ -222,27 +225,23 @@
 
     });
 
-
+    offset = 0;
     function show_avis() {
       $.ajax({
         type: "POST",
         url: "../action/avis.php",
         data: {
+          test:'test',
           offset:offset,
           jeux_id: <?php echo $jeu[0]['id'] ?>,
 
+        },
+        success: function(response){
+          $('#divComments').append(response);
+          offset+=3
 
         },
-        success: function(data){
-          if (offset==0) {
-            $("#avis").html(data)
-            offset+=3
-          }
-          else{
-            $("#avis").append(data)
-            offset+=3
-          }
-
+        error: function (jqXHR, textStatus, errorThrown) {
         },
       });
     }
