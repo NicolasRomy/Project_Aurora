@@ -8,11 +8,11 @@
   }
   ?>
   
-
   <div class="col s4 m4 l3 xl2 <?php $class ?>" >
   <form action="../page/detaille_jeux.php"  method="post">
 
-    <button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0)">
+<button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0)">
+   
       <div class="card"
       style= "height: 260px ; width: 195px;
       border-radius: 15px;
@@ -32,8 +32,10 @@
       background: rgb(255,153,238);
       background: linear-gradient(180deg, rgba(219,91,255,1) 0%, rgba(164,84,255,1) 100%);
       <?php endif;?>
-      ">
-      <div class="card-image">
+      "> 
+
+      <div class="card-image">     
+      
         <div style="display:flex;align-items:center;justify-content:center">
           <?php foreach($plateforms as $plateform): ?>
             <img src="../../../<?php echo $plateform['icon'] ?>"
@@ -71,12 +73,16 @@
       ">
       <?php echo $jeu['prix']?> €
     </p>
-    </button>  
+     
     </form>
   </div>
+
+
+
 
 </div>
 </div>
 </a>
-</div>
+</div> 
+</button> 
 <?php } ?>
