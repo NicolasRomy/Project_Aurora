@@ -19,6 +19,13 @@
 
   <?php
 
+<<<<<<< HEAD
+=======
+  var_dump($_POST);
+
+  var_dump ($_SESSION['user']['panier']);
+
+>>>>>>> 13cc1b18c2f4d36c5d0cc4bb01cb98136c9772ea
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
@@ -47,7 +54,7 @@
   ?>
 
   <?php  if ($jeu[0]['PEGI'] == 18){
-    $couleur = "rouge"; 
+    $couleur = "rouge";
     $boutonPegi = "btn_PEGI_18.PNG"; }
 
     elseif ($jeu[0]['PEGI'] == 16){
@@ -55,15 +62,15 @@
       $boutonPegi = "btn_PEGI_16.PNG";  }
 
       elseif($jeu[0]['PEGI'] == 12){
-        $couleur = "bleuC"; 
+        $couleur = "bleuC";
         $boutonPegi = "btn_PEGI_12.PNG"; }
 
         elseif($jeu[0]['PEGI'] == 7){
-          $couleur = "violetF"; 
+          $couleur = "violetF";
           $boutonPegi = "btn_PEGI_7.PNG" ;}
 
           elseif($jeu[0]['PEGI'] == 3){
-            $couleur = "violetC"; 
+            $couleur = "violetC";
             $boutonPegi = "btn_PEGI_3.PNG" ;}
             ?>
 
@@ -104,7 +111,7 @@
           </div>
         </p>
         <p>livraison en 24H</p>
-        <button class="btn  <?php echo $couleur ?> white-text" onclick="<?php addArticle($jeu[0]['id']); ?>" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
+        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
         <button class="btn   <?php echo $couleur ?> white-text" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
       </div>
     </div>
@@ -190,6 +197,10 @@
 
     <script type="text/javascript">
       offset = 0;
+
+      $('button#addPanier').click(function(){
+        <?php addArticle($jeu[0]['id']); ?>
+      });
 
       $('button#submit').click(function(){
 

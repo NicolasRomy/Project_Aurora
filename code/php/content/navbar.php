@@ -10,7 +10,7 @@
           <i class="material-icons icon-search">close</i>
         </li>
         <div class="right">
-          <?php if ($_SESSION['user']['admin'] == 1): ?>
+          <?php if (isset($_SESSION['user']) && $_SESSION['user']['admin'] == 1): ?>
             <li><a class="height-panier-a hover" href="../page/admin.php"><img class="responsive-img img-navbar-panier taille-admin" src="../../../assets/admin.png" alt=""></a></li>
           <?php endif; ?>
           <li><a class="height-panier-a hover" href="../page/panier.php"><img class="responsive-img img-navbar-panier" src="../../../assets/panier.PNG" alt=""><img class="responsive-img img-navbar-mon-panier" src="../../../assets/mon-panier.PNG" alt=""></a></li>
