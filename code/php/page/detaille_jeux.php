@@ -18,12 +18,7 @@
 
 
   <?php
-<<<<<<< HEAD
-  
-=======
 
-  var_dump($_POST);
->>>>>>> 140e3b6b56c3301484b58855b0caa4c31cf66413
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
