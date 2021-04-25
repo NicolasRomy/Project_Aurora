@@ -20,6 +20,7 @@
   <?php
 
   var_dump($_POST);
+  var_dump ($_SESSION['user']['panier']);
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
@@ -100,7 +101,7 @@
           </div>
         </p>
         <p>livraison en 24H</p>
-        <button class="btn  <?php echo $couleur ?> white-text" onclick="<?php addArticle($jeu[0]['id']); ?>" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
+        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
         <button class="btn   <?php echo $couleur ?> white-text" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
       </div>
     </div>
@@ -186,6 +187,10 @@
 
     <script type="text/javascript">
       offset = 0;
+
+      $('button#addPanier').click(function(){
+        <?php addArticle($jeu[0]['id']); ?>
+      })
 
       $('button#submit').click(function(){
 
