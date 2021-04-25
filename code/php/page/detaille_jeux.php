@@ -20,10 +20,9 @@
   <?php
 
   var_dump($_POST);
-<<<<<<< HEAD
+
   var_dump ($_SESSION['user']['panier']);
-=======
->>>>>>> 63f8c002ac52923ec51bd9208e25f645be290838
+
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
