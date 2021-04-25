@@ -19,16 +19,10 @@
 
   <?php
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
   var_dump($_POST);
 
   var_dump ($_SESSION['user']['panier']);
 
->>>>>>> 13cc1b18c2f4d36c5d0cc4bb01cb98136c9772ea
->>>>>>> 30a4a456b2ad4ae1b673aa7378899ea672f5d8c8
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
@@ -114,11 +108,7 @@
           </div>
         </p>
         <p>livraison en 24H</p>
-<<<<<<< HEAD
-        <button class="btn  <?php echo $couleur ?> white-text"  id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
-=======
-        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="addPanier"> Ajouter au panier</button>
->>>>>>> 30a4a456b2ad4ae1b673aa7378899ea672f5d8c8
+        <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="Panier"> Ajouter au panier</button>
         <button class="btn   <?php echo $couleur ?> white-text" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
       </div>
     </div>
@@ -206,7 +196,15 @@
       offset = 0;
 
       $('button#addPanier').click(function(){
-        <?php addArticle($jeu[0]['id']); ?>
+        $.ajax({
+          type: 'POST',
+          url: '../action/addToPanier.php',
+          data: {
+            id:<?php echo $jeu[0]['id']; ?>,
+          },
+        });
+        M.toast({html: 'I am a toast!'});
+
       });
 
       $('button#submit').click(function(){
