@@ -30,9 +30,7 @@
 
 <body>
 
-<div class = "col s12 m7">
  <h1> nos coups de coeur <h1>
-</div>
 
 <h2>Filter DIV Elements</h2>
 <div id="myBtnContainer">
