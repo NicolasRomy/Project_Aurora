@@ -3,25 +3,26 @@
 // configuration
 include_once 'config.php';
 
-$sql = "select * from comments where jeux_id = ".$_POST['jeux']." order by date desc LIMIT 3 OFFSET ".$_POST['offset'];
-$pre = $pdo->prepare($sql);
-$pre->execute();
-$data = $pre->fetchAll();
 
-foreach ($data as $avis) {
-   ?> 
-   <div class="row">
-      <div class="col s12">
-         <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-               <span class="card-title">Avis de <?php echo $avis['pseudo']?></span>
-               <p><?php echo $avis['content']."<br />";?></p>
-               <p>Note : <?php echo $avis['note']?>/10</p>
-            </div>
-         </div>
-      </div>
+
+
+  $sql= "SELECT * FROM comments where jeux_id = 1 order by date desc LIMIT 3 OFFSET ".$_POST['offset'];
+  $pre = $pdo->prepare($sql);
+  $pre->execute();
+  $comment = $pre->fetchAll(PDO::FETCH_ASSOC);
+  
+
+
+    foreach($comment as $comments):?>
+                  
+   <div class="col offset-m1 m2 pseudo degrade_<?php echo $couleur ?>">
+   <?php echo $comments['pseudo'] ?>
    </div>
-   <?php
-}
-
-?>
+   <div class="col offset-m7 m2 pseudo degrade_<?php echo $couleur ?>">
+   <?php echo $comments['note'] ?>
+   </div>
+   <div class="avis-text ">
+   <?php echo $comments['content'] ?>
+   </div>
+   
+   <?php endforeach; ?>

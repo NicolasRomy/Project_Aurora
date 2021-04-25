@@ -9,11 +9,12 @@
 </head>
 <body>
   <header>
-    <?php include '../content/navbar.php'; ?>
   </header>
 
   <footer>
   </footer>
+
+  
 
   <?php
   $sql= "SELECT * FROM jeux where id = 1 ";
@@ -22,12 +23,7 @@
   $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
-<?php
-  $sql= "SELECT * FROM comments where jeux_id = 1 ";
-  $pre = $pdo->prepare($sql);
-  $pre->execute();
-  $comment = $pre->fetchAll(PDO::FETCH_ASSOC);
-  ?>
+
 
   <?php
   $sql= "SELECT * FROM jeux_plateforme jp INNER JOIN plateforme p ON p.id = jp.plateforme WHERE jeux=".$jeu[0]['id'];
@@ -85,7 +81,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class = "offset-m1 col m3 acheter <?php echo $couleur ?>">
                   <p>acheter le jeux</p>
                   <p><?php echo $jeu[0]['prix'] ?> € </p>
@@ -119,22 +114,10 @@
                   Avis des joueurs (nombre) (note moyenne)
                 </div>
                 <div class="col m12">
-                <?php foreach($comment as $comments){?>
-                  
-                  <div class="col offset-m1 m2 pseudo degrade_<?php echo $couleur ?>">
-                  <?php echo $comments[0]['pseudo'] ?>
-                  </div>
-                  <div class="col offset-m7 m2 pseudo degrade_<?php echo $couleur ?>">
-                  <?php echo $comments[0]['note'] ?>
-                  </div>
-                  <div class="avis-text ">
-                  <?php echo $comments[0]['content'] ?>
-                  </div>
-                  
-                  <?php endforeach; ?>
+            
+              <script> show_avis(); </script>
 
-
-                  <button class="bouton">
+                  <button class="bouton" onclick="show_avis()" >
                     voir plus d'avis
                   </button>
 
@@ -152,17 +135,11 @@
                       <p class="range-field">
                         <input type="range" id="note" min="0" max="10"/>
                       </p>
-
                       <button class="btn waves-effect waves-light orange  modal-close" id="submit" type="button" name="action">Submit
                         <i class="material-icons right">send</i>
                       </button>
                     </div>
-                    <div class="modal-footer">
-                      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
                   </div>
-
-
                 </div>
               </div>
             </div>
@@ -202,6 +179,7 @@
             </script>
 
             <script type="text/javascript">
+              offset = 0;
 
              $('button#submit').click(function(){
 
@@ -215,7 +193,31 @@
                 },
               });
             });
+
+
+            function show_avis() {
+              $.ajax({
+                type: "POST",
+                url: "../action/avis.php",
+                data: {
+                  offset:offset,
+                },
+                success: function(data){
+                  if (offset==0) {
+                    $("#avis").html(data)
+                    offset+=3
+                  }
+                  else{
+                    $("#avis").append(data)
+                    offset+=3
+                  }
+                  
+                }
+              });
+            }
+
           </script>
+          
 
 
         </body>
