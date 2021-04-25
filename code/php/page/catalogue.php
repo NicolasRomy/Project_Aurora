@@ -56,10 +56,9 @@
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php include '../content/game_card.php';?></div><?php } ?>
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
       </div>
-  
-
+      
 
 <script>
 filterrrr("all")

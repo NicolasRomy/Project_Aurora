@@ -115,7 +115,7 @@
                 </div>
                 <div class="col m12">
             
-              <script> show_avis(); </script>
+              
 
                   <button class="bouton" onclick="show_avis()" >
                     voir plus d'avis
