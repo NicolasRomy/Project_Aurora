@@ -2,6 +2,7 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 $token = $_POST['stripeToken'];
+$total = $_POST["total"]
 
 if (filter_var($email,FILTER_VALIDATE_EMAIL) && !empty($name) && !empty($token)){
     require('cle_stripe.php');
@@ -19,7 +20,7 @@ if (filter_var($email,FILTER_VALIDATE_EMAIL) && !empty($name) && !empty($token))
     $customer = $s->call();*/
     $s->url .= 'charges';
     $s->fields = [
-        'amount' => 1000,
+        'amount' => $total*100,
         'currency' => "eur",
         'source' => $token
     ];
