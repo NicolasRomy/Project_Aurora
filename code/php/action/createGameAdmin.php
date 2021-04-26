@@ -5,6 +5,7 @@ if ($_SESSION['user']['admin'] == 0){
 }
 else{
   $errors = array();
+  $_MESSAGE = "";
   //$test2 = json_decode($test);
   //echo"<pre>";
   //var_dump($_FILES);
@@ -14,22 +15,22 @@ else{
 
   if ($_POST['temps_jeux'] == "" || $_POST['title'] == "" || $_POST['price'] == "" || $_POST['synopsi'] == ""
   || $_POST['avi'] == "" || ! array_key_exists('PEGI', $_POST) || ! array_key_exists('listePEGI', $_POST) || ! array_key_exists('platformes', $_POST)){
-    //echo 'truc pas rempli';
+    $_MESSAGE = 'veuillez remplir tout les champs';
   }
   else{
     $id = isExistGame($_POST, $pdo); //lance requete sql pour verifier si le jeux existe deja dans la bd
     //var_dump ($id);
     if ($id != false){
       // renvoier que le jeu existe deja (à programmer !!!)
-      echo 'deja inscrit';
+      $_MESSAGE = "le jeu existe deja";
     }
     else{
-      $target_dir = '../../../assets/imgGame/';
+      $target_dir = '../../../assets/imgJeu/';
       foreach ($_FILES as $file) { // enleve key tester as $key
         if(is_array($file['type'])){
           foreach ($file['type'] as $k => $fileType) {
             if ($fileType == ''){
-              // renvoie que le jeux est uplaod mais il n'a pas d'img carousel
+              $_MESSAGE = "le jeu est uplaod mais il n'y a pas de carousel";
             }
             else{
               if(isImg($fileType) == false){
@@ -48,7 +49,7 @@ else{
         else{
           $fileType = $file['type'];
           if(isImg($fileType) == false){
-            //echo 'error seul';
+            $_MESSAGE = "un fuchier n'est pas une image";
             array_push($errors,$file['name']);
             break;
           }
