@@ -69,7 +69,7 @@
 
     <div class = "presentation  <?php $couleur ?>">
     <div class = "row">
-      <div class = "col m3"><img src= "../../../assets/imgGame/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
+      <div class = "col m3"><img src= "../../../assets/imgJeu/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
       <div class = "col m4">
         <div class ="offset-m1 col m12">
           <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?></h2>
@@ -141,15 +141,16 @@
             <div class="modal-content">
               <div class="col s12">
                 <div class="input-field col s12">
+                <p class="text bold degrade_<?php echo $couleur ?> text">Votre Avis</p>
                   <textarea id="text" class="materialize-textarea"></textarea>
-                  <label for="text">Votre Avis</label>
+                  
                 </div>
               </div>
-              <label for="text">Votre note</label>
+              <label class= "bold degrade_<?php echo $couleur ?> text" for="text">Votre note</label>
               <p class="range-field">
                 <input type="range" id="note" min="0" max="10"/>
               </p>
-              <button class="btn waves-effect waves-light orange  modal-close" id="submit" type="button" name="action">Submit
+              <button class="btn waves-effect waves-light  <?php echo $couleur ?> white-text modal-close" id="submit" type="button" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
             </div>
