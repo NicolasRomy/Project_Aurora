@@ -2,6 +2,7 @@
 
 <?php
 include_once '../action/config.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -95,11 +96,27 @@ include_once '../action/config.php';
       </div>
     </form>
 
+    <div class="center">
+      <?php if(isset($_MESSAGE)){
+        echo $_MESSAGE;
+      } ?>
+    </div>
+
   </div>
 
-    <footer>
-      <p>test</p>
-    </footer>
+  <?php
+
+  if (isset($_MESSAGE) && $_MESSAGE == "le jeux est upload"){
+    $_MESSAGE = "";
+  }
+
+  ?>
+
+  <div class="mt5">
+    <?php include '../content/footer.php'; ?>
+  </div>
+
+
 
 
     <script type="text/javascript" src="../../js/jquery.min.js"></script>

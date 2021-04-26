@@ -14,7 +14,7 @@ else{
   //echo"</pre>";
 
   if ($_POST['temps_jeux'] == "" || $_POST['title'] == "" || $_POST['price'] == "" || $_POST['synopsi'] == ""
-  || $_POST['avi'] == "" || ! array_key_exists('PEGI', $_POST) || ! array_key_exists('listePEGI', $_POST) || ! array_key_exists('platformes', $_POST)){
+  || $_POST['avi'] == "" || ! array_key_exists('PEGI', $_POST) || ! array_key_exists('platformes', $_POST)){
     $_MESSAGE = 'veuillez remplir tout les champs';
   }
   else{
@@ -41,7 +41,7 @@ else{
                 $target = $target_dir.$name;
                 move_uploaded_file($file['tmp_name'][$k], $target);
                 postImgs($id, $target, $pdo);
-                //echo 'file uploaded +';
+                $_MESSAGE = "le jeux est upload";
               }
             }
           }
@@ -57,7 +57,7 @@ else{
             $name = namedFile($fileType);
             $targetJacket = $target_dir.$name;
             move_uploaded_file($_FILES['jacket']['tmp_name'], $targetJacket);
-            //echo 'file uploaded 1';
+          $targetJacket = $name;
             postJeux($_POST, $targetJacket, $pdo);
             $id = isExistGame($_POST, $pdo);
             //var_dump($id);
