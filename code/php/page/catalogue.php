@@ -50,24 +50,39 @@
   <button class="waves-effect waves-light btn-small" onclick="filter2('1')"> coeur</button>
 </div>
 <div id="myBtnContainer">
-    <button class="waves-effect waves-light btn-small" onclick="filter3('10')"> 0-10€ </button>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('7')"> pegi 7</button>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('12')"> pegi 12</button>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('16')"> pegi 16</button>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('18')"> pegi 18</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('1')"> 0-10€ </button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('2')"> 10-25€</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('3')"> 25-50€</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('4')"> 50+€</button>
 </div>
 <?php
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
+      <?php $i = $jeu['prix'];  
+            if( $i < 11){
+              $i = 1;
+            }
+            elseif($i > 11 && $i <26){
+              $i = 2;
+            }
+            elseif($i > 24 && $i <51){
+              $i = 3;
+            }
+            else{
+              $i = 4;
+            }
+
+
+              ?>
       <div style="display:flex;">
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'>
         <div class= 'filterDiv2 <?php echo $jeu['coeur']?>'>
-          <div class= 'filterDiv3 <?php echo $jeu['Prix']?>'>
+          <div class= 'filterDiv3 <?php echo $i?>'>
         <?php gameCard($pdo, $jeu, 0);?></div>
-      </div><?php } ?>
+      </div></div><?php } ?>
       </div>
-      </div>
+      
 
 <script>
 filterrrr("all")
@@ -75,6 +90,7 @@ function filterrrr(c){
   if (c== "all") {
     $(".filterDiv").show();
     filter2('all');
+    filter3('all');
 } else {
   $(".filterDiv").hide();
   $("."+c).show();
@@ -84,7 +100,6 @@ function filterrrr(c){
 function filter2(c){
   if (c== "all") {
     $(".filterDiv2").show();
-    filterrrr("all");
 } else {
   $(".filterDiv2").hide();
   $("."+c).show();
@@ -95,12 +110,15 @@ function filter3(c){
   if (c== "all") {
     $(".filterDiv3").show();
     filterrrr("all");
+    filter2('all');
 } else {
   $(".filterDiv3").hide();
   $("."+c).show();
+
+}
 }
   
-}
+
 
 
 </script>
