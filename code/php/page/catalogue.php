@@ -149,8 +149,7 @@
                         <div class= 'filterDiv10 <?php echo $MAC?>'>
                           <div class= 'filterDiv11 <?php echo $Linux?>'>
 
-        <?php gameCard($pdo, $jeu, 0);?></div>
-      </div></div></div></div></div></div></div></div></div></div><?php } ?>
+        <?php gameCard($pdo, $jeu, 0);?></div></div></div></div></div></div></div></div></div></div></div><?php } ?>
       </div>
   </div>    
 </div>
@@ -247,7 +246,7 @@ function filter9(c){
 
 }
 }
-function filter7(c){
+function filter10(c){
   if (c== "all") {
     $(".filterDiv10").show();
 } else {
@@ -256,7 +255,7 @@ function filter7(c){
 
 }
 }
-function filter8(c){
+function filter11(c){
   if (c== "all") {
     $(".filterDiv11").show();
 } else {
