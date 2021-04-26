@@ -41,22 +41,22 @@
 
     <div class="col s12 center mt5">
       <h5 class="medium white-text">Si vous n'avez pas de compte :</h3>
-      <a class="waves-effect bold waves-light btn-large violetC" href="inscription.php">inscription</a>
+        <a class="waves-effect bold waves-light btn-large violetC" href="inscription.php">inscription</a>
+      </div>
+
     </div>
+    <img src="../../../assets\background_gradiant.svg" alt="background"/>
 
-  </div>
-<img src="../../../assets\background_gradiant.svg" alt="background"/>
+    <?php include '../content/footer.php'; ?>
 
-<?php include '../content/footer.php'; ?>
+    <script type="text/javascript" src="../../js/materialize.js"></script>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
 
-  <script type="text/javascript" src="../../js/materialize.js"></script>
-  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
 
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>

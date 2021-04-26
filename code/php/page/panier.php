@@ -60,7 +60,7 @@ include_once '../action/config.php';
           </div>
         </div>
         <div class="col s12 center mt5 mb5">
-          <button class="btn" type="button" name="button">Valider le panier</button>
+          <button class="btn" type="submit" name="button">Valider le panier</button>
         </div>
       </form>
     </div>
@@ -71,7 +71,8 @@ include_once '../action/config.php';
       $jeux = recupGamePanier($pdo, $id);
       $plateform = recupPlatForGame($pdo, $jeux[0]);
       ?>
-      <form class="" action="index.html" method="post">
+      <form class="" action="../action/dellGamePanier.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $id ?>">
         <div class="col s6 m6 l6 xl6 offset-s3 offset-m3 offset-l3 offset-xl3 bd-raduis-20 white mt5">
           <div class="col s12 m12 l12 xl12">
             <div class="col s3">
@@ -88,8 +89,8 @@ include_once '../action/config.php';
                 <select>
                   <option value="" disabled selected>Choisir la plateforme</option>
                   <?php foreach ($plateform as $key => $plateformes) :?>
-                  <option value="<?php echo $plateformes['id']; ?>"><?php echo $plateformes['name']; ?></option>
-                <?php endforeach; ?>
+                    <option value="<?php echo $plateformes['id']; ?>"><?php echo $plateformes['name']; ?></option>
+                  <?php endforeach; ?>
                 </select>
                 <label>Plateforme</label>
               </div>
@@ -103,7 +104,7 @@ include_once '../action/config.php';
                 <p class="green-text">En Stock</p>
               </div>
               <div class="col s4 offset-s2 right">
-                <button class="btn" type="button" name="button">Supprimer</button>
+                <button class="btn" type="submit" name="button">Supprimer</button>
               </div>
             </div>
           </div>
@@ -131,6 +132,8 @@ include_once '../action/config.php';
     $('.sidenav').sidenav();
     $('select').formSelect();
   });
+
+  $('')
 
   </script>
 </body>

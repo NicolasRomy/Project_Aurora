@@ -17,33 +17,33 @@
   </header>
 
 
-    <form action="../action/inscription.php" method="post" class="col s12">
-      <div class="row">
-        <div class="input-field col offset-s4 s4">
-          <i class="material-icons prefix">face</i>
-          <input id="pseudoInscription" name="pseudo" type="text" class="validate">
-          <label for="pseudoInscription">pseudo</label>
-        </div>
-        <div class="input-field col offset-s4 s4">
-          <i class="material-icons prefix">email</i>
-          <input id="emailInscription" name="email" type="text" class="validate">
-          <label for="emailInscription">Email</label>
-        </div>
-        <div class="input-field col offset-s4 s4">
-          <i class="material-icons prefix">lock_outline</i>
-          <input id="passwordInscription" name="password" type="password" class="validate">
-          <label for="passwordInscription">Mot De Passe</label>
-        </div>
-        <div class="col offset-s4 s6">
-          <input class="waves-effect bold waves-light btn violetC" type="submit" name="" value="inscription">
-        </div>
+  <form action="../action/inscription.php" method="post" class="col s12">
+    <div class="row">
+      <div class="input-field col offset-s4 s4">
+        <i class="material-icons prefix">face</i>
+        <input id="pseudoInscription" name="pseudo" type="text" class="validate">
+        <label for="pseudoInscription">pseudo</label>
       </div>
-    </form>
-    <?php if (isset($_SESSION['messageInscription'])){
-      echo $_SESSION['messageInscription'];
-    } ?>
+      <div class="input-field col offset-s4 s4">
+        <i class="material-icons prefix">email</i>
+        <input id="emailInscription" name="email" type="text" class="validate">
+        <label for="emailInscription">Email</label>
+      </div>
+      <div class="input-field col offset-s4 s4">
+        <i class="material-icons prefix">lock_outline</i>
+        <input id="passwordInscription" name="password" type="password" class="validate">
+        <label for="passwordInscription">Mot De Passe</label>
+      </div>
+      <div class="col offset-s4 s6">
+        <input class="waves-effect bold waves-light btn violetC" type="submit" name="" value="inscription">
+      </div>
+    </div>
+  </form>
+  <?php if (isset($_SESSION['messageInscription'])){
+    echo $_SESSION['messageInscription'];
+  } ?>
 
-  </div>
+</div>
 
 <footer>
 </footer>
