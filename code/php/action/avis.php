@@ -4,7 +4,7 @@
 include_once 'config.php';
 
 
-  $sql= "SELECT * FROM comments where jeux_id = 1 order by id desc LIMIT 3 OFFSET ".$_POST["offset"];
+  $sql= "SELECT * FROM comments where jeux_id =".$_POST["jeux_id"]." order by id desc LIMIT 3 OFFSET ".$_POST["offset"];
   $pre = $pdo->prepare($sql);
   $pre->execute();
   $comment = $pre->fetchAll(PDO::FETCH_ASSOC);
@@ -12,19 +12,13 @@ include_once 'config.php';
 foreach ($comment as $key => $comments) {
 
   echo '
-  <div class="row">
-    <div class="col s12">
-      <div class="card purple darken-1">
-        <div class="card-content white-text">
-          <p>Posté par : '.$comments['pseudo'].'</p>
-          <p>
-          '.$comments['content'].'
-          </p>
-          <p>
-          '.$comments['note'].'
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>';
+   <div class="col offset-m1 m2 pseudo ">
+   <p class="degrade_'.$_POST["couleur"].' bold">'.$comments['pseudo'].' </p>
+   </div>
+   <div class="col offset-m7 m2 pseudo degrade_'. $_POST["couleur"].' bold">
+   <p> '.$comments['note'].' / 10 </p>
+   </div>
+   <div class="avis-text ">
+   <p>'.$comments['content'].' </p>
+   </div>';
   }

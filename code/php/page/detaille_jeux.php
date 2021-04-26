@@ -19,10 +19,6 @@
 
   <?php
 
-  var_dump($_POST);
-
-  var_dump ($_SESSION['user']['panier']);
-
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
@@ -127,7 +123,7 @@
     <div class = "row">
       <div class = "avis-background offset-m2 col m8 ">
         <div class="ext col m12 degrade_<?php echo $couleur ?>">
-          Avis des joueurs (nombre) (note moyenne)
+          Avis des joueurs
         </div>
         <div id="divComments" class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
 
@@ -135,11 +131,11 @@
         <div class="col m12">
 
 
-          <button class="bouton   <?php echo $couleur ?> white-text" onclick="show_avis()" >
+          <button class="waves-effect waves-light btn   <?php echo $couleur ?> white-text" onclick="show_avis()" >
             voir plus d'avis
           </button>
 
-          <a class="waves-effect waves-light btn modal-trigger   <?php echo $couleur ?> white-text" href="#modal1">Modal</a>
+          <a class="waves-effect waves-light btn modal-trigger button  <?php echo $couleur ?> white-text" href="#modal1">donnez votre avis</a>
 
           <div id="modal1" class="modal">
             <div class="modal-content">
@@ -174,9 +170,9 @@
 
 
     <?php include '../content/pegi_explanation.php'; ?>
+
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/materialize.js"></script>
-
 
 
     <script type="text/javascript">
@@ -184,9 +180,9 @@
       $('.sidenav').sidenav();
     });
 
-    //$('.carousel.carousel-slider').carousel({
-      //fullWidth: true
-    //});
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true
+    });
 
 
     $(document).ready(function(){
@@ -234,7 +230,7 @@
           test:'test',
           offset:offset,
           jeux_id: <?php echo $jeu[0]['id'] ?>,
-
+          couleur: "<?php echo $couleur ?>",
         },
         success: function(response){
           $('#divComments').append(response);

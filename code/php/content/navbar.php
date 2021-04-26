@@ -17,9 +17,11 @@
           <?php
             if (isset($_SESSION['user'])){
             $hrefUser = '../page/user.php';
-          } else{
-            $hrefUser = '../page/login.php';
-          } ?>
+          } else
+            $hrefUser = '../page/login.php'; ?>
+            <li><a class="height-user-a hover margin" href="../action/logout.php"><img class="responsive-img img-navbar-user" src="../../../assets/logout-logo.PNG" alt=""></a></li>
+
+          <?php  ?>
           <li><a class="height-user-a hover margin" href="<?php echo $hrefUser ?>"><img class="responsive-img img-navbar-user" src="../../../assets/user-logo.PNG" alt=""></a></li>
 
         </div>
