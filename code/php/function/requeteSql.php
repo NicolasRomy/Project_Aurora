@@ -124,3 +124,16 @@ function recupGamePanier($pdo, $id){
   $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
   return $jeu;
 }
+
+function setAdresse($pdo, $adress, $id){
+  $sql =
+  " UPDATE users SET adresse = :adresse
+    WHERE id = :id
+  ";
+  $dataBinded = array(
+    ':id' => $id,
+    ':adresse' => $adress,
+  );
+  $prepareRequete = $pdo->prepare($sql);
+  $prepareRequete->execute($dataBinded);
+}

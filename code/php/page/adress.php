@@ -15,19 +15,23 @@ include_once '../action/config.php';
     <?php include '../content/navbar.php'; ?>
   </header>
 
-  <?php if($_SESSION['user']['adress'] == NULL): ?>
+  <?php if($_SESSION['user']['adresse'] == NULL): ?>
     <div class="row mt5">
       <div class="col s12 white bd-raduis-20">
         <form class="" action="../action/setAdress.php" method="post">
-          <input id="adress" type="text" name="adress" value="">
-          <label for="adress">Rentrer votre adresse</label>
-          <button class="btn" type="submit" name="button">Valider</button>
+          <div class="col s12 ">
+            <label for="adress">Rentrer votre adresse</label>
+            <input id="adresse" type="text" name="adress" value="">
+          </div>
+          <div class="col s12 center">
+            <button class="btn mb5" type="submit" name="button">Valider</button>
+          </div>
         </form>
       </div>
     </div>
 
   <?php else:
-    header('Location: ../page/Paiment.php');
+    header('Location: ../page/Paiement.php');
 
   endif;
   ?>
