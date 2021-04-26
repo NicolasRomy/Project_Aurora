@@ -18,9 +18,10 @@ include_once '../action/config.php';
   <?php if($_SESSION['user']['adress'] == NULL): ?>
     <div class="row mt5">
       <div class="col s12 white bd-raduis-20">
-        <form class="" action="index.html" method="post">
+        <form class="" action="../action/setAdress.php" method="post">
           <input id="adress" type="text" name="adress" value="">
           <label for="adress">Rentrer votre adresse</label>
+          <button class="btn" type="submit" name="button">Valider</button>
         </form>
       </div>
     </div>

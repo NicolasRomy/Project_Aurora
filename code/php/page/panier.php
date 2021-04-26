@@ -31,7 +31,7 @@ include_once '../action/config.php';
     $total = $livraison + $totalPrix;
     ?>
     <div class="col s4 offset-s4 white bd-raduis">
-      <form class="" action="index.html" method="post">
+      <form class="" action="../page/adress.php" method="post">
 
         <div class="col s12">
           <div class="col s6">
