@@ -73,10 +73,10 @@
 
     <div class = "presentation  <?php $couleur ?>">
     <div class = "row">
-      <div class = "col m3"><img src= "../../../assets/imgJeu/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
+      <div class = "col m3"><img src= "../../../assets/imgGame/<?php echo $jeu[0]['image'] ?>" class='jeux'></div>
       <div class = "col m4">
         <div class ="offset-m1 col m12">
-          <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?>   </h2>
+          <h2 class="titre degrade_<?php echo $couleur ?>"> <?php echo $jeu[0]['title'] ?></h2>
           <?php foreach($plateforms as $plateform){ ?>
             <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
           <?php } ?>
@@ -128,6 +128,9 @@
       <div class = "avis-background offset-m2 col m8 ">
         <div class="ext col m12 degrade_<?php echo $couleur ?>">
           Avis des joueurs (nombre) (note moyenne)
+        </div>
+        <div id="divComments" class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1">
+
         </div>
         <div class="col m12">
 
@@ -181,9 +184,9 @@
       $('.sidenav').sidenav();
     });
 
-    $('.carousel.carousel-slider').carousel({
-      fullWidth: true
-    });
+    //$('.carousel.carousel-slider').carousel({
+      //fullWidth: true
+    //});
 
 
     $(document).ready(function(){
@@ -193,18 +196,18 @@
     </script>
 
     <script type="text/javascript">
-      offset = 0;
+
 
       $('button#addPanier').click(function(){
         $.ajax({
-          type: 'POST',
-          url: '../action/addToPanier.php',
+          type: "POST",
+          url: "../action/addToPanier.php",
           data: {
-            id:<?php echo $jeu[0]['id']; ?>,
+            id_: <?php echo $jeu[0]['id']; ?>,
           },
+          success: console.log("ca marche"),
         });
-        M.toast({html: 'I am a toast!'});
-
+        M.toast({html: 'Jeu ajouté au panier'});
       });
 
       $('button#submit').click(function(){
@@ -217,31 +220,29 @@
           content:$("#text").val(),
           jeux_id: <?php echo $jeu[0]['id'] ?>,
         },
+
       });
+
     });
 
-
+    offset = 0;
     function show_avis() {
       $.ajax({
         type: "POST",
         url: "../action/avis.php",
         data: {
+          test:'test',
           offset:offset,
           jeux_id: <?php echo $jeu[0]['id'] ?>,
 
+        },
+        success: function(response){
+          $('#divComments').append(response);
+          offset+=3
 
         },
-        success: function(data){
-          if (offset==0) {
-            $("#avis").html(data)
-            offset+=3
-          }
-          else{
-            $("#avis").append(data)
-            offset+=3
-          }
-
-        }
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
       });
     }
     show_avis();
