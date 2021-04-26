@@ -18,6 +18,9 @@
      <link rel="stylesheet" href="../../css/catalogue.css">
      </head>
 
+     <?php# $total = $_POST["total"] 
+     
+     #ici on aurait du l'envoyer à /action/paiement_stripe.php mais comme l'on n'arrivais pas a faire fonctionner l'api on a préféré le simuler avec une fausse page de confirmation?>
      <form action="../action/paiement_stripe_demo.php" class="form white" id="payment_form" method="post">
         <div>
             <input type="text" name="name" placeholder="name" require value="Eliot">
@@ -37,7 +40,7 @@
         <div>
             <input type="text" placeholder="CVC" name="cvc"  data-stripe="cvc" value="123">
         </div>
-        <button class="button" type="submit">Acheter</button>
+        <button class="button" value="<?php #$total ?>" type="submit">Acheter</button>
      
      </form>
 
