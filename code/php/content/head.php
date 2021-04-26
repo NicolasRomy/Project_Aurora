@@ -5,5 +5,7 @@
 <link type="text/css" rel="stylesheet" href="../../css/navbar.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/margin.css"/>
 <link type="text/css" rel="stylesheet" href="../../css/font.css"/>
+<link type="text/css" rel="stylesheet" href="../../css/jeux.css"/>
+
 <link rel="stylesheet" href="../../css/main.css"/>
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
