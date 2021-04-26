@@ -36,6 +36,7 @@
   border-radius: 15px;
   display: flex;
   justify-content:space-around ;
+  align-items:flex-start ;
 
 }
 p.titre{
@@ -53,6 +54,7 @@ align-items: center;
 
 .flex{
   display: flex;
-  justify-content:space-around;
-  flex-wrap: wrap
+  justify-content:space-between;
+  flex-wrap:wrap;
+align-content: flex-start;
 }

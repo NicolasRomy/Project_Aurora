@@ -42,17 +42,17 @@
 <div id="myBtnContainer">
   <p class="gradient titre">Choisissez le pegi</p>
   <button class="waves-effect waves-light btn-small " onclick="filter('all')">reset</button> <br>
-  <button class="waves-effect waves-light btn-small bleuC" onclick="filter('3')"> pegi 3</button><br>
-  <button class="waves-effect waves-light btn-small bleuF" onclick="filter('7')"> pegi 7</button><br>
-  <button class="waves-effect waves-light btn-small violetC" onclick="filter('12')"> pegi 12</button><br>
-  <button class="waves-effect waves-light btn-small violetF" onclick="filter('16')"> pegi 16</button><br>
+  <button class="waves-effect waves-light btn-small violetC" onclick="filter('3')"> pegi 3</button><br>
+  <button class="waves-effect waves-light btn-small violetF" onclick="filter('7')"> pegi 7</button><br>
+  <button class="waves-effect waves-light btn-small bleuC" onclick="filter('12')"> pegi 12</button><br>
+  <button class="waves-effect waves-light btn-small bleuF" onclick="filter('16')"> pegi 16</button><br>
   <button class="waves-effect waves-light btn-small rouge" onclick="filter('18')"> pegi 18</button><br>
 </div> <br>
 
 <div id="myBtnContainer">
 <p class="gradient titre">Le coup de coeur</p>
-  <button class="waves-effect waves-light btn-small bleuC" onclick="filter2('0')"> oui</button><br>
-  <button class="waves-effect waves-light btn-small rouge" onclick="filter2('1')"> non</button><br>
+  <button class="waves-effect waves-light btn-small bleuC" onclick="filter2('1')"> oui</button><br>
+  <button class="waves-effect waves-light btn-small rouge" onclick="filter2('0')"> non</button><br>
 </div> <br>
 <div id="myBtnContainer">
 <p class="gradient titre">La tranche de prix</p>
@@ -134,8 +134,9 @@
       
 
               ?>
-              <div class="flex"> 
-      <div class="flex">
+
+      <div class="row">
+        <div class= "s1"> 
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'>
         <div class= 'filterDiv2 <?php echo $jeu['coeur']?>'>
           <div class= 'filterDiv3 <?php echo $i?>'>
@@ -148,8 +149,8 @@
                         <div class= 'filterDiv10 <?php echo $MAC?>'>
                           <div class= 'filterDiv11 <?php echo $Linux?>'>
 
-        <?php gameCard($pdo, $jeu, 0);?></div></div></div></div></div></div></div></div></div></div></div><?php } ?>
-      </div></div>
+         <?php gameCard($pdo, $jeu, 0);?></div></div></div></div></div></div></div></div></div></div></div></div><?php } ?>
+      </div>
 
 <script>
 filter("all")
