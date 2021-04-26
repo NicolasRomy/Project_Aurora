@@ -1,4 +1,5 @@
 <?php
+//utilisation de la fonction recupCoeur afin de recuperer les jeux coup de coeur
 include_once '../action/config.php';
 $coupCoeur = recupCoeur($pdo);
 ?>
@@ -13,10 +14,11 @@ $coupCoeur = recupCoeur($pdo);
 
 <body>
   <header>
+   <!-- importation de la navbar -->
     <?php include '../content/navbar.php'; ?>
   </header>
   <div class="row">
-
+      <!-- utilisation du gradiant afin de donner le degradé voulu -->
     <div class="col m10 offset-m1 ">
       <h1><span class="titre white-text shadow"> Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu</span> <span class="titre white-text gradient "> pour les parents.</span></h1>
       <p class="light white-text">Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
@@ -31,21 +33,21 @@ $coupCoeur = recupCoeur($pdo);
           (en particulier, les parents) à s'informer de chaque type de jeux vidéo à l'aide de
           différents logos exposé sur leur boite d'origine.</p>
       </div>
-
+        <!-- affichage des boutons pegi -->
         <div class="col s2 m2 l2 xl2 offset-s1 offset-m1 offset-l1 offset-xl1">
           <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
         </div>
         <div class="col s2 m2 l2 xl2">
-          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_7.PNG" alt="bntPEGI3"></a>
+          <a href="catalogue.php"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_7.PNG" alt="bntPEGI3"></a>
         </div>
         <div class="col s2 m2 l2 xl2">
-          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_12.PNG" alt="bntPEGI3"></a>
+          <a href="catalogue.php"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_12.PNG" alt="bntPEGI3"></a>
         </div>
         <div class="col s2 m2 l2 xl2">
-          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_16.PNG" alt="bntPEGI3"></a>
+          <a href="catalogue.php"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_16.PNG" alt="bntPEGI3"></a>
         </div>
         <div class="col s2 m2 l2 xl2">
-          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI3"></a>
+          <a href="catalogue.php"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI3"></a>
         </div>
 
         <div class="col s12 m12 l12 xl12">
@@ -56,6 +58,7 @@ $coupCoeur = recupCoeur($pdo);
             <div class="col s2 m2 l2 xl2 valign-wrapper">
               <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
             </div>
+            <!-- boucle discriminant les jeux en coup de coeur uniquement et pour le pegi voulu -->
             <?php foreach ($coupCoeur as $key => $jeu) {
                     if($jeu['PEGI'] == 3){
                       gameCard($pdo, $jeu, 0);
