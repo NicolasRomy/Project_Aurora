@@ -141,11 +141,12 @@
             <div class="modal-content">
               <div class="col s12">
                 <div class="input-field col s12">
+                <p class="text bold degrade_<?php echo $couleur ?> text">Votre Avis</p>
                   <textarea id="text" class="materialize-textarea"></textarea>
-                  <label for="text">Votre Avis</label>
+                  
                 </div>
               </div>
-              <label for="text">Votre note</label>
+              <label class= "bold degrade_<?php echo $couleur ?> text" for="text">Votre note</label>
               <p class="range-field">
                 <input type="range" id="note" min="0" max="10"/>
               </p>
