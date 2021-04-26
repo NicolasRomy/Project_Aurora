@@ -18,21 +18,28 @@
 
 
   <?php
-
+if( isset($_POST['id']) ){
   $sql= "SELECT * FROM jeux where id =".$_POST['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
   $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
 
-  $sql= "SELECT * FROM images where jeux_id =".$_POST['id'];
+
+  if( isset($_POST['title']) ){
+  $sql= "SELECT * FROM jeux where title =".$_POST["title"];
+  $pre = $pdo->prepare($sql);
+  $pre->execute();
+  $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
+  var_dump($jeu);
+  }
+  
+  $sql= "SELECT * FROM images where jeux_id =".$jeu[0]['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();
   $img = $pre->fetchAll(PDO::FETCH_ASSOC);
-  ?>
+  }
 
 
-
-  <?php
   $sql= "SELECT * FROM jeux_plateforme jp INNER JOIN plateforme p ON p.id = jp.plateforme WHERE jeux=".$jeu[0]['id'];
   $pre = $pdo->prepare($sql);
   $pre->execute();

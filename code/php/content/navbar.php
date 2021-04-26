@@ -4,11 +4,20 @@
       <a href="../page/index.php" class="brand-logo margin-left height-logo-a"><img class="responsive-img img-navbar-logo" src="../../../assets/logo-big.PNG" alt=""></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down row">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../content/script.js"></script>
+
+
         <li class="input-field marge-search offset-s2 offset-m2 offset-l2 offset-xl2 col s4 m3 l3 xl4">
-          <input placeholder="Rechercher" id="search" type="search" required>
+        <form action="../page/detaille_jeux.php" method="post">
+          <input placeholder="Rechercher" id="search" type="search" name="title" >
+          </form>
           <label class="label-icon icon-searc" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons icon-search">close</i>
         </li>
+
+
+        <div id="display"></div>
         <div class="right">
           <?php if (isset($_SESSION['user']) && $_SESSION['user']['admin'] == 1): ?>
             <li><a class="height-panier-a hover" href="../page/admin.php"><img class="responsive-img img-navbar-panier taille-admin" src="../../../assets/admin.png" alt=""></a></li>
