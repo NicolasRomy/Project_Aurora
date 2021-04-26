@@ -119,7 +119,7 @@ $coupCoeur = recupCoeur($pdo);
 
     </div>
 
-
+      <!--signification des pictogrames -->
       <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
       <h2 class="center-align"><span class="titre white-text">La</span><span class="titre gradient"> signifiquation des pictogrammes PEGI </span><span class="titre white-text">définit par l'Union Européenne</span></h2>
       <?php include '../content/pegi_explanation.php'; ?>
