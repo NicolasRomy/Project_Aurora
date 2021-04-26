@@ -113,3 +113,14 @@ function recupAllImg($pdo){
     $plateforms = $pre->fetchAll(PDO::FETCH_ASSOC);
     return $plateforms;
 }
+
+function recupGamePanier($pdo, $id){
+  $sql =
+  " SELECT * FROM jeux
+    WHERE id=".$id."
+  ";
+  $pre = $pdo->prepare($sql);
+  $pre->execute();
+  $jeu = $pre->fetchAll(PDO::FETCH_ASSOC);
+  return $jeu;
+}

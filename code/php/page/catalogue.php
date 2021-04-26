@@ -8,10 +8,11 @@
 </head>
 <body>
   <header>
-
+    
     <?php include '../content/navbar.php'; ?>
     <br><br>
   </header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <meta charset="utf-8">
      <meta name="description" content="A page's description, usually one or two sentences."/>
      <title>Contact</title>
@@ -36,95 +37,71 @@
 
 <h2>Filter DIV Elements</h2>
 <div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('all')"> Show all</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('3')"> pegi 3</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('7')"> pegi 7</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('12')"> pegi 12</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('16')"> pegi 16</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('18')"> pegi 18</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterrrr('all')"> Show all</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterrrr('3')"> pegi 3</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterrrr('7')"> pegi 7</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterrrr('12')"> pegi 12</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterrrr('16')"> pegi 16</button>
+  <button class="waves-effect waves-light btn-small" onclick="filterrrr('18')"> pegi 18</button>
+</div>
+
+<div id="myBtnContainer">
+  <button class="waves-effect waves-light btn-small" onclick="filter2('0')"> pas coeur</button>
+  <button class="waves-effect waves-light btn-small" onclick="filter2('1')"> coeur</button>
 </div>
 <div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('all')"> Show all</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('0')"> coeur</button>
-  <button class="waves-effect waves-light btn-small" onclick="filterSelection2('1')"> pascoeur</button>
-
-
-  <p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
-
-<button onclick="myFunction()">Try it</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('10')"> 0-10€ </button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('7')"> pegi 7</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('12')"> pegi 12</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('16')"> pegi 16</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('18')"> pegi 18</button>
+</div>
 <?php
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
     ?>
       <div style="display:flex;">
-<<<<<<< HEAD
-       <div id= "myDIV"><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
-=======
-       <div class= 'filterDiv <?php echo $jeu['PEGI']?>' class = 'filterDiv2 <?php echo $jeu['coeur']?>'><?php gameCard($pdo, $jeu, 0);?></div><?php } ?>
->>>>>>> c20b92d2f55721164531ab4480142bc00e883732
+       <div class= 'filterDiv <?php echo $jeu['PEGI']?>'>
+        <div class= 'filterDiv2 <?php echo $jeu['coeur']?>'>
+          <div class= 'filterDiv3 <?php echo $jeu['Prix']?>'>
+        <?php gameCard($pdo, $jeu, 0);?></div>
+      </div><?php } ?>
       </div>
-<p><b>Note:</b> The element will not take up any space when the display property set to "none".</p>
+      </div>
 
 <script>
-<<<<<<< HEAD
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.show;
-  } else {
-    x.style.hide;
-  }
-}
-</script>
-
-=======
 filterrrr("all")
 function filterrrr(c){
-  x = document.getElementsByClassName("filterDiv");
-  $('.filterDiv').hide();
-  $('.'+c).show();}
-
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
+  if (c== "all") {
+    $(".filterDiv").show();
+    filter2('all');
+} else {
+  $(".filterDiv").hide();
+  $("."+c).show();
 }
-filterSelection2("all")
-function filterSelection2(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv2");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
+  
 }
->>>>>>> c20b92d2f55721164531ab4480142bc00e883732
+function filter2(c){
+  if (c== "all") {
+    $(".filterDiv2").show();
+    filterrrr("all");
+} else {
+  $(".filterDiv2").hide();
+  $("."+c).show();
+}
+  
+}
+function filter3(c){
+  if (c== "all") {
+    $(".filterDiv3").show();
+    filterrrr("all");
+} else {
+  $(".filterDiv3").hide();
+  $("."+c).show();
+}
+  
+}
 
-      
-
-<script>
-
-function filterSelection2(c){
-  $x = document.getElementsByClassName("filterDiv");
-  $i = 0
-  while (i < x.lengh)
-  { 
-    $(x[i]).show();
-    $i++;
-  }
-  $('.filterDiv'+c).show();}
-
-$(document).ready(function(){
-
-$('.sidenav').sidenav();
-$('select').formSelect();
-});
 
 </script>
 
