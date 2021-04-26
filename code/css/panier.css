@@ -1,4 +1,19 @@
 .taille-img{
-  height: 200px;
+  height: 150px;
   width: auto;
+}
+
+.margin-top{
+  margin-top: 9px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+div h4 {
+  margin-top: 10px;
+}
+
+.margin-10{
+  margin-top: 10px;
 }

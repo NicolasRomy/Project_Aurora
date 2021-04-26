@@ -28,3 +28,9 @@ main {
 .bd-raduis{
   border-radius: 60px;
 }
+.bd-raduis-10{
+  border-radius: 10px;
+}
+.bd-raduis-20{
+  border-radius: 20px;
+}

@@ -12,8 +12,6 @@
         <form action="../page/detaille_jeux.php" method="post">
           <input placeholder="Rechercher" id="search" type="search" name="title" >
           </form>
-          <label class="label-icon icon-searc" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons icon-search">close</i>
         </li>
 
 
@@ -29,9 +27,9 @@
             <li><a class="height-user-a hover margin" href="../action/logout.php"><img class="responsive-img img-navbar-user" src="../../../assets/logo-logout.PNG" alt=""></a></li>
           <?php } else
             $hrefUser = '../page/login.php'; ?>
-            
 
-           
+
+
           <li><a class="height-user-a hover margin" href="<?php echo $hrefUser ?>"><img class="responsive-img img-navbar-user" src="../../../assets/user-logo.PNG" alt=""></a></li>
 
         </div>
