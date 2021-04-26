@@ -35,7 +35,7 @@ $coupCoeur = recupCoeur($pdo);
       </div>
         <!-- affichage des boutons pegi -->
         <div class="col s2 m2 l2 xl2 offset-s1 offset-m1 offset-l1 offset-xl1">
-          <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
+          <a href="catalogue.php"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
         </div>
         <div class="col s2 m2 l2 xl2">
           <a href="catalogue.php"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_7.PNG" alt="bntPEGI3"></a>
