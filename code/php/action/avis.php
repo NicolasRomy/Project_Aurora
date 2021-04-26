@@ -11,21 +11,6 @@ include_once 'config.php';
 
 foreach ($comment as $key => $comments) {
 
-<<<<<<< HEAD
-    foreach($comment as $comments):?>
-                  
-   <div class="col offset-m1 m2 pseudo degrade_<?php echo $couleur ?>">
-   <?php echo $comments['pseudo'] ?>
-   </div>
-   <div class="col offset-m7 m2 pseudo degrade_<?php echo $couleur ?>">
-   <?php echo $comments['note'] ?>
-   </div>
-   <div class="avis-text ">
-   <?php echo $comments['content'] ?>
-   </div>
-   
-   <?php endforeach; ?>
-=======
   echo '
   <div class="row">
     <div class="col s12">
@@ -43,4 +28,3 @@ foreach ($comment as $key => $comments) {
     </div>
   </div>';
   }
->>>>>>> ea4ad22db526ef0adbf3460b6997eaffd363238e

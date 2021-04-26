@@ -49,7 +49,13 @@
   <button class="waves-effect waves-light btn-small" onclick="filter2('0')"> pas coeur</button>
   <button class="waves-effect waves-light btn-small" onclick="filter2('1')"> coeur</button>
 </div>
-
+<div id="myBtnContainer">
+    <button class="waves-effect waves-light btn-small" onclick="filter3('10')"> 0-10€ </button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('7')"> pegi 7</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('12')"> pegi 12</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('16')"> pegi 16</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter3('18')"> pegi 18</button>
+</div>
 <?php
   //loop to display title one by one and create unique link to articles
   foreach($jeux as $jeu){
@@ -57,7 +63,7 @@
       <div style="display:flex;">
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'>
         <div class= 'filterDiv2 <?php echo $jeu['coeur']?>'>
-          <div class= 'filterDiv2 <?php echo $jeu['coeur']?>'>
+          <div class= 'filterDiv3 <?php echo $jeu['Prix']?>'>
         <?php gameCard($pdo, $jeu, 0);?></div>
       </div><?php } ?>
       </div>
@@ -87,10 +93,10 @@ function filter2(c){
 }
 function filter3(c){
   if (c== "all") {
-    $(".filterDiv2").show();
+    $(".filterDiv3").show();
     filterrrr("all");
 } else {
-  $(".filterDiv2").hide();
+  $(".filterDiv3").hide();
   $("."+c).show();
 }
   
