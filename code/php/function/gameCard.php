@@ -48,7 +48,7 @@
         <div style= "background-size: cover;
         width: 90%; height: 180px;
         margin:0 auto;margin-bottom:3px;
-        background-image:url(../../../assets/imgGame/<?php echo $jeu['image']?>);
+        background-image:url(../../../assets/imgJeu/<?php echo $jeu['image']?>);
         border-radius: 15px;
         ">
       </div>
