@@ -13,10 +13,6 @@
 
 <button type="submit" name="id" value='<?php echo $jeu['id']?>' style="background-color:rgba(0,0,0,0); border: none">
 
-<<<<<<< HEAD
-
-=======
->>>>>>> bb14406a32725b2aef94a320a85d1d407816650e
       <div class="card"
       style= "height: 260px ; width: 195px;
       border-radius: 15px;
