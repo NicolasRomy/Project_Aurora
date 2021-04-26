@@ -14,11 +14,11 @@ $coupCoeur = recupCoeur($pdo);
 
 <body>
   <header>
-   <!-- importation de la navbar -->
+    <!-- importation de la navbar -->
     <?php include '../content/navbar.php'; ?>
   </header>
   <div class="row">
-      <!-- utilisation du gradiant afin de donner le degradé voulu -->
+    <!-- utilisation du gradiant afin de donner le degradé voulu -->
     <div class="col m10 offset-m1 ">
       <h1><span class="titre white-text shadow"> Bienvenue sur Aurora, le site d'achat de jeu vidéo conçu</span> <span class="titre white-text gradient "> pour les parents.</span></h1>
       <p class="light white-text">Acheter des jeux pour vos enfants en toute confiance grâce à nos différents indicateurs</p>
@@ -32,7 +32,7 @@ $coupCoeur = recupCoeur($pdo);
         <p class="medium white-text center-align" style="font-size: 25px">Le PEGI est un système d'évaluation des jeux vidéo, créé pour aider les consommateurs
           (en particulier, les parents) à s'informer de chaque type de jeux vidéo à l'aide de
           différents logos exposé sur leur boite d'origine.</p>
-      </div>
+        </div>
         <!-- affichage des boutons pegi -->
         <div class="col s2 m2 l2 xl2 offset-s1 offset-m1 offset-l1 offset-xl1">
           <a href="#"><img class="responsive-img" src="../../../assets/btn_PEGI/btn_PEGI_3.PNG" alt="bntPEGI3"></a>
@@ -60,11 +60,11 @@ $coupCoeur = recupCoeur($pdo);
             </div>
             <!-- boucle discriminant les jeux en coup de coeur uniquement et pour le pegi voulu -->
             <?php foreach ($coupCoeur as $key => $jeu) {
-                    if($jeu['PEGI'] == 3){
-                      gameCard($pdo, $jeu, 0);
-                    }
-                  }
-                ?>
+              if($jeu['PEGI'] == 3){
+                gameCard($pdo, $jeu, 0);
+              }
+            }
+            ?>
           </div>
           <div class="col s12 white mt5 bd-raduis">
             <div class="col s2 m2 l2 xl2 valign-wrapper">
@@ -72,10 +72,10 @@ $coupCoeur = recupCoeur($pdo);
             </div>
             <?php
             foreach ($coupCoeur as $key => $jeu) {
-                    if($jeu['PEGI'] == 7){
-                      gameCard($pdo, $jeu, 0);
-                    }
-                  }
+              if($jeu['PEGI'] == 7){
+                gameCard($pdo, $jeu, 0);
+              }
+            }
             ?>
           </div>
           <div class="col s12 white mt5 bd-raduis">
@@ -83,48 +83,48 @@ $coupCoeur = recupCoeur($pdo);
               <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_12.PNG" alt="bntPEGI12"></a>
             </div>
             <?php
-                foreach ($coupCoeur as $key => $jeu) {
-                        if($jeu['PEGI'] == 12){
-                          gameCard($pdo, $jeu, 0);
-                        }
-                      }
-                ?>
+            foreach ($coupCoeur as $key => $jeu) {
+              if($jeu['PEGI'] == 12){
+                gameCard($pdo, $jeu, 0);
+              }
+            }
+            ?>
           </div>
           <div class="col s12 white mt5 bd-raduis">
             <div class="col s2 m2 l2 xl2 valign-wrapper">
               <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_16.PNG" alt="bntPEGI16"></a>
             </div>
             <?php
-                foreach ($coupCoeur as $key => $jeu) {
-                        if($jeu['PEGI'] == 16){
-                          gameCard($pdo, $jeu, 0);
-                        }
-                      }
-                ?>
-          </div>
-              <div class="col s12 white mt5 bd-raduis">
-                <div class="col s2 m2 l2 xl2 valign-wrapper">
-                  <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI18"></a>
-                </div>
-                <?php
-                  foreach ($coupCoeur as $key => $jeu) {
-                          if($jeu['PEGI'] == 18){
-                            gameCard($pdo, $jeu, 0);
-                          }
-                        }
+            foreach ($coupCoeur as $key => $jeu) {
+              if($jeu['PEGI'] == 16){
+                gameCard($pdo, $jeu, 0);
+              }
+            }
             ?>
-              </div>
+          </div>
+          <div class="col s12 white mt5 bd-raduis">
+            <div class="col s2 m2 l2 xl2 valign-wrapper">
+              <a href="#"><img class="taille" src="../../../assets/btn_PEGI/btn_PEGI_18.PNG" alt="bntPEGI18"></a>
+            </div>
+            <?php
+            foreach ($coupCoeur as $key => $jeu) {
+              if($jeu['PEGI'] == 18){
+                gameCard($pdo, $jeu, 0);
+              }
+            }
+            ?>
+          </div>
         </div>
 
 
-    </div>
+      </div>
 
 
       <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
       <h2 class="center-align"><span class="titre white-text">La</span><span class="titre gradient"> signifiquation des pictogrammes PEGI </span><span class="titre white-text">définit par l'Union Européenne</span></h2>
       <?php include '../content/pegi_explanation.php'; ?>
       <img src="../../../assets\background_gradiant.svg" alt="background">
-      
+
 
     </div>
 

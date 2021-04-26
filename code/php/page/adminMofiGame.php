@@ -21,20 +21,20 @@ include_once '../action/config.php';
 
   </div>
 
-<?php include '../content/footer.php'; ?>
+  <?php include '../content/footer.php'; ?>
 
 
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/materialize.js"></script>
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../js/materialize.js"></script>
 
-    <script>
+  <script>
 
-    $(document).ready(function(){
+  $(document).ready(function(){
 
-      $('.sidenav').sidenav();
-      $('select').formSelect();
-    });
+    $('.sidenav').sidenav();
+    $('select').formSelect();
+  });
 
-    </script>
-  </body>
-  </html>
+  </script>
+</body>
+</html>

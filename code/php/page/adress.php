@@ -1,15 +1,12 @@
-<?php include_once '../action/config.php';
-
-$jeux = recupAllGame($pdo);
-
+<?php
+include_once '../action/config.php';
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
   <?php include '../content/head.php'; ?>
+  <link rel="stylesheet" href="../../css/panier.css"/>
   <title>Panier</title>
 </head>
 
@@ -18,13 +15,23 @@ $jeux = recupAllGame($pdo);
     <?php include '../content/navbar.php'; ?>
   </header>
 
-  <img src="../../../assets\background_gradiant.svg" alt="background" class="reverse2">
-  <div class="row">
-    <?php
-    foreach($jeux as $jeu){
-      gameCard($pdo, $jeu);
-    } ?>
-  </div>
+  <?php if($_SESSION['user']['adress'] == NULL): ?>
+    <div class="row mt5">
+      <div class="col s12 white bd-raduis-20">
+        <form class="" action="index.html" method="post">
+          <input id="adress" type="text" name="adress" value="">
+          <label for="adress">Rentrer votre adresse</label>
+        </form>
+      </div>
+    </div>
+
+  <?php else:
+    header('Location: ../page/Paiment.php');
+
+  endif;
+  ?>
+
+
   <img src="../../../assets\background_gradiant.svg" alt="background"/>
 
   <?php include '../content/footer.php'; ?>
@@ -39,6 +46,8 @@ $jeux = recupAllGame($pdo);
     $('.sidenav').sidenav();
     $('select').formSelect();
   });
+
+  $('')
 
   </script>
 </body>
