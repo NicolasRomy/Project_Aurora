@@ -68,7 +68,7 @@
     <button class="waves-effect waves-light btn-small" onclick="filter8('1')"> PS5</button>
     <button class="waves-effect waves-light btn-small" onclick="filter9('1')"> WII U</button>
     <button class="waves-effect waves-light btn-small" onclick="filter10('1')"> MAC </button>
-    <button class="waves-effect waves-light btn-small" onclick="filter11('1')"> Linuw</button>
+    <button class="waves-effect waves-light btn-small" onclick="filter11('1')"> Linux</button>
 </div>
 <?php
   //loop to display title one by one and create unique link to articles
@@ -143,8 +143,7 @@
                         <div class= 'filterDiv10 <?php echo $MAC?>'>
                           <div class= 'filterDiv11 <?php echo $Linux?>'>
 
-        <?php gameCard($pdo, $jeu, 0);?></div>
-      </div></div></div></div></div></div></div></div></div></div><?php } ?>
+        <?php gameCard($pdo, $jeu, 0);?></div></div></div></div></div></div></div></div></div></div></div><?php } ?>
       </div>
       
 
@@ -241,7 +240,7 @@ function filter9(c){
 
 }
 }
-function filter7(c){
+function filter10(c){
   if (c== "all") {
     $(".filterDiv10").show();
 } else {
@@ -250,7 +249,7 @@ function filter7(c){
 
 }
 }
-function filter8(c){
+function filter11(c){
   if (c== "all") {
     $(".filterDiv11").show();
 } else {
