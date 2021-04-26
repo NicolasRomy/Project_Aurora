@@ -101,16 +101,16 @@ if( isset($_POST['id']) ){
         </div>
       </div>
       <div class = "offset-m1 col m3 acheter <?php echo $couleur ?>">
-        <p>acheter le jeux</p>
-        <p><?php echo $jeu[0]['prix'] ?> € </p>
-        <p>
+        <p class="bold">acheter le jeux</p>
+        <p class="titre"><?php echo $jeu[0]['prix'] ?> € </p>
+        <p >
           <div style="display:flex;align-items:center;justify-content:center">
             <?php foreach($plateforms as $plateform){ ?>
               <img src="../../../<?php echo $plateform['icon'] ?>" style="height:30px; width:32px; margin-bottom: 5px ;margin-top: 5px;margin-right:5px;">
             <?php } ?>
           </div>
         </p>
-        <p>livraison en 24H</p>
+        <p class="bold">livraison en 24H</p>
         <button class="btn  <?php echo $couleur ?> white-text" id="addPanier" type="button" name="Panier"> Ajouter au panier</button>
         <button class="btn   <?php echo $couleur ?> white-text" id="Acheter" type="button" name="acheter">Acheter maintenant</button>
       </div>

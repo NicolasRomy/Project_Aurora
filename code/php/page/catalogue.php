@@ -12,7 +12,7 @@
     <?php include '../content/navbar.php'; ?>¨
     
 
-    <br><br>
+    
   </header>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <meta charset="utf-8">
@@ -37,43 +37,41 @@
 <html>
 
 <body>
-
-<div class = "col s12 m7">
- <h1> nos coups de coeur <h1>
-</div>
-
-<h2>Filter DIV Elements</h2>
-<div class="row">
-<div class="col  m1">
+<h2 class=" titre gradient center"> Filtrez votre recherche</h2>
+<div class="background">
 <div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small " onclick="filter('all')"> Show all</button> <br>
+  <p class="gradient titre">Choisissez le pegi</p>
+  <button class="waves-effect waves-light btn-small " onclick="filter('all')">reset</button> <br>
   <button class="waves-effect waves-light btn-small bleuC" onclick="filter('3')"> pegi 3</button><br>
   <button class="waves-effect waves-light btn-small bleuF" onclick="filter('7')"> pegi 7</button><br>
   <button class="waves-effect waves-light btn-small violetC" onclick="filter('12')"> pegi 12</button><br>
   <button class="waves-effect waves-light btn-small violetF" onclick="filter('16')"> pegi 16</button><br>
   <button class="waves-effect waves-light btn-small rouge" onclick="filter('18')"> pegi 18</button><br>
-</div>
+</div> <br>
 
 <div id="myBtnContainer">
-  <button class="waves-effect waves-light btn-small" onclick="filter2('0')"> pas coeur</button><br>
-  <button class="waves-effect waves-light btn-small" onclick="filter2('1')"> coeur</button><br>
-</div>
+<p class="gradient titre">Le coup de coeur</p>
+  <button class="waves-effect waves-light btn-small bleuC" onclick="filter2('0')"> oui</button><br>
+  <button class="waves-effect waves-light btn-small rouge" onclick="filter2('1')"> non</button><br>
+</div> <br>
 <div id="myBtnContainer">
-    <button class="waves-effect waves-light btn-small" onclick="filter3('1')"> 0-10€ </button><br>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('2')"> 10-25€</button><br>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('3')"> 25-50€</button><br>
-    <button class="waves-effect waves-light btn-small" onclick="filter3('4')"> 50+€</button><br>
-</div>
+<p class="gradient titre">La tranche de prix</p>
+    <button class="waves-effect waves-light btn-small bleuC" onclick="filter3('1')"> 0-10€ </button><br>
+    <button class="waves-effect waves-light btn-small bleuF" onclick="filter3('2')"> 10-25€</button><br>
+    <button class="waves-effect waves-light btn-small violetC" onclick="filter3('3')"> 25-50€</button><br>
+    <button class="waves-effect waves-light btn-small violetF" onclick="filter3('4')"> 50+€</button><br>
+</div> <br>
 <div id="myBtnContainer">
-    <button class="waves-effect waves-light btn-small" onclick="filter4('1')"> PC </button><br>
+<p class="gradient titre">La console</p>
+    <button class="waves-effect waves-light btn-small" onclick="filter4('1')"> PC </button>
     <button class="waves-effect waves-light btn-small" onclick="filter5('1')"> XBOX</button><br>
-    <button class="waves-effect waves-light btn-small" onclick="filter6('1')"> PS4 </button><br>
+    <button class="waves-effect waves-light btn-small" onclick="filter6('1')"> PS4 </button>
     <button class="waves-effect waves-light btn-small" onclick="filter7('1')"> SW</button><br>
-    <button class="waves-effect waves-light btn-small" onclick="filter8('1')"> PS5</button><br>
+    <button class="waves-effect waves-light btn-small" onclick="filter8('1')"> PS5</button>
     <button class="waves-effect waves-light btn-small" onclick="filter9('1')"> WII U</button><br>
-    <button class="waves-effect waves-light btn-small" onclick="filter10('1')"> MAC </button><br>
+    <button class="waves-effect waves-light btn-small" onclick="filter10('1')"> MAC </button>
     <button class="waves-effect waves-light btn-small" onclick="filter11('1')"> Linuw</button><br>
-</div>
+</div> <br>
 </div>
 <div class ="offset-m1 m9">
 <?php
@@ -136,7 +134,8 @@
       
 
               ?>
-      <div style="display:flex;">
+              <div class="flex"> 
+      <div class="flex">
        <div class= 'filterDiv <?php echo $jeu['PEGI']?>'>
         <div class= 'filterDiv2 <?php echo $jeu['coeur']?>'>
           <div class= 'filterDiv3 <?php echo $i?>'>
@@ -150,9 +149,8 @@
                           <div class= 'filterDiv11 <?php echo $Linux?>'>
 
         <?php gameCard($pdo, $jeu, 0);?></div></div></div></div></div></div></div></div></div></div></div><?php } ?>
-      </div>
-  </div>    
-</div>
+      </div></div>
+
 <script>
 filter("all")
 function filter(c){
