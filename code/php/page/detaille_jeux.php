@@ -186,16 +186,13 @@
             <script type="text/javascript">
             $(document).ready(function(){
               $('.sidenav').sidenav();
+              $('.modal').modal();
             });
 
             $('.carousel.carousel-slider').carousel({
               fullWidth: true
             });
 
-
-            $(document).ready(function(){
-              $('.modal').modal();
-            });
 
             </script>
 
